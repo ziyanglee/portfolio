@@ -11,7 +11,7 @@ liElems.forEach(function(item){
         var target = ev.target
         var address = target.getAttribute("ahref");
 
-        console.log(address);
+        console.log(target);
         
         
 
