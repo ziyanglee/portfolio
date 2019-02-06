@@ -8,8 +8,8 @@ liElems.forEach(function(item){
 
     item.addEventListener("click", function(ev){
         ev.preventDefault();
-        
-        var address = ev.target
+        var target = ev.target
+        var address = target.getAttribute("ahref");
 
         console.log(address);
         
