@@ -8,27 +8,13 @@ liElems.forEach(function(item){
 
     item.addEventListener("click", function(ev){
         ev.preventDefault();
+        if(ev.target.nodeName !== "A"){
+            return
+        }
         var address = ev.target.getAttribute("href");
-        console.log(address);
-        
+
         window.open(address,"width= 1500, height=1000");
-
-
-
     })
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
+}// window
