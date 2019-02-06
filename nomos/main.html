@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>NOMOS Glashütte</title>	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+	<link rel="stylesheet" media="all" href="css/common.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script>
+    // $(document).ready(function(){
+    //   $('.slider').bxSlider({
+    //   	minSlides:5,
+    //   	maxSlides:5,
+    //   	moveSlides:5,
+    //   	slideWidth:260,
+    //   	slideMargin:87,
+    //   });
+    //   $('.press_slider').bxSlider({
+    //   	minSlides:4,
+    //   	maxSlides:4,
+    //   	moveSlides:4,
+    //   	slideWidth:230,
+    //   	slideMargin:100,
+    //   })
+    // });
+
+
+$(document).ready(function(){
+  var windowWidth = window.innerWidth;
+
+  var slider = $('.slider').bxSlider({
+      minSlides:5,
+      maxSlides:5,
+      moveSlides:5,
+      slideWidth:260,
+      slideMargin:87,
+      hideControlOnEnd: true,
+      infiniteLoop: false
+  });
+
+  var pressSlider = $('.press_slider').bxSlider({
+      minSlides:4,
+      maxSlides:4,
+      moveSlides:4,
+      slideWidth:230,
+      slideMargin:100,
+      hideControlOnEnd: true,
+      infiniteLoop: false
+  });
+
+
+  if(windowWidth <= 1400){
+    slideNum();
+  }
+
+  if (windowWidth <= 991){
+    slideNum();
+  }
+
+  if (windowWidth <= 575){
+    slideNum();
+  }
+
+ 
+  window.addEventListener("resize",slideNum);
+ 
+  function slideNum(){
+    var width = window.innerWidth;
+
+    if (width > 1400 ){ 
+      slider.reloadSlider({
+       minSlides:5,
+       maxSlides:5,
+       moveSlides:5,
+       slideWidth:260,
+       slideMargin:87,
+       hideControlOnEnd: true,
+       infiniteLoop:false
+     });
+      pressSlider.reloadSlider({
+       minSlides:4,
+       maxSlides:4,
+       moveSlides:4,
+       slideWidth:250,
+       slideMargin:100,
+       hideControlOnEnd: true,
+       infiniteLoop:false
+      })
+    }
+ 
+    if (width <= 1400){
+       slider.reloadSlider({
+         minSlides:3,
+         maxSlides:3,
+         slideWidth:300,
+         slideMargin:50,
+         hideControlOnEnd:true,
+         infiniteLoop:false
+       });
+     } 
+     
+    if (width <= 991){
+      pressSlider.reloadSlider({
+        minSlides:3,
+        maxSlides:3,
+        moveSlides:3,
+        slideWidth:300,
+        slideMargin:87,
+        hideControlOnEnd:true,
+        infiniteLoop:false
+      })
+    }; 
+    if (width <= 575){
+       slider.reloadSlider({
+         minSlides:1,
+         maxSlides:1,
+         slideWidth:300,
+         slideMargin:10,
+         stopAutoOnClick:true,
+         hideControlOnEnd:true,
+         infiniteLoop: false
+       })
+       pressSlider.reloadSlider({
+         minSlides:3,
+         maxSlides:3,
+         moveSlides:1,
+         slideWidth:500,
+         slideMargin:20,
+         hideControlOnEnd:true,
+         infiniteLoop:false
+       });
+     }
+    
+  }; // slideNum
+});
+ 
+ 
+
+
+
+
+
+    </script>
+    <script src="js/ui.js"></script>
+</head>
+<body>
+	<!-- wrap 시작  -->
+	<div class="wrap">
+		<!-- header 시작 -->
+		<header>
+			<div class="header_wrap">
+				<nav class="nav_tab">
+					<ul>
+						<li><a href="">Watches</a></li>
+						<li><a href="">Watchmaking</a></li>
+						<li><a href="">Service</a></li>
+					</ul>
+					<a class="mobile_menu" href="">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+							<path d="M4 7.88h12M4 12.12h12"></path>
+					</a>
+				</nav>
+				<h1>
+					<a href="" class="logo" title="home">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 40" version="1">
+							<path d="M36.57 27.72h-1.42v11.62h4.4l.32-1.19h-3.3zm51.67-2a.87.87 0 1 0 .9-.86.86.86 0 0 0-.9.86m3.07 0a.87.87 0 1 0 .85-.81.85.85 0 0 0-.85.81m1 10.42c0 .88-.31 2.1-1.65 2.1S89 36.93 89 36v-8.28h-1.38v8c0 2.66 1.27 3.8 3 3.8 2.71 0 3.07-2.1 3.07-3.66v-8.14h-1.42zm-28.87-2.57a69.6 69.6 0 0 1-1.46-1.43 2.33 2.33 0 0 1-.89-1.84 1.45 1.45 0 0 1 1.5-1.48 1.81 1.81 0 0 1 .72.15 1.7 1.7 0 0 1 .62.49l.56-1.08a2.8 2.8 0 0 0-2.07-.84 2.67 2.67 0 0 0-1.8.7 2.75 2.75 0 0 0-.89 2A3.65 3.65 0 0 0 61 33c.4.44.8.81 1 1 .47.47 1.51 1.26 1.51 2.37v.1A1.48 1.48 0 0 1 62 38.21h-.09a2.62 2.62 0 0 1-1.8-1.11l-.55 1.15A3.33 3.33 0 0 0 62 39.51h.05a2.76 2.76 0 0 0 2.87-3 4.29 4.29 0 0 0-1.52-2.93m-38.7.81h1.86v.72c0 1.66-.46 3.18-1.84 3.18h-.08c-1.64 0-2.17-2-2.17-4.83s.47-4.61 2-4.61c.8 0 1.41.77 1.81 1.62l1.12-.65c-.67-1.52-1.57-2.22-2.93-2.22-2.45 0-3.52 2-3.52 6s1.21 6 3.64 6c2.7 0 3.38-2.22 3.38-5.9v-.45h-3.22zm88-5.45h2.3v10.4h1.44v-10.4h2.28v-1.22h-6.02zm-12.32 0h2.34v10.4h1.44v-10.4h2.28v-1.22h-6.05zm-22.83 3.42h-3.18v-4.64h-1.44v11.62h1.44v-5.75h3.17v5.75H79V27.72h-1.45zm-26.71 3.4H48l.05-.2 1-5 .3-1.5 1.41 6.53zm-2.11-8.06l-3.07 11.64h1.4l.62-2.39h3.47l.62 2.39h1.51L50.16 27.7zm76.62 11.64h5.19v-1.19h-3.74v-4.32h3.51v-1.2h-3.51v-3.71h3.75v-1.2h-5.19zm-87-23A6.68 6.68 0 1 1 45 9.68a6.68 6.68 0 0 1-6.68 6.68m0-15.87a9.19 9.19 0 1 0 9.19 9.19A9.19 9.19 0 0 0 38.34.49m75.17 15.86a6.68 6.68 0 1 1 6.68-6.68 6.68 6.68 0 0 1-6.68 6.68m0-15.87a9.19 9.19 0 1 0 9.19 9.19 9.19 9.19 0 0 0-9.19-9.18m-50.9 5.66l13.21 11.48L89.21 6v12.28h2.51V.68L75.85 14.44 60.14.71v17.57h2.47zm-47.85 7L1 .86v17.42h2.47V6.43l13.8 12.31V1.2h-2.51zm129-4.58l-3.14-.71c-1.47-.35-3.48-.8-3.48-2.28 0-2.1 2.55-2.55 4-2.55 2.46 0 3.9.65 4.89 2.29l2.33-1c-1-2.4-3.43-3.64-6.91-3.69-4-.05-7 1.57-7 5 0 2.76 2.09 3.82 4.89 4.51l3.12.71c1.95.44 3.77 1 3.77 2.68 0 2-2.82 3-4.85 2.9-2.61-.15-4.53-1.14-5.09-2.91l-2.53.87c.76 2.3 2.89 4.32 7.52 4.45 3.77.11 7.69-1.73 7.69-5.43 0-2.92-2.74-4.31-5.26-4.87">
+							</path>
+						</svg>
+					</a>
+				</h1>
+				<div class="find_retailer">
+					<a href="">Find retailer
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+							<circle cx="9.5" cy="9.5" r="7.5"></circle>
+							<path d="M15 15l4 4"></path>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</header>
+		<!-- header 끝  -->
+		<!-- main 시작  -->
+		<main>
+			<section class="update">
+				<div class="teaser_text">
+					<h2>
+						<a href="">Handcrafted for the holidays: Orion in deep midnight blue</a>
+					</h2>
+					<a href="">To the festive timepieces</a>
+				</div>
+				<div class="visual">
+					<a href="">
+						<picture>
+							<source media="(max-width: 575px)" srcset="images/main_visual575.jpg">
+							<img src="images/main_visual.jpg" alt="Orion nematik">
+						</picture>
+					</a>
+				</div>
+				<div class="teaser_container">
+					<div class="teaser_box">
+						<a href="">
+							<img src="images/update-startseite-s.jpg" alt="NOMOS CLASSICS">
+						</a>
+						<div class="teaser_text">
+							<h2>
+								<a href="">Update series—the NOMOS classics with an entirely new date</a>
+							</h2>
+							<a href="">Get up-to-date</a>
+						</div>
+					</div>
+					<div class="teaser_box">
+						<a href="">
+							<img src="images/reddot_autobahn_front_2d.jpg" alt="Autobahn">
+						</a>
+						<div class="teaser_text">
+							<h2>
+								<a href="">Autobahn—distinct and decisive,racing ahead of the pack</a>
+							</h2>
+							<a href="">Live life in the fast lane</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="slider_wrap">
+				<div class="comment_row">
+					<a class="watchfinder" href="">Watchfinder</a>
+					<h3>Thirteen model families, eleven calibers—beautiful, highly precise watches for him, for her, for everyone</h3>
+				</div>	
+				<div class="slider_row">
+					<ul class="slider">
+						<li>
+							<a href="">
+								<img src="images/slide_tangente.jpg" alt="Tangente">
+								<span>
+							    	<h4>TANGENTE</h4>
+							    	<i>19 watches</i>
+							    </span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/slide_metro.jpg" alt="METRO">
+								<span>
+							    	<h4>METRO</h4>
+							    	<i>12 watches</i>
+							    </span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/slide_ahoi.jpg" alt="AHOI">
+								<span>
+							    	<h4>AHOI</h4>
+							    	<i>10 watches</i>
+							    </span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/slide_tetra.jpg" alt="TETRA">
+								<span>
+							    	<h4>TETRA</h4>
+							    	<i>16 watches</i>
+							    </span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/slide_club.jpg" alt="CLUB">
+								<span>
+							    	<h4>CLUB</h4>
+							    	<i>14 watches</i>
+							    </span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/slide_lux.jpg" alt="LUX">
+								<span>
+							    	<h4>LUX</h4>
+							    	<i>5 watches</i>
+							    </span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/slide_zurich.jpg" alt="Zürich">
+								<span>
+							    	<h4>Zürich</h4>
+							    	<i>10 watches</i>
+							    </span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/slide_tangomat.jpg" alt="TANGOMAT">
+								<span>
+							    	<h4>TANGOMAT</h4>
+							    	<i>5 watches</i>
+							    </span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/slide_autobahn.jpg" alt="AUTOBAHN">
+								<span>
+							    	<h4>AUTOBAHN</h4>
+							    	<i>3 watches</i>
+							    </span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/slide_orion.jpg" alt="ORION">
+								<span>
+							    	<h4>ORION</h4>
+							    	<i>24 watches</i>
+							    </span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/slide_ludwig.jpg" alt="LUDWIG">
+								<span>
+							    	<h4>LUDWIG</h4>
+							    	<i>10 watches</i>
+							    </span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/slide_minimatik.jpg" alt="MINIMATIK">
+								<span>
+							    	<h4>MINIMATIK</h4>
+							    	<i>3 watches</i>
+							    </span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/slide_lambda.jpg" alt="LAMBDA">
+								<span>
+							    	<h4>LAMBDA</h4>
+							    	<i>8 watches</i>
+							    </span>
+							</a>
+						</li>
+					</ul>
+				</div>			
+			</section>
+			<section class="main_contents">
+					<div class="content">
+						<a href="">
+							<img src="images/bahnhof.jpg">
+						</a>
+						<div class="teaser_text">
+							<h3>
+								<a href="">Glashütte, the world-famous home of German horology—for 170 years. And in the middle of it all: the NOMOS workshops</a>
+							</h3>
+							<a href="">Get to know Glashütte</a>
+						</div>
+					</div>
+					<div class="content">
+						<a href="">
+							<img src="images/nomos-frontpage-swing-system.jpg">
+						</a>
+						<div class="teaser_text">
+							<h3>
+								<a href="">Plenty of tradition here, some high tech there—and always something new</a>
+							</h3>
+							<a href="">What makes NOMOS Glashütte independent</a>
+						</div>
+					</div>
+					<div class="content">
+						<a href="">
+							<img src="images/nomos-frontpage-design.jpg">
+						</a>
+						<div class="teaser_text">
+							<h3>
+								<a href="">Award-winning timepieces, made by the watchmaking company that never fails to surprise: NOMOS Glashütte</a>
+							</h3>
+							<a href="">Discover now</a>
+						</div>
+					</div>
+			</section>
+			<section class="quote">
+				<blockquote>
+					<span>So on-point and contemporary yet also timeless</span>
+					<b>Esquire Singapore</b>
+				</blockquote>
+			</section>
+			<section class="slider_wrap press">
+				<div class="comment_row">
+					<a class="press" href="">Complete press coverage</a>
+					<h3>We could tell you many things. Which is why you will find here a selection of the media coverage NOMOS Glashütte and our watches have received.</h3>
+				</div>
+				<div class="slider_row">
+					<ul class="press_slider">
+						<li>
+							<a href="">
+								<img src="images/slide_spiegel.jpg" alt="Spiegel">
+								<span>
+							    	<h4>Spiegel</h4>
+							    	<i>09/2018</i>
+							    </span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/slide_die_zeit.jpg" alt="Die Zeit">
+								<span>
+							    	<h4>Die Zeit</h4>
+							    	<i>09/2018</i>
+							    </span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/slide_revolution.jpg" alt="Revolution Italia">
+								<span>
+							    	<h4>Revolution Italia</h4>
+							    	<i>06/2018</i>
+							    </span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/slide_watchtime.jpg" alt="Watchtime">
+								<span>
+							    	<h4>Watchtime</h4>
+							    	<i>05/2018</i>
+							    </span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/slide_nyt.jpg" alt="The New York Times">
+								<span>
+							    	<h4>The New York Times</h4>
+							    	<i>11/2017</i>
+							    </span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/slide_sonderdruck.jpg" alt="Uhren Magazin">
+								<span>
+							    	<h4>Uhren Magazin</h4>
+							    	<i>03/2018</i>
+							    </span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/slide_uhren_die.jpg" alt="Die Welt Uhren">
+								<span>
+							    	<h4>Die Welt Uhren</h4>
+							    	<i>03/2018</i>
+							    </span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/slide_esquire.jpg" alt="Esquire UK">
+								<span>
+							    	<h4>Esquire UK</h4>
+							    	<i>12/2017</i>
+							    </span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/slide_capital.jpg" alt="Capital">
+								<span>
+							    	<h4>Capital</h4>
+							    	<i>12/2017</i>
+							    </span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/slide_tiempo.jpg" alt="TR Tiempo de Relojes">
+								<span>
+							    	<h4>TR Tiempo de Relojes</h4>
+							    	<i>10/2017</i>
+							    </span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/slide_belegexemplar.jpg" alt="GZ Goldschmiede Zeitung">
+								<span>
+							    	<h4>GZ Goldschmiede Zeitung</h4>
+							    	<i>08/2017</i>
+							    </span>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="images/slide_newyorker.jpg" alt="The New Yorker">
+								<span>
+							    	<h4>The New Yorker</h4>
+							    	<i>03/2017</i>
+							    </span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</main>
+		<!-- main 끝  -->
+		<!-- footer 시작  -->
+		<footer>
+			<div class="visual">
+				<img src="images/nomos-families-tangente-teaser.jpg">
+			</div>
+			<div class="footer_contents">
+				<div class="newsletter">
+					<p id="signupinfo">Sign up for our newsletter to receive special offers, news and great events.</p>
+					<form id="myform">
+						<label for="personal-email" class="hide">Email address</label>
+						<input type="email" placeholder="Email address" class="email" id="mailaddr">
+						<div class="persn_info">
+							<fieldset>
+								<label for="personal-firstname">FIRST NAME</label>
+								<input type="text" placeholder="First name" class="fst_name" required>
+								<label for="personal-lastname">LAST NAME</label>
+								<input type="text" placeholder="Last name" class="lst_name" required>
+								<label for="newsletter-language" class="language">NEWSLETTER LANGUAGE<span>- Please choose</span></label>
+								<select>
+									<option>English</option>
+									<option>German</option>
+								</select>
+								<input type="checkbox" name="" class="checkbox" required>
+								<label for="newsletter-privacy" class="privacy">
+									I hereby agree to receive the newsletter of NOMOS Glashütte/SA Roland Schwertner KG in order to be informed about the latest products and sales promotions in the webshop at www.nomos-glashuette.com. The revocation is possible at any time, e.g. by e-mail. Furthermore, I have the possibility to revoke my consent by using the unsubscribe link in every e-mail I receive.
+								</label>
+								<button type="submit" id="submit_btn">Subscribe now</button>
+							</fieldset>
+						</div>
+					</form>
+				</div>
+				<div class="nav">
+					<ul>
+						<li><a href="">Career</a></li>
+						<li><a href="">Press</a></li>
+						<li><a href="">Contact</a></li>
+						<li><a href="">Image database</a></li>
+					</ul>
+					<ul>
+						<li><a href="">Facebook</a></li>
+						<li><a href="">Twitter</a></li>
+						<li><a href="">Youtube</a></li>
+						<li><a href="">Instagram</a></li>
+						<li><a href="">Pinterest</a></li>
+					</ul>
+					<ul>
+						<li><a href="">Right to cancel</a></li>
+						<li><a href="">Terms and conditions</a></li>
+						<li><a href="">Data protection</a></li>
+						<li><a href="">Imprint</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="bottom">
+				<div class="select">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+						<circle cx="10" cy="10" r="8.5"></circle>
+						<path d="M1.94 12.83a26.48 26.48 0 0 0 8.6-.83 26.48 26.48 0 0 0 7.84-3.56M7.34 1.94a13.3 13.3 0 0 0 4.38 16.4m.95-.23A13.3 13.3 0 0 0 8.34 1.74">
+						</path>
+					</svg>
+					<div class="country_select">
+					<a href="">
+						<span class="select_label">Location:</span>
+						<span class="select_selection">South Korea</span>
+					</a>
+					</div>
+					<div class="lang_select">
+					<a href="">
+						<span class="select_label">Language:</span>
+						<span class="select_selection">English</span>
+					</a>
+					</div>
+				</div>
+				<div class="payment_icon">
+					<span class="paypal">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 20">
+							<path d="M9.13 2.33H3.37a.69.69 0 0 0-.72.51S.69 15.11.59 15.62s.21.51.21.51h2.67a.4.4 0 0 0 .41-.41s.51-2.84.62-3.55a.63.63 0 0 1 .72-.61h2.57c4.73 0 4.94-5.38 4.94-5.38.27-3.85-3.6-3.85-3.6-3.85zm0 4.26a2.23 2.23 0 0 1-2.47 2.13H5.32a.4.4 0 0 1-.41-.51s.41-2.54.51-3a.85.85 0 0 1 .72-.41h1.44a1.59 1.59 0 0 1 1.55 1.79zm14.2.2h-2.17s-.51 0-.62.41a3.2 3.2 0 0 1-.21.71 3 3 0 0 0-2.88-1.42A5.2 5.2 0 0 0 14 7.7s-2.16 2-2.16 4.46 1.34 4.06 3.91 4.06 3.39-1.32 3.39-1.32a.1.1 0 0 1 .21 0l-.1.71a.4.4 0 0 0 .41.51h2.16s.72-.1.82-.71 1.2-7.91 1.2-7.91.16-.71-.52-.71zm-3.91 6.09a3.43 3.43 0 0 1-2.06 1 2 2 0 0 1-2.16-2.64S15.92 9 18 9a2 2 0 0 1 2.16 1.83 2.89 2.89 0 0 1-.74 2.05zm16.87-6h-2.37c-.31 0-.62.41-.62.41l-3.09 4.36a.38.38 0 0 1-.31.2c-.1 0-.21-.2-.21-.2s-1.12-3.54-1.22-4.25-.72-.61-.72-.61h-2.37c-.72 0-.31.81-.31.81s2.57 7.1 2.57 7.41a.58.58 0 0 1-.1.41l-2.16 3a.56.56 0 0 0-.21.61.4.4 0 0 0 .41.41h2.26a.77.77 0 0 0 .62-.3S36.18 8.31 36.59 7.6s-.3-.71-.3-.71zm8.54-4.56h-5.77a.69.69 0 0 0-.72.51s-2 12.27-2.06 12.78.21.51.21.51h2.78a.4.4 0 0 0 .41-.41s.51-2.84.62-3.55a.63.63 0 0 1 .72-.61h2.47c4.73 0 4.94-5.38 4.94-5.38.41-3.84-3.61-3.84-3.61-3.84zm.1 4.26a2.23 2.23 0 0 1-2.47 2.13h-1.34a.4.4 0 0 1-.41-.51s.41-2.54.51-3a.64.64 0 0 1 .62-.51h1.44a1.72 1.72 0 0 1 1.65 1.9zm14.3.2h-2.16s-.51 0-.62.41a3.2 3.2 0 0 1-.21.71 3 3 0 0 0-2.88-1.42 5.2 5.2 0 0 0-3.5 1.22s-2.16 2-2.16 4.46 1.34 4.06 3.91 4.06S55 14.9 55 14.9a.1.1 0 0 1 .21 0l-.21.71a.4.4 0 0 0 .41.51h2.16s.72-.1.82-.71 1.25-7.91 1.25-7.91.2-.71-.41-.71zm-4 6.09a3.43 3.43 0 0 1-2.06 1A2 2 0 0 1 51 11.25S51.72 9 53.77 9a2 2 0 0 1 2.16 1.83 2.89 2.89 0 0 1-.71 2.05zM65 2.22h-2.28a.56.56 0 0 0-.51.51c-.1.51-2.06 12.88-2.06 12.88a.4.4 0 0 0 .41.51h2.26a.7.7 0 0 0 .41-.51L65.4 2.73s.21-.51-.4-.51z"/>
+						</svg>
+					</span>
+					<span class="mastercard">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 102 20">
+							<path d="M56.55 9.64l-.61-.09c-.56-.07-1-.19-1-.58s.42-.69 1.13-.69a3.82 3.82 0 0 1 1.85.51l.55-1A4.43 4.43 0 0 0 56 7.12c-1.5 0-2.48.72-2.48 1.9 0 1 .72 1.56 2 1.75l.61.09c.71.1 1 .28 1 .62s-.47.72-1.35.72a3.16 3.16 0 0 1-2-.62l-.59 1a4.28 4.28 0 0 0 2.57.77c1.71 0 2.7-.81 2.7-1.93s-.62-1.6-1.91-1.78zm6.3 2.48c-.64 0-.86-.4-.86-1V8.45h2.11V7.27H62v-1.8h-1.3v1.8h-1.2v1.18h1.2v2.7c0 1.38.53 2.2 2.06 2.2a3 3 0 0 0 1.61-.46L64 11.78a2.38 2.38 0 0 1-1.15.34zm-20.35-5a2.29 2.29 0 0 0-2.08 1.05 2.18 2.18 0 0 0-2-1.05 2 2 0 0 0-1.7.88v-.74h-1.28v5.93h1.3V9.91a1.39 1.39 0 0 1 1.45-1.57c.88 0 1.29.56 1.29 1.56v3.3h1.29V9.91a1.4 1.4 0 0 1 1.45-1.57c.86 0 1.3.56 1.3 1.56v3.3h1.3V9.48a2.21 2.21 0 0 0-2.32-2.36zm9.6.14h-1.29V8a2.25 2.25 0 0 0-1.86-.86 3 3 0 0 0-3 3.11 3 3 0 0 0 3 3.11 2.25 2.25 0 0 0 1.87-.87v.72h1.28V7.26zm-3 4.87a1.78 1.78 0 0 1-1.8-1.9 1.79 1.79 0 1 1 3.58 0 1.78 1.78 0 0 1-1.78 1.9zM87.19 8a2.25 2.25 0 0 0-1.87-.87 3 3 0 0 0-3 3.11 3 3 0 0 0 3 3.11 2.25 2.25 0 0 0 1.87-.87v.72h1.29V7.26h-1.29zm-1.71 4.15a1.78 1.78 0 0 1-1.8-1.9 1.79 1.79 0 1 1 3.58 0 1.78 1.78 0 0 1-1.78 1.88zm-17.37-5a2.9 2.9 0 0 0-3 3.11 2.92 2.92 0 0 0 3 3.11 3.6 3.6 0 0 0 2.43-.83l-.63-1a2.82 2.82 0 0 1-1.73.62 1.64 1.64 0 0 1-1.77-1.45h4.4v-.5a2.84 2.84 0 0 0-2.7-3.09zm-1.59 2.56a1.52 1.52 0 0 1 1.57-1.44 1.47 1.47 0 0 1 1.5 1.44zM91.45 8v-.73h-1.28v5.93h1.29V9.87c0-1 .42-1.53 1.27-1.53a2.1 2.1 0 0 1 .81.15l.4-1.22a2.76 2.76 0 0 0-.94-.15 1.75 1.75 0 0 0-1.55.88zm7.7-3.1V8a2.25 2.25 0 0 0-1.87-.87 3 3 0 0 0-3 3.11 3 3 0 0 0 3 3.11 2.25 2.25 0 0 0 1.87-.87v.72h1.29V4.89zm-1.71 7.24a1.78 1.78 0 0 1-1.8-1.9 1.79 1.79 0 1 1 3.58 0 1.78 1.78 0 0 1-1.78 1.89zM79.52 8.33a2.6 2.6 0 0 1 1.55.53l.62-1a3.1 3.1 0 0 0-2.13-.71 3 3 0 0 0-3.16 3.11 3 3 0 0 0 3.16 3.11 3.1 3.1 0 0 0 2.13-.71l-.62-1a2.6 2.6 0 0 1-1.55.53 1.76 1.76 0 0 1-1.78-1.9 1.77 1.77 0 0 1 1.78-1.96zm-6-.34v-.72h-1.26v5.93h1.29V9.87c0-1 .42-1.53 1.27-1.53a2.1 2.1 0 0 1 .81.15L76 7.28a2.76 2.76 0 0 0-.92-.16 1.75 1.75 0 0 0-1.54.88zm-62 2.21a9.14 9.14 0 0 1 3.2-6.94 8.67 8.67 0 1 0 0 13.89 9.14 9.14 0 0 1-3.16-6.95zm6.68 0a8.65 8.65 0 0 0-3.09-6.63c-.22.19-.44.38-.64.59l-.31.33-.29.35a8.71 8.71 0 0 0-.56.82l-.31.51v.09l-.16.34-.05.11-.14.35v.1a8.58 8.58 0 0 0-.29.92v.12c0 .11-.05.23-.08.35v3.32c0 .12 0 .23.07.34v.13a8.58 8.58 0 0 0 .29.92v.1l.14.35.05.11.16.33v.1l.21.38a8.71 8.71 0 0 0 .55.82l.28.35.3.33a8.79 8.79 0 0 0 .65.6 8.65 8.65 0 0 0 3.26-6.53zm2.48-8.67a8.62 8.62 0 0 0-5.18 1.73 9.14 9.14 0 0 1 0 13.88 8.66 8.66 0 1 0 5.22-15.61z"/>
+						</svg>
+					</span>
+					<span class="visa">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 20">
+							<path d="M13.66 2.38L10 12.48s-.8-4.14-1.27-6.72C8.59 5 8.48 4.33 8.43 4a1.74 1.74 0 0 0-1.72-1.54h-6v.37a14.41 14.41 0 0 1 3.85 1.56l3.3 12.72h3.94l5.81-14.65zm3 14.73h3.66L22.7 2.46H19zm14.2-8.32s-1.65-.88-2.37-1.33A1.09 1.09 0 0 1 28 6.29s.36-1.11 2.22-1.11a5.68 5.68 0 0 1 3.09.82l.5-3.17a11.51 11.51 0 0 0-2.22-.52 11.09 11.09 0 0 0-3.94.37 5 5 0 0 0-2.72 2.21 4.42 4.42 0 0 0-.29 3.61c.79 1.69 2.65 2.43 3.66 2.95a2.16 2.16 0 0 1 1.15 1 1.26 1.26 0 0 1-.45 1.28 4.2 4.2 0 0 1-2.29.52 7.05 7.05 0 0 1-3.44-1l-.57 3.32a7.94 7.94 0 0 0 3.87.74A7.71 7.71 0 0 0 31.3 16a4.87 4.87 0 0 0 1.86-3.76 4 4 0 0 0-2.29-3.45zM43.2 2.46h-3a1.68 1.68 0 0 0-1.65 1L33 17.12h3.94l.79-2.21h4.73l.5 2.21h3.44zM38.54 12l2-5.6L41.7 12z"/>
+						</svg>
+					</span>					
+				</div>
+			</div>
+		</footer>
+		<!-- footer 끝  -->
+	</div>
+	<!-- wrap 끝  -->
+</body>
+</html>
