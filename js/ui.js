@@ -3,19 +3,15 @@ window.onload = function (){
 
 var liElems = document.querySelectorAll(".portfolio li");
 
-
+//새 창 팝업열기
 liElems.forEach(function(item){
 
     item.addEventListener("click", function(ev){
         ev.preventDefault();
-        var target = ev.target
-        var address = target.getAttribute("ahref");
-
-        console.log(target);
+        var address = ev.target.getAttribute("href");
+        console.log(address);
         
-        
-
-        // window.open("http://www.naver.com","naver","width= 1000, height=500");
+        window.open(address,"width= 1500, height=1000");
 
 
 
