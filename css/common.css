@@ -51,7 +51,10 @@ main {padding-top: 70px }
 .portfolio .building_63 {background: url('../images/main_63.png')no-repeat left top;}
 .portfolio .cj_one {background: url('../images/main_cj.png')no-repeat left top;}
 .portfolio .nomos {background: url('../images/main_nomos.png')no-repeat left top;}
-.portfolio .hyosung {background: url('../images/main_hyosung.png')no-repeat left top;}
+.portfolio .hyosung {background: url('../images/main_hyosung.png')no-repeat left top; position: relative;}
+.portfolio .hyosung .sub_1 {position: absolute; left: -70px; bottom: 0; width: 150px; height: 159px; background: url('../images/sub_hyosung1.png')no-repeat left top;}
+.portfolio .hyosung .sub_2 {position: absolute; left: 400px; bottom: 0; width: 150px; height: 159px; background: url('../images/sub_hyosung2.png')no-repeat left top;}
+
 
 
 .portfolio > ul > li a {display: inline-block; width: 100%; height: 100%}
@@ -72,6 +75,8 @@ main {padding-top: 70px }
 .portfolio .cj_one {background-size: 340px; background-position-x: center;}
 .portfolio .nomos {background-size: 340px; background-position-x: center;}
 .portfolio .hyosung {background-size: 340px; background-position-x: center;}
+.portfolio .hyosung .sub_1 {left: 5px; bottom: auto; top: 180px; width: 100px; background-size: 100px;}
+.portfolio .hyosung .sub_2 {left: 274px; bottom: auto; top: 180px; width: 100px; background-size: 100px;}
 
 .portfolio > ul > li a ul {margin-left: 0px; margin-top: 279px;}
 .portfolio > ul > li a ul h2 {padding: 20px 0;}
