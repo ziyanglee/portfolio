@@ -25,7 +25,6 @@ liElems.forEach(function(item){
             return
         }
         var address = ev.target.getAttribute("href");
-        console.log(address);
 
         window.open(address,"width= 1500, height=1000");
     })
