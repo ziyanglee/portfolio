@@ -1,17 +1,17 @@
 window.onload = function (){
 
-var main = document.querySelector("main")
-var portfolio = document.querySelector(".portfolio");
 var liElems = document.querySelectorAll(".portfolio li");
 
-//포트폴리오 화면전환
-portfolio.addEventListener("click", function(ev){
-    ev.preventDefault();
-    
-    main.style.transform = "translateY(-640px)"
+tabMove();
 
-});
-
+// 포트폴리오위치로 스크롤
+function tabMove(){
+    $('.btn_portfolio').on("click", function(ev){
+        var offset = $('.portfolio').offset();
+        $('html, body').animate({scrollTop : offset.top}, 400);
+        return false;
+    })
+}
 
 
 

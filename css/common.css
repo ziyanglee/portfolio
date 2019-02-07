@@ -48,12 +48,32 @@ main {padding-top: 70px }
 .portfolio > ul {width: 1260px; margin: 0 auto; padding: 85px 0}
 .portfolio > ul > li {height: 400px;}
 .portfolio > ul > li + li {margin-top: 200px}
-.portfolio > ul > li a {display: inline-block; width: 100%; height: 100%}
-.portfolio > ul > li a ul {margin-left: 610px;}
-.portfolio > ul > li a ul h2 {padding: 40px 0; font-size: 22px}
-.portfolio > ul > li a ul li + li {margin-top: 20px}
 .portfolio .building_63 {background: url('../images/main_63.png')no-repeat left top;}
 .portfolio .cj_one {background: url('../images/main_cj.png')no-repeat left top;}
 .portfolio .nomos {background: url('../images/main_nomos.png')no-repeat left top;}
 .portfolio .hyosung {background: url('../images/main_hyosung.png')no-repeat left top;}
 
+
+.portfolio > ul > li a {display: inline-block; width: 100%; height: 100%}
+.portfolio > ul > li a ul {margin-left: 610px;}
+.portfolio > ul > li a ul h2 {padding: 40px 0; font-size: 22px}
+.portfolio > ul > li a ul li + li {margin-top: 20px}
+
+
+
+@media screen and (max-width: 385px){
+.wrap {min-width: 385px; background-image: url('../images/bg_main2.jpg'); overflow: hidden;}
+.about .text_box {background-size: 300px; width: 385px; height: 300px; margin: 0 auto; padding-top: 50px;}
+.about .text_box p {padding: 10px 0; font-size: 13px}
+
+.portfolio > ul {width: 1260px; margin: 0 auto; padding: 85px 0; background-color: white}
+.portfolio > ul > li {width:385px; height: 574px; text-align: center; }
+.portfolio .building_63 {background-size: 340px; background-position-x: center; height: 620px}
+.portfolio .cj_one {background-size: 340px; background-position-x: center;}
+.portfolio .nomos {background-size: 340px; background-position-x: center;}
+.portfolio .hyosung {background-size: 340px; background-position-x: center;}
+
+.portfolio > ul > li a ul {margin-left: 0px; margin-top: 279px;}
+.portfolio > ul > li a ul h2 {padding: 20px 0;}
+
+}
