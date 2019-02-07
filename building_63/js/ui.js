@@ -12,6 +12,7 @@ sectionScroll();
 
 resize();
 
+famOpen(); 
     
 function attachOn(target){
     if(target.classList.contains("on")){
@@ -242,38 +243,25 @@ function sectionScroll(){
                 }, 100)
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     };
-
 };//sectionScroll
     
+
+
+// 패밀리 사이트 리스트 열림 
+function famOpen(){
+    var famElem = document.querySelector(".goto_family");
+    var famList = famElem.querySelector("ul")
+    famElem.addEventListener("click", function(ev){
+        ev.preventDefault();
+
+        if(famList.classList.contains("on")){
+            famList.classList.remove("on");
+        } else {
+            famList.classList.add("on");
+        }
+    })
+};
 
     
     
