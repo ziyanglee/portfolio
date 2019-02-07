@@ -156,6 +156,7 @@ function sectionScroll(){
 
             sequenceBtn[i].classList.add("on");
             section[i].style.top = "0";
+            teaserBox[i].classList.remove("off");
 
         });
 
