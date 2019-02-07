@@ -122,7 +122,7 @@ function sectionScroll(){
 
     // 주요 이벤트 
     for(let i = 0; i < section.length; i++){
-        section[i].addEventListener("mousewheel", function(event){
+        section[i].addEventListener("wheel", function(event){
             ev = event;
             sect = this;
             index = i;
