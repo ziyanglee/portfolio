@@ -78,8 +78,8 @@ main {padding-top: 70px }
 .portfolio .hyosung .sub_1 {left: 5px; bottom: auto; top: 180px; width: 100px; background-size: 100px;}
 .portfolio .hyosung .sub_2 {left: 274px; bottom: auto; top: 180px; width: 100px; background-size: 100px;}
 
-.portfolio > ul > li a ul {margin-left: 0px; margin-top: 279px;}
-.portfolio > ul > li a ul h2 {padding: 20px 0;}
+.portfolio > ul > li > a ul {margin-left: 0px; margin-top: 279px;}
+.portfolio > ul > li > a ul h2 {padding: 20px 0;}
 
 
 }
