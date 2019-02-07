@@ -29,7 +29,7 @@ figure {margin: 0; }
 
 
 
-.wrap {background: url('../images/bg_main.jpg')no-repeat 0 0; background-attachment: fixed; position: relative;}
+.wrap {background: url('../images/bg_main.jpg')no-repeat 0 0; background-attachment: fixed; position: relative; min-width: 1500px;}
 
 /* 헤더 부분 */
 header {position: fixed; top: 0; left: 0; right: 0; height: 70px; background-color: white; box-shadow: 0 2px 5px 2px rgba(0,0,0,0.1); z-index: 900;}
