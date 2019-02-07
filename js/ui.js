@@ -11,7 +11,7 @@ function tabMove(){
         $('html, body').animate({scrollTop : offset.top}, 400);
         return false;
     })
-}
+};
 
 
 
@@ -20,6 +20,8 @@ liElems.forEach(function(item){
 
     item.addEventListener("click", function(ev){
         ev.preventDefault();
+        console.log("클릭됨");
+        
         if(ev.target.nodeName !== "A"){
             return
         }
