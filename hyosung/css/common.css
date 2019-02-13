@@ -113,7 +113,7 @@ address{font-style: normal;}
 .header > .nav .utill > .prod > .prod_open > ul.prod_map > li.place > ul > li > a > span {border-bottom: 1px solid #aaaeb8; padding-bottom: 5px;}
 .header > .nav .utill > .prod > .prod_open > ul.prod_map > li.place:after {content: ''; clear: both; display: block;}
 .header > .nav .utill > .prod > .prod_open > ul.prod_map a {color: #88a1b2;} 
-.header > .nav .utill > .prod > .prod_open > ul.prod_map a > b {display: inline-block; width: 2px; height: 2px; background-color: #a5a9b3; vertical-align: 3px; margin-right: 10px;} 
+.header > .nav .utill > .prod > .prod_open > ul.prod_map a > i {display: inline-block; width: 2px; height: 2px; background-color: #a5a9b3; vertical-align: 3px; margin-right: 10px;} 
 
 .header > .nav .menu_tab {position: absolute; top: 60px; left: 0; line-height: 18px;}
 .header > .nav .menu_tab > ul > li {float: left;}
