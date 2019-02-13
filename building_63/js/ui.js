@@ -12,6 +12,7 @@ sectionScroll();
 
 resize();
 
+famOpen(); 
     
 function attachOn(target){
     if(target.classList.contains("on")){
@@ -121,7 +122,7 @@ function sectionScroll(){
 
     // 주요 이벤트 
     for(let i = 0; i < section.length; i++){
-        section[i].addEventListener("mousewheel", function(event){
+        section[i].addEventListener("wheel", function(event){
             ev = event;
             sect = this;
             index = i;
@@ -156,6 +157,7 @@ function sectionScroll(){
 
             sequenceBtn[i].classList.add("on");
             section[i].style.top = "0";
+            teaserBox[i].classList.remove("off");
 
         });
 
@@ -241,38 +243,25 @@ function sectionScroll(){
                 }, 100)
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     };
-
 };//sectionScroll
     
+
+
+// 패밀리 사이트 리스트 열림 
+function famOpen(){
+    var famElem = document.querySelector(".goto_family");
+    var famList = famElem.querySelector("ul")
+    famElem.addEventListener("click", function(ev){
+        ev.preventDefault();
+
+        if(famList.classList.contains("on")){
+            famList.classList.remove("on");
+        } else {
+            famList.classList.add("on");
+        }
+    })
+};
 
     
     

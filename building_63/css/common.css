@@ -291,7 +291,7 @@ main .sequence a.on {background-color: #f37321; transform: scale(1.5);}
 .company_info .goto_family .open_btn {border:1px solid #d6d6d6; display: inline-block; width: 123px; height: 28px; padding-left: 15px; font-size: 12px; line-height: 27px; position: relative;}
 .company_info .goto_family .open_btn::after {content: ''; position: absolute; top: 11px; right: 13px; width: 7px; height: 3.5px; background: url('../images/footer_bullet.gif')no-repeat 0 0;}
 
-.company_info .goto_family ul {width: 238px; height: 103px; border:1px solid #d6d6d6; padding: 20px 10px; position: absolute; bottom: 28px; right: 50px; opacity: 0;}
+.company_info .goto_family ul {width: 238px; height: 103px; background-color: white; border:1px solid #d6d6d6; padding: 20px 10px; position: absolute; bottom: 28px; right: 50px; opacity: 0; z-index: 500; }
 .company_info .goto_family ul.on {opacity: 1;}
 .company_info .goto_family ul li {display: inline-block; width: 113px;}
 .company_info .goto_family ul li + li {margin-top: 5px;}
