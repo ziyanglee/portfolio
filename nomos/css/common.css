@@ -83,7 +83,7 @@ section.slider_wrap .slider_row ul li a {overflow: hidden;}
 section.slider_wrap .slider_row ul li a img {width: 100%; vertical-align: top; transition: all 1s cubic-bezier(.1,.6,.4,1); }
 section.slider_wrap .slider_row ul li:hover a img {transform: scale(1.05) translate3d(0,-1%,0);} 
 section.slider_wrap .slider_row ul li a span { display: block; height: 90px; font-size: 20px; padding-top: 25px;}
-section.slider_wrap .slider_row ul li a span h4 {text-align: center; }
+section.slider_wrap .slider_row ul li a span em {text-align: center;}
 section.slider_wrap .slider_row ul li a span i {text-align: center; display: block; }
 .bx-wrapper {box-shadow: none; border:none; background: transparent;}
 .bx-wrapper .bx-pager.bx-default-pager {bottom: -3%}
