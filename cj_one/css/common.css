@@ -583,6 +583,7 @@ address{font-style: normal;}
 	margin-top: 20px;
 }
 .hot_content .contents_row > .hot_item .expln {
+	display: block;
 	margin-top: 10px;
 }
 .hot_content .contents_row > .hot_item .togo {
