@@ -1,197 +1,129 @@
 window.onload = function(){
 
-    prod();
+prod();
+lang();
+menuTab();
+subTabMenu();
+prodTable();
 
-    lang();
+// 클래스 on추가
+function attachOn(target){
+    if(target.classList.contains("on")){
+        target.classList.remove("on")
+    } else {
+        target.classList.add("on")
+    }
+}
 
-    menuTab();
+// product 전체메뉴 열림
+function prod (){
+    var prodElem = document.querySelector(".prod");
+    var prodBtn = prodElem.querySelector(".prod > a");
 
-    subMenuTab();
-
-    ProdTable();
-
-
-    function prod (){
-
-        var ProdA = document.querySelector(".prod > a");
-
-        var ProdOn = document.querySelector(".prod");
-
-            
-
-        ProdA.addEventListener("click",attachOn);
-
-            
-
-        function attachOn(ev){
-
+    prodBtn.addEventListener("click", function(ev){
         ev.preventDefault();
+        attachOn(prodElem);
 
-            
+    });
+}
 
-        if (ProdOn.classList.contains("on")){
+// language 메뉴열림 
+function lang(){
 
-            ProdOn.classList.remove("on");
+    var langDiv = document.querySelector(".lang");
+    var langUl = langDiv.querySelector(".lang > ul");
 
-            } else {ProdOn.classList.add("on");
+    langDiv.addEventListener("click",function(ev){ev.preventDefault()});
 
-            };
+    langDiv.addEventListener("mouseenter",function(){
+        if(langDiv){
+            langDiv.classList.add("on")
+        }
 
-        };
+        setTimeout(function(){
+            langUl.classList.add("on")
+        },400);
 
-    }; //prod
+    });
 
-    
+    langDiv.addEventListener("mouseleave",function(){
+        langUl.classList.remove("on");
 
-    
+        setTimeout(function(){
 
-    function lang(){
-
-        var langDiv = document.querySelector(".lang");
-
-        var langUl = document.querySelector(".lang > ul");
-
-        langDiv.addEventListener("click",function(ev){ev.preventDefault()});
-
-        langDiv.addEventListener("mouseenter",attachOn);
-
-        langDiv.addEventListener("mouseleave",detachOn);
-
-    
-
-        function attachOn(ev){
-
-            if(langDiv){
-
-                langDiv.classList.add("on");
-
-            };
-
-            setTimeout(function(){
-
-                langUl.classList.add("on")},400);
-
-        };
+            langDiv.classList.remove("on")
+        },200);
+    });
+} 
 
     
+// 메인메뉴 열림 
+function menuTab (){
+    var header = document.querySelector(".header");
+    var tabDiv = document.querySelector(".menu_tab");
+    var tabUl = tabDiv.querySelector(".menu_tab > ul");
 
-        function detachOn(ev){
+    tabDiv.addEventListener("click",function(ev){ev.preventDefault()});
 
-            langUl.classList.remove("on");
+    tabDiv.addEventListener("mouseenter",function(){
+       
+        if(tabDiv){
+            tabUl.classList.add("on");
+            header.classList.add("on");
+        }
+    });
 
-            setTimeout(function(){
-
-                langDiv.classList.remove("on")},200);
-
-        };
-
+    tabDiv.addEventListener("mouseleave",function(){
         
-
-    }; // lang
-
+        tabUl.classList.remove("on");
+        header.classList.remove("on");
+    });
+}
     
+// 서브메뉴 열림
+function subTabMenu(){
 
+    var engTab = document.querySelector(".eng_tab");
+
+    document.addEventListener("scroll",function(){
+
+        var target = document.querySelector("html");
+        var targetTop = target.scrollTop;
+
+        if(targetTop > 400){
+
+            engTab.classList.add("active");
+
+        } else {
+
+            engTab.classList.remove("active");
+
+        }
+    });
+}
+
+// 에너지 해당컨텐츠 열림 
+function prodTable() {
+    var prodList = document.querySelector(".prodlist");
+    var tabBtns = prodList.querySelectorAll(".prodlist > ul > li");
+    var targetElems = prodList.querySelectorAll(".prod_table");
     
-
-    function menuTab (){
-
-        var tabDiv = document.querySelector(".menu_tab");
-
-        var tabUl = document.querySelector(".menu_tab > ul")
-
-        var header = document.querySelector(".header")
-
-        var tab;
-
-        tabDiv.addEventListener("click",function(ev){ev.preventDefault()});
-
-        tabDiv.addEventListener("mouseenter",attachOn);
-
-        tabDiv.addEventListener("mouseleave",detachOn);
-
-        function attachOn(ev){
-
-            if(tabDiv){
-
-                tabUl.classList.add("on");
-
-                header.classList.add("on");
-
-            };
-
-        };
-
-    
-
-        function detachOn(ev){
-
-           
-
-            tabUl.classList.remove("on");
-
-            header.classList.remove("on");
-
-        };
-
-    
-
-    }; //menuTab
-
-    
-
-
-    
-
-    function subMenuTab(){
-
-        document.addEventListener("scroll",ActiveTab);
-
-        var engTab = document.querySelector(".eng_tab");
-
-        function ActiveTab(){
-
-            var target = document.querySelector("html");
-
-            var targetTop = target.scrollTop;
-
-            if(targetTop > 400){
-
-                engTab.classList.add("active");
-
-            } else {
-
-                engTab.classList.remove("active");
-
-            }
-        };
-
-    }; // subMenuTab 
-
- 
-
- 
-
-    function ProdTable() {
-        var prodList = document.querySelector(".prodlist");
-        var tabBtnLis = prodList.querySelectorAll(".prodlist > ul > li");
-        var targetElems = prodList.querySelectorAll(".prod_table");
-
-        for(var i = 0; i < tabBtnLis.length; i++){
-            tabBtnLis[i].onclick = (function(j){
-                return function(){
-                    for(var i = 0; i < targetElems.length; i++){
-                        targetElems[i].classList.remove("on");
-                        tabBtnLis[i].classList.remove("on");
-                    };
-                    targetElems[j].classList.add("on");
-                    tabBtnLis[j].classList.add("on");
-                    return false;
+    for(var i = 0; i < tabBtns.length; i++){
+        tabBtns[i].onclick = (function(j){
+            return function(ev){
+                ev.preventDefault();
+                
+                for(var i = 0; i < targetElems.length; i++){
+                    targetElems[i].classList.remove("on");
+                    tabBtns[i].classList.remove("on");
                 }
-            })(i)
-        };
+                targetElems[j].classList.add("on");
+                tabBtns[j].classList.add("on");
+            }
+        })(i)
+    };
+}
 
-    } // ProdTable
-
-}; // window
+} // window
 
 

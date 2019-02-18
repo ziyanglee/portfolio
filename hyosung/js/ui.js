@@ -1,118 +1,84 @@
 window.onload = function(){
 
-    prod();
+prod();
+lang(); 
+menuTab();
 
-    lang();
 
-    menuTab();
+// 클래스 on추가
+function attachOn(target){
+    if(target.classList.contains("on")){
+        target.classList.remove("on")
+    } else {
+        target.classList.add("on")
+    }
+}
 
-  
+// product 전체메뉴 열림
+function prod (){
+    var prodElem = document.querySelector(".prod");
+    var prodBtn = prodElem.querySelector(".prod > a");
 
-    function prod (){
-
-        var ProdA = document.querySelector(".prod > a");
-        var ProdOn = document.querySelector(".prod");
-        ProdA.addEventListener("click",attachOn);
-
-        function attachOn(ev){
+    prodBtn.addEventListener("click", function(ev){
         ev.preventDefault();
-        if (ProdOn.classList.contains("on")){
-            ProdOn.classList.remove("on");
-            } else {ProdOn.classList.add("on");
-            };
-        };
-    }; //prod
+        attachOn(prodElem);
 
+    });
+}
 
+// language 메뉴열림 
+function lang(){
 
-    function lang(){
+    var langDiv = document.querySelector(".lang");
+    var langUl = langDiv.querySelector(".lang > ul");
 
-        var langDiv = document.querySelector(".lang");
-        var langUl = document.querySelector(".lang > ul");
+    langDiv.addEventListener("click",function(ev){ev.preventDefault()});
 
-        langDiv.addEventListener("click",function(ev){ev.preventDefault()});
+    langDiv.addEventListener("mouseenter",function(){
+        if(langDiv){
+            langDiv.classList.add("on")
+        }
 
-        langDiv.addEventListener("mouseenter",attachOn);
+        setTimeout(function(){
+            langUl.classList.add("on")
+        },400);
 
-        langDiv.addEventListener("mouseleave",detachOn);
+    });
+
+    langDiv.addEventListener("mouseleave",function(){
+        langUl.classList.remove("on");
+
+        setTimeout(function(){
+
+            langDiv.classList.remove("on")
+        },200);
+    });
+} 
+
+    
+
+    
+// 메인메뉴 열림 
+function menuTab (){
+    var header = document.querySelector(".header");
+    var tabDiv = document.querySelector(".menu_tab");
+    var tabUl = tabDiv.querySelector(".menu_tab > ul");
+
+    tabDiv.addEventListener("click",function(ev){ev.preventDefault()});
+
+    tabDiv.addEventListener("mouseenter",function(){
+       
+        if(tabDiv){
+            tabUl.classList.add("on");
+            header.classList.add("on");
+        }
+    });
+
+    tabDiv.addEventListener("mouseleave",function(){
         
-        function attachOn(ev){
+        tabUl.classList.remove("on");
+        header.classList.remove("on");
+    });
+}
 
-            if(langDiv){
-
-                langDiv.classList.add("on");
-
-            };
-
-            setTimeout(function(){
-
-                langUl.classList.add("on")},400);
-
-        };
-
-    
-
-        function detachOn(ev){
-
-            langUl.classList.remove("on");
-
-            setTimeout(function(){
-
-                langDiv.classList.remove("on")},200);
-
-        };
-
-        
-
-    }; // lang
-
-    
-
-    
-
-    function menuTab (){
-
-        var tabDiv = document.querySelector(".menu_tab");
-
-        var tabUl = document.querySelector(".menu_tab > ul")
-
-        var header = document.querySelector(".header")
-
-        var tab;
-
-        tabDiv.addEventListener("click",function(ev){ev.preventDefault()});
-
-        tabDiv.addEventListener("mouseenter",attachOn);
-
-        tabDiv.addEventListener("mouseleave",detachOn);
-
-        
-
-        function attachOn(ev){
-
-            if(tabDiv){
-
-                tabUl.classList.add("on");
-
-                header.classList.add("on");
-
-            };
-
-        };
-
-    
-
-        function detachOn(ev){
-
-            tabUl.classList.remove("on");
-
-            header.classList.remove("on");
-
-        };
-
-    
-
-    }; //menuTab
-
-
-}; // window
+} // window
