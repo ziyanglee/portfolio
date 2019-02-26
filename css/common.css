@@ -35,12 +35,8 @@ figure {margin: 0; }
 .wrap.active header{padding: 10px 0; } 
 .wrap.active header nav h1 > a {font-size: 28px;}
 .wrap.active main {padding-top: 100px;}
-
 .wrap main {padding: 220px 70px 0; transition: all 0.5s ease;}
 .wrap footer {padding: 100px; text-align: center;}
-
-
-
 
 
 /* header */
