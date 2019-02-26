@@ -1,13 +1,13 @@
 @charset 'utf-8';
-@import url('https://fonts.googleapis.com/css?family=Noto+Serif+KR:300,400');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300|Montserrat:400,600');
 
 body {
+	font: normal 16px 'Montserrat','Noto Sans KR' sans-serif;
 	line-height:1.3;
-	color:#666666;
-	background-color:#fff;
-	margin:0;
-	padding:0;
-	font: 16px 'Noto Serif KR', serif;
+	color: #333;
+	background-color: #fff;
+	margin: 0;
+	padding: 0;
 	letter-spacing: -0.3px;
 }
 h1, h2, h3, h4, h5, h6 {font-size:1em;}
@@ -21,7 +21,7 @@ img {border:0;}
 
 a {text-decoration:none; font-size: 16px; font-weight: 300; color: #333;}
 
-i, address, small {text-decoration: none; font-weight: 300; font-style: normal; color: #333; }
+i, address, small, em {text-decoration: none; font-weight: 300; font-style: normal; color: #333; }
 
 table {border-collapse: collapse; border-spacing: 0;}
 
@@ -29,57 +29,145 @@ figure {margin: 0; }
 
 
 
-.wrap {background: url('../images/bg_main.jpg')no-repeat 0 0; background-attachment: fixed; position: relative; min-width: 1500px;}
+/* lay out*/
+.wrap {position: relative; min-width: 72.9166667%; /*1400/1920*/}
+.wrap header {position: fixed; top: 0; left: 0; right: 0; z-index: 900;  padding: 100px 0 30px 0; background-color: white; box-shadow: 0 0 17px rgba(0,0,0,0.1); /*background: url('../images/bg_portfolio2.jpg')no-repeat 0 0;*/ transition: all 0.5s ease}
+.wrap.active header{padding: 10px 0; } 
+.wrap.active header nav h1 > a {font-size: 28px;}
+.wrap.active main {padding-top: 100px;}
 
-/* 헤더 부분 */
-header {position: fixed; top: 0; left: 0; right: 0; height: 70px; background-color: white; box-shadow: 0 2px 5px 2px rgba(0,0,0,0.1); z-index: 900;}
-header ul {text-align: center; margin-top: 21px}
-header ul li {display: inline-block; margin-left: 30px}
-
-
-/* 메인 부분 */
-main {padding-top: 70px }
-.about{padding: 74px 0;}
-.about .text_box {text-align: center; background: white url('../images/bg_about.jpg')no-repeat center bottom; width: 800px; height: 434px; margin: 0 auto; padding: 85px 0;/* box-shadow: 0 0 30px 0 rgba(255,255,255,0.7);*/}
-.about .text_box p {padding: 10px 0; font-size: 18px}
-.about .text_box p:nth-child(2) {font-size: 20px; font-weight: 500; padding: 20px 0; }
-
-
-.portfolio > ul {width: 1260px; margin: 0 auto; padding: 85px 0}
-.portfolio > ul > li {height: 400px;}
-.portfolio > ul > li + li {margin-top: 200px}
-.portfolio .building_63 {background: url('../images/main_63.png')no-repeat left top;}
-.portfolio .cj_one {background: url('../images/main_cj.png')no-repeat left top;}
-.portfolio .nomos {background: url('../images/main_nomos.png')no-repeat left top;}
-.portfolio .hyosung {background: url('../images/main_hyosung.png')no-repeat left top; position: relative;}
-.portfolio .hyosung .sub_1 {position: absolute; left: -70px; bottom: 0; width: 150px; height: 159px; background: url('../images/sub_hyosung1.png')no-repeat left top;}
-.portfolio .hyosung .sub_2 {position: absolute; left: 400px; bottom: 0; width: 150px; height: 159px; background: url('../images/sub_hyosung2.png')no-repeat left top;}
+.wrap main {padding: 220px 70px 0; transition: all 0.5s ease;}
+.wrap footer {padding: 100px; text-align: center;}
 
 
 
-.portfolio > ul > li > a {display: inline-block; width: 100%; height: 100%}
-.portfolio > ul > li > a ul {margin-left: 610px;}
-.portfolio > ul > li > a ul h2 {padding: 40px 0; font-size: 22px}
-.portfolio > ul > li > a ul li + li {margin-top: 20px}
+
+
+/* header */
+nav {margin: 0 auto; width: 100%; font-size: 0; text-align: center;}
+nav a {display: inline-block; position: relative; font-size: 16px; letter-spacing: 1px; transition: all 0.5s ease;}
+nav a:after {content: ''; position: absolute; bottom: -9px; left: 45%; right: 45%; height: 2px; background-color: transparent; transition: all 0.4s ease}
+nav a:hover:after {left: 0; right: 0; background-color: #f37321}
+nav h1 {display: inline-block; margin: 0 11.8421053%/*100/760*/}
+nav h1 > a {font-size: 45px; font-weight: 600;} 
 
 
 
-@media screen and (max-width: 385px){
-.wrap {min-width: 385px; background-image: url('../images/bg_main2.jpg'); overflow: hidden;}
-.about .text_box {background-size: 300px; width: 385px; height: 300px; margin: 0 auto; padding-top: 50px;}
-.about .text_box p {padding: 10px 0; font-size: 13px}
+/* main */
+section h2 {position: relative; margin: 0 auto; width: 70px; line-height: 50px}
+section h2:after {content: ''; position: absolute; top: 0; left: 10px; right: 10px; height: 2px; background-color: #FF653F;}
 
-.portfolio > ul {width: 1260px; margin: 0 auto; padding: 85px 0; background-color: white}
-.portfolio > ul > li {width:385px; height: 574px; text-align: center; }
-.portfolio .building_63 {background-size: 340px; background-position-x: center; height: 620px}
-.portfolio .cj_one {background-size: 340px; background-position-x: center;}
-.portfolio .nomos {background-size: 340px; background-position-x: center;}
-.portfolio .hyosung {background-size: 340px; background-position-x: center;}
-.portfolio .hyosung .sub_1 {left: 5px; bottom: auto; top: 180px; width: 100px; background-size: 100px;}
-.portfolio .hyosung .sub_2 {left: 274px; bottom: auto; top: 180px; width: 100px; background-size: 100px;}
+.portfolio ul > li {overflow: hidden; margin-top: 50px;}
+.portfolio ul > li + li {margin-top: 176px;}
+.portfolio ul > li span {float: left;}
+.portfolio ul > li span em {font-weight: 400}
+.portfolio ul > li .img_box {max-width: 60%}
+.portfolio ul > li .img_box img {width: 100%;}
+.portfolio ul > li.content_63 .img_box {float: right;}
+.portfolio ul > li.content_63 .txt_box {float: right; text-align: right;}
+.portfolio ul > li.content_hyosung .img_box {float: right;}
+.portfolio ul > li.content_hyosung .txt_box {float: right; text-align: right;}
+.portfolio ul > li.content_hyosung .txt_box .open_btn {width: 97px;}
 
-.portfolio > ul > li > a ul {margin-left: 0px; margin-top: 279px;}
-.portfolio > ul > li > a ul h2 {padding: 20px 0;}
 
+.portfolio ul > li .txt_box {padding: 50px 0}
+.portfolio ul > li .txt_box * {display: block; line-height: 20px;}
+.portfolio ul > li .txt_box h3 {font-size: 35px}
+.portfolio ul > li .txt_box strong {margin-top: 20px}
+.portfolio ul > li .txt_box em {margin-top: 20px}
+.portfolio ul > li .txt_box .open_btn {display: inline-block; position: relative; margin-top: 20px; width: 150px; border: 1px solid #FF653F; background-color: #FF653F; font-size: 13px; color: white; text-align: center; line-height: 33px;}
+.portfolio ul > li .txt_box .open_btn:hover:before {content: ''; position: absolute; top: -1px; left: -1px; bottom: -1px; width: 0; background-color: white; animation: btn_action 0.6s ease;}
+@keyframes btn_action {from {width: 0;} 50% {width: 100%;} to {width: 0}}
+
+.cover_letter {clear: both; padding-top: 200px; font-family: Noto Sans KR; text-align: center;}
+.cover_letter h2 {width: 100px;}
+.cover_letter h3 {margin-top: 50px; font-size: 30px; line-height: 55px}
+
+.cover_letter div {margin-top: 50px; font-weight: 600;}
+.cover_letter div p + p {margin-top: 23px}
+
+.cover_letter .skill {margin-top: 100px}
+.cover_letter .skill ul > li * {display: block;}
+.cover_letter .skill ul > li {margin-top: 30px}
+.cover_letter .skill ul > li strong {display: inline-block; position: relative; color: #f37321}
+
+.cover_letter .skill ul > li span {margin-top: 20px}
+.cover_letter .skill ul > li span em {margin-top: 10px}
+
+
+
+
+
+/* footer */
+footer h3 {font-size: 20px; margin-bottom: 45px}
+footer a {display: block; margin: 0 auto; width: 200px; background: url('../images/icon_bg.png')no-repeat 0 -5px;}
+footer .email_addr{padding-left: 20px; width: 220px; background-position: 0 -37px;}
+footer address {margin-top: 20px; font-size: 20px; line-height: 32px}
+footer address:hover {color: #FF653F;}
+footer p {margin-top: 50px; font-size: 28px; font-weight: bold;}
+
+
+/*----------------------- media ------------------------------ */
+
+
+@media screen and (max-width: 1200px){
+
+.portfolio ul > li span {display: block; float: none;}
+.portfolio ul > li .img_box {max-width: 100%;}
+
+.portfolio ul > li.content_63 .img_box {float: none;}
+.portfolio ul > li.content_63 .txt_box {float: none; text-align: left;}
+.portfolio ul > li.content_hyosung .img_box {float: none;}
+.portfolio ul > li.content_hyosung .txt_box {float: none; text-align: left;}
+
+.cover_letter h3 {font-size: 25px;}
 
 }
+
+@media screen and (max-width: 640px){
+
+.wrap header {padding: 90px 0 30px 0;}
+.wrap.active header nav h1 > a {font-size: 25px;}
+.wrap main {margin-top: 220px; padding: 0 20px}
+
+nav {width: 100%;}
+nav a {font-size: 16px;}
+nav h1 {margin: 0 7.126467%}
+nav h1 > a {font-size: 30px;} 
+
+.portfolio ul > li + li {margin-top: 120px;}
+.cover_letter h3 {font-size: 20px;}
+
+}
+
+
+@media screen and (max-width: 459px){
+
+.wrap header {padding: 0; height: 100px}
+.wrap.active header{padding: 0; height: 70px} 
+.wrap.active header nav a {top: 40px;}
+.wrap.active header nav h1 > a {margin-left: -81px; top: 10px; font-size: 25px;}
+
+
+nav a {position: absolute; top: 68px;}
+nav a.btn_portfolio {left: 6%}
+nav a.btn_cover {right: 2%}
+nav h1 > a {top: 10px; left: 50%; margin-left: -96px}
+
+.wrap main {margin-top: 132px}
+
+.portfolio ul > li .txt_box {text-align: center;}
+.portfolio ul > li .txt_box h3 {font-size: 23px}
+.portfolio ul > li.content_63 .txt_box {text-align: center;}
+.portfolio ul > li.content_hyosung .txt_box {text-align: center;}
+
+.cover_letter div p{line-height: 35px;}
+.cover_letter div p + p {margin-top: 0px}
+
+.wrap footer {padding: 70px}
+footer h3 {margin-bottom: 35px}
+footer address {margin-top: 20px; font-size: 16px}
+
+}
+
+

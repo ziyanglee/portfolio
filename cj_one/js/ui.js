@@ -1,311 +1,237 @@
 window.onload = function(){
 
-    csActive();
-
-    navOpen();
-
-    searchOpen();
-
-    gnbOpen();
-
-    servImgChange();
-
-    scrollEvent();
-
-    // brandTapOn();
-
-    // brandHover();
-
-    familyOn();
+csActive();
+navOpen();
+searchOpen();
+gnbOpen();
+servImgChange();
+scrollEvent();
+familyOn();
 
 
 
+// 클래스 on추가 
+function attachOn(target){
+
+    if(target.classList.contains("on")){
+
+        target.classList.remove("on")
+
+    } else {
+
+        target.classList.add("on")
+    }
+}
+
+// 클래스 active 추가 
+function attachActive(target){
+
+    if(target.classList.contains("active")){
+
+        target.classList.remove("active")
+
+    } else {
+        
+        target.classList.add("active")
+    }
+}
+
+
+// CS 고객센터 메뉴 열리기 
+function csActive(){
+
+    var csLi = document.querySelector(".cs_center");
+
+    csLi.addEventListener("click",function(ev){
+
+        ev.preventDefault();
+
+        attachActive(ev.target.parentNode);
+    })
+}
+
+
+// nav 하단메뉴 열리기 
+function navOpen(){
     
-    function attachOn(i){
-        if(i.classList.contains("on")){
-            i.classList.remove("on")
-        } else {
-            i.classList.add("on")
-        };
+    var headerWrap = document.querySelector(".header_wrap");
+    var navUl = headerWrap.querySelector("nav > ul");
+    var navLi = navUl.querySelectorAll("ul > li");
+    var currentWidth = window.innerWidth;
+
+    navUl.addEventListener("mouseover",attachOn);
+
+    navUl.addEventListener("mouseleave",detachOn);
+
+    window.addEventListener("resize",work);
+
+    attachOn();
+    detachOn();
+
+    if ( currentWidth < 768 ){
+        work();
     };
 
-    function attachActive(i){
-        if(i.classList.contains("active")){
-            i.classList.remove("active")
-        } else {
-            i.classList.add("active")
-        };
+    function work(){
+
+        var width = window.innerWidth;
+
+        if ( width < 768 ){
+            navUl.removeEventListener("mouseover",attachOn);
+            navUl.removeEventListener("mouseleave",detachOn);
+        }
+        if ( width > 768) {
+            navUl.addEventListener("mouseover",attachOn);
+            navUl.addEventListener("mouseleave",detachOn);
+        }
     }
 
 
+    function attachOn(){
+        headerWrap.classList.add("on")
+    };
 
 
-    // function Device(i){
-
-    // };
-
-
-    // Device.prototype.active = function(i){
-    //     if(i.classList.contains("active")){
-    //         i.classList.remove("active")
-    //     } else {
-    //         i.classList.add("active")
-    //     }
-    // };
-
-    // Device.prototype.attachOn = function(i){
-    //     if(i.classList.contains("on")){
-    //         i.classList.remove("on")
-    //     } else {
-    //         i.classList.add("on")
-    //     }
-    // }
-
-    // var Activator = new Device();
+    function detachOn(){
+        headerWrap.classList.remove("on")
+    };
 
 
+    for(let i = 0; i < navLi.length; i++){
 
-
-
-
-
-
-
-
-
-    //CS 고객센터 메뉴 열리기 
-    function csActive(){
-        var csLi = document.querySelector(".cs_center");
-
-        csLi.addEventListener("click",work)
-
-        function work(ev){
+        navLi[i].addEventListener("click",function(ev){
             ev.preventDefault();
-            var targetElem = ev.target.parentNode;
-            attachActive(targetElem);
-            // if(this.classList.contains("active")){
-            //     this.classList.remove("active")
-            // } else {
-            //     this.classList.add("active")
-            // }
-
-        };
+            attachActive(ev.target.parentNode);
+        });
     }
+}
 
 
 
+// 검색창 열리기 
+function searchOpen(){
 
-    //nav 하단메뉴 열리기 
-    function navOpen(){
-        var headerWrap = document.querySelector(".header_wrap");
-        var navUl = document.querySelector("nav > ul");
-        var navLi = document.querySelectorAll("nav > ul > li")
-        var currentWidth = window.innerWidth;
+    var searchDiv = document.querySelector(".search");
 
-        navUl.addEventListener("mouseover",attachOn);
+    searchDiv.addEventListener("click",function(ev){
+        ev.preventDefault();
+        attachOn(ev.target.parentNode);
+    });
+}
 
-        navUl.addEventListener("mouseleave",detachOn);
+// 모바일 메뉴 열리기 
+function gnbOpen(){
 
-        window.addEventListener("resize",work);
+    var btnGnb = document.querySelector(".btn_gnb_open");
+    var gnb = document.querySelector(".gnb");
+    var btnGnbClose = gnb.querySelector(".btn_gnb_close");
 
-        attachOn();
-        detachOn();
+    btnGnb.addEventListener("click",function(ev){
+        ev.preventDefault();
+        gnb.classList.add("on");
+    });
+    btnGnbClose.addEventListener("click",function(ev){
+        ev.preventDefault();
+        gnb.classList.remove("on");
+    });
+}
 
-        if ( currentWidth < 768 ){
-            work();
-        };
 
-        function work(){
-            var width = window.innerWidth;
+//메인 serv 이미지 움직이기 
+function servImgChange(){
 
-            if ( width < 768 ){
-                navUl.removeEventListener("mouseover",attachOn);
-                navUl.removeEventListener("mouseleave",detachOn);
+    var servA = document.querySelectorAll(".serv_info a");
+    var servImg = document.querySelectorAll(".serv_info img");
+    var imgSrc = [
+        "images/serv_card.gif",
+        "images/serv_point.gif",
+        "images/serv_bonus.gif",
+        "images/serv_coupon.gif"
+    ];
 
+    for(var i = 0; i < servA.length; i++){
+        servA[i].onmouseenter = (function(j){
+            return function(ev) {
+                servImg[j].setAttribute("src",imgSrc[j]);
             }
-
-            if ( width > 768) {
-                navUl.addEventListener("mouseover",attachOn);
-                navUl.addEventListener("mouseleave",detachOn);
-
-            }
-
-        };
-
-
-        function attachOn(){
-            headerWrap.classList.add("on")
-        };
-
-
-        function detachOn(){
-            headerWrap.classList.remove("on")
-        };
-
-
-
-        for( var i = 0; i < navLi.length; i++){
-
-            navLi[i].addEventListener("click",subOpen);
-
-            function subOpen(ev){
-                ev.preventDefault();
-                var liElem = ev.target.parentNode;
-                attachActive(liElem);
-                // if( liElem.classList.contains("active")){
-                //     liElem.classList.remove("active")
-                // } else {
-                //     liElem.classList.add("active")
-                // };
-            };
-        };
-    }; //navOpen
-
-
-
-    // 검색창 열리기 
-    function searchOpen(){
-        var searchDiv = document.querySelector(".search");
-
-        searchDiv.addEventListener("click",work)
-
-        function work(ev){
-            ev.preventDefault();
-            var targetElem = ev.target.parentNode;
-            attachOn(targetElem);
-
-            // if(this.classList.contains("on")){
-            //     this.classList.remove("on")
-            // } else {
-            //     this.classList.add("on")
-            // }
-        }
-    };
-
-    // 모바일 메뉴 열리기 
-    function gnbOpen(){
-        var btnGnb = document.querySelector(".btn_gnb_open");
-        var gnb = document.querySelector(".gnb");
-        var btnGnbClose = document.querySelector(".btn_gnb_close");
-
-        btnGnb.addEventListener("click",attachOn);
-        btnGnbClose.addEventListener("click",detachOn);
-
-        function attachOn(ev){
-            ev.preventDefault();
-            gnb.classList.add("on");
-        };
-
-        function detachOn(ev){
-            ev.preventDefault();
-            gnb.classList.remove("on");
-        }
-
-
-    };
-
-
-    //메인 serv 이미지 움직이기 
-    function servImgChange(){
-        var servA = document.querySelectorAll(".serv_info a")
-        var servImg = document.querySelectorAll(".serv_info img");
-        var imgSrc = [
-            "images/serv_card.gif",
-            "images/serv_point.gif",
-            "images/serv_bonus.gif",
-            "images/serv_coupon.gif"
-        ];
-
-        for(var i = 0; i < servA.length; i++){
-            servA[i].onmouseenter = (function(j){
-                return function(ev) {
-                    servImg[j].setAttribute("src",imgSrc[j]);
-                }
-            })(i)
-
-        }
-        // for(let i = 0; i < servA.length; i++){
-        //     servA[i].onmouseenter = function(){
-        //             servImg[i].setAttribute("src",imgSrc[i]);
-        //     }
-
-        // }
+        })(i)
     }
+}
 
-    //메인 스크롤이벤트 - 움직이는 원, 맨위로 가기 버튼 
-    function scrollEvent(){
-        var circle = document.querySelectorAll(".circle_wrap i");
-        var gotoBtn = document.querySelector(".goto_top");
+//메인 스크롤이벤트 - 움직이는 원, 맨위로 가기 버튼 
+function scrollEvent(){
+    
+    var circle = document.querySelectorAll(".circle_wrap i");
+    var gotoBtn = document.querySelector(".goto_top");
 
-        document.addEventListener("scroll",work);
+    document.addEventListener("scroll",work);
 
-        function work(){
+    function work(){
+
+        var target = document.querySelector("html");
+        var currentSpot = target.scrollTop;
+
+        movingCircle();
+        gotoTop();
+
+        // 컨텐츠안에 움직이는 원형배경들 
+        function movingCircle(){
+            if( currentSpot > 100 ){
+                circle[5].style.top = currentSpot - 150 + "px";
+                circle[6].style.top = currentSpot - 600 + "px";
+            }
+            if( currentSpot > 1100 ){
+                circle[3].style.top = currentSpot - 150 + "px";
+            }
+            if( currentSpot > 1866 ){
+                circle[1].style.top = currentSpot - 1020 + "px";
+                circle[4].style.bottom = currentSpot - 1900 + "px";
+            }
+            if( currentSpot == 0 || currentSpot > 4432 ){
+                return;
+            }
+        }
+
+        // 맨 위로 
+        function gotoTop(){
+
             var target = document.querySelector("html");
             var currentSpot = target.scrollTop;
 
-            movingCircle();
-            gotoTop();
-
-            function movingCircle(){
-                if( currentSpot > 100 ){
-                    circle[5].style.top = currentSpot - 150 + "px"
-                    circle[6].style.top = currentSpot - 600 + "px"
-                };
-                if( currentSpot > 1100 ){
-                    circle[3].style.top = currentSpot - 150 + "px"
-                };
-                if( currentSpot > 1866 ){
-                    circle[1].style.top = currentSpot - 1020 + "px"
-                    circle[4].style.bottom = currentSpot - 1900 + "px"
-                }
-                if( currentSpot == 0 || currentSpot > 4432 ){
-                    return;
-                };
-            }; //movingCicle
+            if (currentSpot > 100){
+                gotoBtn.style.opacity = "1";
+                gotoBtn.style.bottom = "50px";
+            }
+            if (currentSpot > 3178){
+                gotoBtn.style.bottom = "290px";
+            }
+            if (currentSpot == 0){
+                gotoBtn.style.opacity = "0";
+            }
+        }
+    }
+}
 
 
+// 계열사버튼 클래스 on,off 주기
 
-            function gotoTop(){
+function familyOn(){
 
-                var target = document.querySelector("html");
-                var currentSpot = target.scrollTop;
+    var famElem = document.querySelector("footer .link .family > a");
 
-                if (currentSpot > 100){
-                    gotoBtn.style.opacity = "1";
-                    gotoBtn.style.bottom = "50px";
-                };
-                if (currentSpot > 3178){
-                    gotoBtn.style.bottom = "290px";
-                };
-                if (currentSpot == 0){
-                    gotoBtn.style.opacity = "0";
-                };
-            };//gotoTop
-        };
-    };
+    famElem.addEventListener("click",function(ev){
 
+        ev.preventDefault();
 
-    // 계열사버튼 클래스 on,off 주기
+        if(ev.target.parentNode.nodeName == "LI"){
 
-    function familyOn(){
+            attachActive(ev.target.parentNode);
 
-        var famElem = document.querySelector("footer .link .family > a");
+        } else {
 
-        famElem.addEventListener("click",work);
+            return;
+        }
+    });
+}
 
-        function work(ev){
-            ev.preventDefault();
-
-            var elemA = ev.target.parentNode;
-            console.log(elemA.nodeName)
-            if(elemA.nodeName == "LI"){
-                attachActive(elemA);
-            } else {
-                return
-            };
-
-        };
-
-    }; //familyOn
-
-}; // window
+} // window

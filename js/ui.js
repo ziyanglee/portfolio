@@ -1,33 +1,56 @@
-window.onload = function (){
+$(document).ready(function(){
 
-var liElems = document.querySelectorAll(".portfolio li");
 
+headerMove();
 tabMove();
+windowPop();
+
+    
+//스크롤이 일어나면 헤더 높이와 main마진값 변경 
+function headerMove(){
+    $(window).scroll(function(){
+
+        if($(this).scrollTop() > 0){
+            $('.wrap').addClass("active");
+
+        } else {
+            $('.wrap').removeClass("active");
+        }
+    });
+}
+
 
 // 포트폴리오위치로 스크롤
 function tabMove(){
-    $('.btn_portfolio').on("click", function(ev){
-        var offset = $('.portfolio').offset();
-        $('html, body').animate({scrollTop : offset.top}, 400);
+    $('.btn_portfolio').on('click', function(){
+
+        var mainSet = $('main').offset();
+
+        $('html, body').animate({scrollTop : mainSet.top}, 400);
         return false;
-    })
-};
+    });
+
+    $('.btn_cover').on('click',function(){
+
+        var coverSet = $('.cover_letter').offset();
+
+        $('html,body').animate({scrollTop : coverSet.top}, 400);
+        return false;
+    });
+}
 
 
 
-//새 창 팝업열기
-liElems.forEach(function(item){
+// view버튼 클릭하면 새 창 열리기 
+function windowPop(){
+    $('.open_btn').on('click',function(ev){
 
-    item.addEventListener("click", function(ev){
-        ev.preventDefault();
+        var addr = $(this).attr('href');
+
+        window.open(addr,"width= 1500, height=1000");       
+        return false;
         
-        if(ev.target.nodeName !== "A"){
-            return
-        }
-        var address = ev.target.getAttribute("href");
+    });
+}
 
-        window.open(address,"width= 1500, height=1000");
-    })
 });
-
-};// window
