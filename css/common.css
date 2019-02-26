@@ -163,6 +163,8 @@ nav h1 > a {top: 10px; left: 50%; margin-left: -96px}
 
 .wrap footer {padding: 70px}
 footer h3 {margin-bottom: 35px}
+footer a {width: 172px;}
+footer .email_addr{width: 190px; background-position: 0 -40px;}
 footer address {margin-top: 20px; font-size: 16px}
 
 }
