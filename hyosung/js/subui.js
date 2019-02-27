@@ -9,9 +9,9 @@ prodTable();
 // 클래스 on추가
 function attachOn(target){
     if(target.classList.contains("on")){
-        target.classList.remove("on")
+        target.classList.remove("on");
     } else {
-        target.classList.add("on")
+        target.classList.add("on");
     }
 }
 
@@ -37,11 +37,11 @@ function lang(){
 
     langDiv.addEventListener("mouseenter",function(){
         if(langDiv){
-            langDiv.classList.add("on")
+            langDiv.classList.add("on");
         }
 
         setTimeout(function(){
-            langUl.classList.add("on")
+            langUl.classList.add("on");
         },400);
 
     });
@@ -51,7 +51,7 @@ function lang(){
 
         setTimeout(function(){
 
-            langDiv.classList.remove("on")
+            langDiv.classList.remove("on");
         },200);
     });
 } 
@@ -120,7 +120,7 @@ function prodTable() {
                 targetElems[j].classList.add("on");
                 tabBtns[j].classList.add("on");
             }
-        })(i)
+        })(i);
     };
 }
 

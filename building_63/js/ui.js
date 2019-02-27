@@ -13,36 +13,38 @@ sectionScroll();
 resize();
 
 famOpen(); 
-    
+
+
+
+// 클래스 on 추가
 function attachOn(target){
     if(target.classList.contains("on")){
-        target.classList.remove("on")
+        target.classList.remove("on");
     } else {
-        target.classList.add("on")
-    };
-};
-
+        target.classList.add("on");
+    }
+}
 
 
 
 // 파트너사 GNB영역 열고 닫힘 
 function gnbOpen(){
-    var gnbContainer = document.querySelector(".gnb_container")
-    var btnOpen = document.querySelector(".gnb_open_btn")
-    var btnClose = gnbContainer.querySelector(".btn_close")
+    var gnbContainer = document.querySelector(".gnb_container");
+    var btnOpen = document.querySelector(".gnb_open_btn");
+    var btnClose = gnbContainer.querySelector(".btn_close");
 
     btnOpen.addEventListener("click", function(ev){
         ev.preventDefault();
-        gnbContainer.classList.add("on")
-    })
+        gnbContainer.classList.add("on");
+    });
 
 
     btnClose.addEventListener("click",function(ev){
         ev.preventDefault();
-        gnbContainer.classList.remove("on")
-    })
+        gnbContainer.classList.remove("on");
+    });
 
-};
+}
 
 
 
@@ -54,60 +56,60 @@ function gnbUtillOn(){
         ev.preventDefault();
         
         if(gnbUtill.classList.contains("on")){
-         gnbUtill.classList.remove("on")
+         gnbUtill.classList.remove("on");
         } else {
-         gnbUtill.classList.add("on")
+         gnbUtill.classList.add("on");
         }
-
     });
-};
+}
     
 
 
 // SNB 63빌딩 사업장영역 열고 닫힘
 function snbOpen(){
-    var snbContainer = document.querySelector(".snb_container")
-    var snbOpen = document.querySelector(".snb_open_btn")
-    var btnClose = snbContainer.querySelector(".btn_close")
+    var snbContainer = document.querySelector(".snb_container");
+    var snbOpen = document.querySelector(".snb_open_btn");
+    var btnClose = snbContainer.querySelector(".btn_close");
 
     snbOpen.addEventListener("click", function(ev){
         ev.preventDefault();
 
-        snbContainer.classList.add("on")
+        snbContainer.classList.add("on");
     })
 
     btnClose.addEventListener("click", function(ev){
         ev.preventDefault();
 
-        snbContainer.classList.remove("on")
+        snbContainer.classList.remove("on");
 
-    })
+    });
 };
 
 
 
-
-sizeCheck();
+// 창 높이에 맞게 리사이즈되기 
 function resize(){
+
+    resizeWork();
+
+    var sizeCheck;
+
     window.addEventListener("resize", function(){
-        sizeCheck()
-    })
-}    
-    
-function sizeCheck(){
-    var main = document.querySelector("main")
-    var windowHeight = window.innerHeight;
-    
-    if(windowHeight < 973){
-        main.style.height = windowHeight + "px"
-    }
-    
-}    
-    
-    
-    
+
+        clearTimeout(sizeCheck);
+        sizeCheck = setTimeout(resizeWork, 150);
+    });
 
 
+    function resizeWork(){
+        var main = document.querySelector("main");
+        var windowHeight = window.innerHeight;
+        
+        if(windowHeight < 973){
+            main.style.height = windowHeight + "px";
+        }
+    }    
+}
 
 
 
@@ -115,7 +117,7 @@ function sizeCheck(){
 // 63빌딩 메인 전체화면 전환 
 function sectionScroll(){
 
-    var main = document.querySelector("main")
+    var main = document.querySelector("main");
     var section = main.querySelectorAll("section");
     var teaserBox = document.querySelectorAll(".teaser_container");
     var sequenceBtn = main.querySelectorAll(".sequence > a");
@@ -123,16 +125,16 @@ function sectionScroll(){
     // 주요 이벤트 
     for(let i = 0; i < section.length; i++){
         section[i].addEventListener("wheel", function(event){
+
             ev = event;
             sect = this;
             index = i;
+
             function scrollWork(){
-                wheelAction(ev, sect, index)
+                wheelAction(ev, sect, index);
             }
 
-            setTimeout(scrollWork, 150)        
-                
-            
+            setTimeout(scrollWork, 150);
         });
 
 
@@ -161,11 +163,9 @@ function sectionScroll(){
 
         });
 
-
-    }; //for문
+    }
 
     
-
 
     function wheelAction(ev, sect, index){
         
@@ -189,11 +189,10 @@ function sectionScroll(){
 
         if(main.style.marginTop == "-100px" && scrollValue < 0){ //footer 안보이기 
 
-            target.querySelector(".teaser_container").classList.remove("off")
+            target.querySelector(".teaser_container").classList.remove("off");
 
             setTimeout(function(){
-                main.style.marginTop = "0"
-            },500);   
+                main.style.marginTop = "0"},500);   
         }
 
 
@@ -202,21 +201,20 @@ function sectionScroll(){
             if( scrollValue > 0 ){//내림
                 if( nextSect.nodeName !== "SECTION" ){ //footer 보이기
                     main.style.marginTop = "-100px"
-                    target.querySelector(".teaser_container").classList.remove("off")
-                    return
+                    target.querySelector(".teaser_container").classList.remove("off");
+                    return;
                 }
                 
-                target.style.top = "-100%"
-                nextSect.style.top = "0"
+                target.style.top = "-100%";
+                nextSect.style.top = "0";
 
                 
-                sequenceBtn[index].classList.remove("on")
-                sequenceBtn[index+1].classList.add("on")
+                sequenceBtn[index].classList.remove("on");
+                sequenceBtn[index+1].classList.add("on");
 
 
                 setTimeout(function(){
-                    nextSect.querySelector(".teaser_container").classList.remove("off")
-                }, 100)
+                    nextSect.querySelector(".teaser_container").classList.remove("off")}, 100);
 
             }
         }
@@ -225,33 +223,33 @@ function sectionScroll(){
         function wheelUp(){
             if( scrollValue < 0 ){//올림
                 if( target == section[0] ){// 첫번째 섹션인 경우
-                    teaserBox[0].classList.remove("off")
-                    return
+                    teaserBox[0].classList.remove("off");
+                    return;
                 }
                 if(main.style.marginTop == "-100px"){
-                    return
+                    return;
                 }
-                prevSect.style.top = "0"
-                target.style.top = "60%"
+                prevSect.style.top = "0";
+                target.style.top = "60%";
 
                 
-                sequenceBtn[index].classList.remove("on")
-                sequenceBtn[index-1].classList.add("on")
+                sequenceBtn[index].classList.remove("on");
+                sequenceBtn[index-1].classList.add("on");
 
                 setTimeout(function(){
-                    prevSect.querySelector(".teaser_container").classList.remove("off")
-                }, 100)
+                    prevSect.querySelector(".teaser_container").classList.remove("off")}, 100);
             }
         }
     };
-};//sectionScroll
+}
     
 
 
 // 패밀리 사이트 리스트 열림 
 function famOpen(){
+
     var famElem = document.querySelector(".goto_family");
-    var famList = famElem.querySelector("ul")
+    var famList = famElem.querySelector("ul");
     famElem.addEventListener("click", function(ev){
         ev.preventDefault();
 
@@ -260,14 +258,7 @@ function famOpen(){
         } else {
             famList.classList.add("on");
         }
-    })
-};
-
-    
-    
-    
-    
-    
-    
-    
-}// window 
+    });
+}
+   
+}

@@ -62,10 +62,8 @@ address{font-style: normal;}
 
 i {font-style: normal;}
 
-/* */
 
 /* 공통사항 */
-
 section {margin-top: 8% /*195px;*/}
 section .teaser_text > h3 {font-size: 34px;}
 section .teaser_text > h2 {font-size: 34px;}
@@ -93,6 +91,7 @@ section.slider_wrap .slider_row ul li a span i {text-align: center; display: blo
 .bx-wrapper .bx-controls-direction a.bx-next {right: -30px;}
 .bx-wrapper .bx-next:hover, .bx-wrapper .bx-next:focus {background-position: 0;}
 
+
 /* header */
 header {position: fixed; top: 0; left: 0; right: 0; background: white; z-index: 300; transition: all 0.5s cubic-bezier(.1,.6,.4,1)}
 header.on {top: -125px}
@@ -113,8 +112,6 @@ header.on {top: -125px}
 
 
 /* main */
-
-
 /*section update */
 section.update {margin-top: 200px}
 section.update > .teaser_text {width: 930px; margin-left: 7.34375%; /*141/1920*/}
@@ -136,7 +133,6 @@ section.update .teaser_container .teaser_box .teaser_text {width:84%;/*668/792*/
 
 
 /* section main_contents */
-
 section.main_contents { padding: 0 5.885416666667%;/* 0 113px;*/}
 section.main_contents .content:after {content: ''; display: block; clear: both;}
 section.main_contents .content .teaser_text { float: left; width: 35.735556879095%;/*600/1679*/ padding: 2.755245% 2.084574151281% 3.496503496503%; /*34px 35px 25px / 1679/715*/ }
@@ -150,7 +146,6 @@ section.main_contents .content:last-child > a {width: 49.612864800476% /*833/167
 section.main_contents .content:last-child .teaser_text {width: 35.735556879095% /*600/1679*/}
 
 
-
 /* section quote */
 section.quote blockquote { width:1076px; padding: 7% 0; margin-left:15.380577427822% /*293px;*/}
 section.quote blockquote > * {display: block;}
@@ -158,7 +153,6 @@ section.quote blockquote > span { font-size: 97px; position: relative}
 section.quote blockquote > span:before {content: '>>'; position: absolute; top: 9.504132231404959%;/*46px;*/ left: -4.925650557620818%; /*-53px;*/ font-family: 'Nanum Myeongjo', serif; font-size: 40px; font-weight: 700; letter-spacing: -4px;}
 section.quote blockquote > span:after {content: '<<'; position: absolute; bottom: 6.198347107438017%;/*30px;*/ left: 37.54646840148699%; /*404px;*/ font-family: 'Nanum Myeongjo', serif; font-size: 40px; font-weight: 700;  letter-spacing: -4px;}
 section.quote blockquote > b { font-size: 35px; font-weight: 300; padding: 28px 0 0 190px;}
-
 
 
 /*section slider */
@@ -171,7 +165,6 @@ section.slider_wrap.press .slider_row .bx-wrapper .bx-controls-direction a.bx-ne
 
 
 /* footer */
-
 footer {background-color:rgb(247,247,247);}
 footer .visual {height: 83.68200836820084%; /*1000/1195*/ background-color: #f7f7f7;}
 footer .visual img { width: 100%; height: 100%; object-fit: cover;}
@@ -214,10 +207,8 @@ footer .bottom .payment_icon {float: right}
 footer .bottom .payment_icon svg {height: 25px; opacity: 0.2; margin-right: 20px;}
 
 
-
 /*--------------------------------------------- media--------------------------------------------------  */
 /*--------------------------------------------- media--------------------------------------------------  */
-
 
 @media screen and (max-width: 1400px){
 
@@ -226,8 +217,6 @@ section .teaser_text > h2 {font-size: 25px;}
 section .teaser_text > h3 {font-size: 25px;}
 section.slider_wrap .comment_row > h3 {font-size: 25px; padding-left: 0; padding-top: 69px; width: 530px; }
 section.slider_wrap .comment_row > a { margin-right: 2.142857142857143%/*30px*/}
-
-
 /**/
 
 .header_wrap { width: 100%; margin: 0; position: relative;}
@@ -237,11 +226,13 @@ section.slider_wrap .comment_row > a { margin-right: 2.142857142857143%/*30px*/}
 .header_wrap h1 {width: 150px; margin-left: -75px;}
 .header_wrap .find_retailer > a {font-size: 21px;}
 .header_wrap .find_retailer > a svg {width: 20px; vertical-align: -2px; margin: 0 5px 0 5px;}
+
 section.update > .teaser_text {width: 780px; margin-left: 3.357142857142857%;/*47/1400*/}
 section.update > .teaser_text > h2 {font-size: 42px;}
 section.update .teaser_container {margin-top: 7px}
 section.update .teaser_container .teaser_box:first-child .teaser_text {width: 62.828535669587%/*502/799*/}
 section.update .teaser_container .teaser_box .teaser_text {margin-top: 20px; width: 88.388214904679%/*510/577*/}
+
 section.slider_wrap.press .slider_row {width: 82%}
 
 section.quote blockquote {width: 875px; margin-left:10%}
@@ -256,8 +247,6 @@ footer .footer_contents .nav {width: 365px}
 footer .bottom {width: 100%; padding: 174px 0 30px 0px}
 footer .bottom .select{padding-left: 10px}
 
-
-
 }
 
 
@@ -270,8 +259,8 @@ section.slider_wrap {position: relative;}
 section.slider_wrap .comment_row > a { position: absolute; bottom: 5%; height: 40px; font-size: 18px; line-height: 40px; padding: 0 15px}
 section.slider_wrap .comment_row > h3 {font-size: 23px; padding-top: 35px; width: 492px; }
 .bx-wrapper .bx-pager.bx-default-pager a {width: 6px; height: 6px; margin: 0 8px;}
-
 /**/
+
 .header_wrap {padding: 24px 0}
 .header_wrap nav {float: right; margin-right: 8.072653884965%/*80/991*/}
 .header_wrap nav > ul > li + li {margin-left: 32px;}
@@ -279,6 +268,7 @@ section.slider_wrap .comment_row > h3 {font-size: 23px; padding-top: 35px; width
 .header_wrap h1 {width: 170px; left: 4%; margin-left:0;}
 .header_wrap .find_retailer > a {font-size: 0px; position: absolute; top: 27px; right: 20px}
 .header_wrap .find_retailer > a svg {width: 25px;}
+
 section.update > .teaser_text {width: 670px; margin-left: 3.027245206862%;/*30/991*/}
 section.update > .teaser_text > h2 {font-size: 35px;}
 section.update .teaser_container .teaser_box {width: 49%;/*472.5px;*/overflow: hidden;}
@@ -312,9 +302,6 @@ footer .bottom .select div { font-size: 17px}
 footer .bottom .select div + div {margin-left: 24px;}
 footer .bottom .payment_icon svg {height: 22px}
 
-
-
-
 }
 
 
@@ -327,8 +314,8 @@ section .teaser_text > h3 {font-size: 18px;}
 section .teaser_text > a {font-size: 15px;}
 section.slider_wrap .comment_row > a { height: 32px; font-size: 15px; line-height: 32px; padding: 0 15px; font-weight: 500;}
 section.slider_wrap .comment_row > h3 {font-size: 20px }
-
 /**/
+
 .header_wrap nav {float: right; margin-right:6.51890482399%/*50/767*/}
 .header_wrap nav > ul > li + li {margin-left: 25px;}
 .header_wrap nav > ul > li > a {font-size: 19px; font-weight: 500}
@@ -368,11 +355,6 @@ footer .footer_contents .nav ul:nth-child(3) {margin-top: 80px; clear: both;}
 footer .bottom .select {float: none; padding-left: 15px}
 footer .bottom .payment_icon { float: none; padding: 20px 0 0 20px }
 footer .bottom .payment_icon svg {height: 20px}
-
-
-
-
-
 
 }
 
@@ -425,7 +407,6 @@ section.quote blockquote > span:after {font-size: 0px}
 section.quote blockquote > b { font-size: 20px; padding: 0; width: 200px; margin: 5px auto;}
 
 
-
 footer .footer_contents { width: 94.85368314833502% /*940/991*/}
 footer .footer_contents {margin-top: 7.61991%; width: 92.17391304347826%/*530px;*/}
 footer .footer_contents .newsletter {width: 300px; float: none;}
@@ -450,7 +431,5 @@ footer .bottom .select div.lang_select {width: 515px; display: block; margin-lef
 footer .bottom .select div.lang_select:after { left: 28% }
 footer .bottom .payment_icon { padding: 30px 0 }
 footer .bottom .payment_icon svg {height: 20px}
-
-
 
 }

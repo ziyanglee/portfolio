@@ -36,11 +36,11 @@ function lang(){
 
     langDiv.addEventListener("mouseenter",function(){
         if(langDiv){
-            langDiv.classList.add("on")
+            langDiv.classList.add("on");
         }
 
         setTimeout(function(){
-            langUl.classList.add("on")
+            langUl.classList.add("on");
         },400);
 
     });
@@ -50,7 +50,7 @@ function lang(){
 
         setTimeout(function(){
 
-            langDiv.classList.remove("on")
+            langDiv.classList.remove("on");
         },200);
     });
 } 

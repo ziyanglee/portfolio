@@ -9,6 +9,7 @@
  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
  	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
  	<script>
+ 		//슬라이더 부분
  		$(document).ready(function(){
      		 $('.slider').bxSlider({
      		 	slideWidth: 1184,
@@ -22,24 +23,24 @@
 				onSliderLoad: SlideStart
 				  
 		});
-			// var aniSpan = document.querySelectorAll(".slider > li > span");
+     		// 슬라이더 텍스트 부분 
 			function SlideStart(){
 				var aniSpan = document.querySelectorAll(".slider > li > span");
 				aniSpan[3].classList.add("active");
-			};
+			}
 			
 			function SlideRemove (){
 				var aniSpan = document.querySelectorAll(".slider > li > span");
 				for(var i = 0; i < aniSpan.length; i++){
-					aniSpan[i].classList.remove("active")
-				};
-			};
+					aniSpan[i].classList.remove("active");
+				}
+			}
 
 			function SlideText(){
 				var slideNum = this.getCurrentSlide();
 			    var aniSpan = document.querySelectorAll(".slider > li > span");
-				aniSpan[slideNum + 3].classList.add("active")
-			};	  
+				aniSpan[slideNum + 3].classList.add("active");
+			}	  
  	   });
  	</script>
  	<script type="text/javascript" src="js/ui.js"></script>

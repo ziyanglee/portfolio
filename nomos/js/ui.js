@@ -1,84 +1,61 @@
 window.onload = function(){
 
 var htmlElem = document.querySelector("html");
-var headerTab = document.querySelector("header");
-var navTab = document.querySelector(".nav_tab");
-var prevScroll = document.documentElement.scrollTop;
+var headerTab = htmlElem.querySelector("header");
+var navTab = htmlElem.querySelector(".nav_tab");
 
-document.addEventListener("scroll", headerOn)
-document.addEventListener("touchmove",touch);
-
-function touch(ev){
-  ev.preventDefault();
-  var y = ev.clientY
-  if(y > 100){
-    navTab.style.backgroundColor = "red"
-  };
+headerMove();
+subScribe();
 
 
+// 스크롤 여부에 따라 header 노출여부
+function headerMove(){
 
-}
+  var wheelEvnt;
 
-function headerOn(ev){
+  document.addEventListener("wheel", function(event){
+   
+    clearTimeout(wheelEvnt);
+    wheelEvnt = setTimeout(scrollWork(event), 150);
+  });
+
+  function scrollWork(ev){
+    var value = ev.deltaY;        
+    var topValue = htmlElem.scrollTop;
+    console.log(ev);
+    
+    
+    //스크롤 내렸을 때
+    if(value > 0){
+      navTab.classList.remove("on");
+      headerTab.classList.remove("on");
+    
+    //스크롤 올렸을 때
+    } else {
+      navTab.classList.add("on");
+      headerTab.classList.add("on");
+    }
+
+    if(topValue < 400){
   
-  var currentScroll = document.documentElement.scrollTop;
-  var htmlScroll = htmlElem.scrollTop;
-  if(prevScroll > currentScroll){
-    navTab.classList.remove("on")
-    headerTab.classList.remove("on")
-    // headerTab.classList.add("on");
-  } else if (prevScroll < currentScroll){
-    navTab.classList.add("on");
-    // headerTab.classList.remove("on");
-    headerTab.classList.add("on");
+      headerTab.classList.remove("on");
+    }
   }
-
-  if(htmlScroll == 0) {
-    headerTab.classList.remove("on");     
-  }
-
-  prevScroll = currentScroll;
-  
-}; //scrollEvnt
+}
 
 
+// email input란에 포커스되면 정보기입란 보이기 
+function subScribe(){
 
-var persnInfo = document.querySelector(".persn_info");
-var signupInfo = document.querySelector("#signupinfo");
-var inputEmail = document.querySelector(".email");
-var submitBtn = document.querySelector("#submit_btn")
-console.log(submitBtn)
-submitBtn.addEventListener("click",infoChange);
+  var footerElem = document.querySelector("footer");
+  var persnInfo = footerElem.querySelector(".persn_info");
+  var inputEmail = footerElem.querySelector(".email");
 
-function infoChange(ev){
-  if(submitBtn.submit()){
-  signupInfo.innerHTML = "Sign up for our newsletter to receive special offers, news and great events."
-  console.log("2")
-
-
-  }
-
-  // signupInfo.innerHTML = "Sign up for our newsletter to receive special offers, news and great events."
+  inputEmail.addEventListener("click",function(){
+    persnInfo.classList.add("active");
+  });
 
 }
 
 
-
-
-
-
-
-inputEmail.addEventListener("click",infoOpen);
-
-function infoOpen(ev){
-  persnInfo.classList.add("active");
 }
-
-
-
-
-
-
-
-
-} //window

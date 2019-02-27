@@ -31,179 +31,166 @@ figure {margin: 0; }
 
 /* layout */
 body {overflow: hidden;}
-.wrap {min-width: 1180px; position: relative;}
-.wrap header {height: 130px; position: fixed; top: 0; left: 0; right: 0; z-index: 500;}
+.wrap {position: relative; min-width: 1180px;}
+.wrap header {position: fixed; top: 0; left: 0; right: 0; z-index: 500; height: 130px;}
 .wrap main {position: relative; height: 973px; transition: all 1s ease;}
 .wrap footer {padding: 20px 50px; font-size: 12px;}
 
-/**/
-
 
 /* 공통사항 */
-
-.blind { text-indent: -99999px; height: 0}
-
+.blind {height: 0; text-indent: -99999px;}
 .btn_close {position: absolute; top: 49px; width: 33px; height: 33px; background: url('../images/btn_close_33x33.png')no-repeat 0 0; text-indent: -99999px; transition: transform 0.3s ease}
 .btn_close:hover {transform: rotate(-90deg)}
 
 
-
-
 /* header */
-
-header > h1 {width: 70px; height: 70px; position: absolute; top: 30px; left: 50%; margin-left: -35px;}
-header > h1 > a {display: block; width: 100%; height: 100%; text-indent: -99999px; background: url('../images/logo.png')no-repeat 0 -70px;}
+header > h1 {position: absolute; top: 30px; left: 50%; margin-left: -35px; width: 70px; height: 70px;}
+header > h1 > a {display: block; width: 100%; height: 100%; background: url('../images/logo.png')no-repeat 0 -70px; text-indent: -99999px;}
 
 /* GNB */
+.gnb_open_btn {position: absolute; top: 30px; right: 50px; width: 68px; height: 68px; border: 1px solid white;}
+.gnb_open_btn > a {position: absolute; top: 0; left: 0; padding: 23px 21px; width: 26px; height: 22px;}
+.gnb_open_btn > a > .icon_wrap {position: absolute; width: 26px; height: 26px;}
+.gnb_open_btn > a > .icon_wrap i {position: absolute; width: 26px; height: 3px; background-color: white}
+.gnb_open_btn > a > .icon_wrap .line_1 {top: 0}
+.gnb_open_btn > a > .icon_wrap .line_2 {top: 10px}
+.gnb_open_btn > a > .icon_wrap .line_3 {top: 20px}
 
-.gnb .gnb_open_btn {position: absolute; top: 30px; right: 50px; width: 68px; height: 68px; border: 1px solid white;}
-.gnb .gnb_open_btn > a {position: absolute; top: 0; left: 0; width: 26px; height: 22px; padding: 23px 21px;}
-.gnb .gnb_open_btn > a > .icon_wrap {position: absolute; width: 26px; height: 26px;}
-.gnb .gnb_open_btn > a > .icon_wrap i {position: absolute; width: 26px; height: 3px; background-color: white}
-.gnb .gnb_open_btn > a > .icon_wrap .line_1 {top: 0}
-.gnb .gnb_open_btn > a > .icon_wrap .line_2 {top: 10px}
-.gnb .gnb_open_btn > a > .icon_wrap .line_3 {top: 20px}
-
-.gnb .gnb_open_btn:hover > a > .icon_wrap .line_1 {animation: hover_line_1 0.8s forwards}
-.gnb .gnb_open_btn:hover > a > .icon_wrap .line_2 {animation: hover_line_1 0.8s forwards 0.2s}
-.gnb .gnb_open_btn:hover > a > .icon_wrap .line_3 {animation: hover_line_1 0.8s forwards 0.3s}
+.gnb_open_btn:hover > a > .icon_wrap .line_1 {animation: hover_line_1 0.8s forwards}
+.gnb_open_btn:hover > a > .icon_wrap .line_2 {animation: hover_line_1 0.8s forwards 0.2s}
+.gnb_open_btn:hover > a > .icon_wrap .line_3 {animation: hover_line_1 0.8s forwards 0.3s}
 
 @keyframes hover_line_1 {from{width: 26px} 50%{width: 3px} to{width: 26px}}
 @keyframes hover_line_2 {from{width: 26px} 50%{width: 3px} to{width: 26px}}
 @keyframes hover_line_3 {from{width: 26px} 50%{width: 3px} to{width: 26px}}
 
-.gnb .gnb_container.on {left: 0;}
-.gnb .gnb_container.on .gnb_content {right: 0}
+.gnb_container.on {left: 0;}
+.gnb_container.on .gnb_content {right: 0}
 
-.gnb .gnb_container {position: fixed; top: 0; right: 0; bottom: 0; background-color: rgba(0,0,0,0.5); z-index: 3}
-.gnb .gnb_container .gnb_content {background-color: white; position: absolute; top: 0; right: -1260px; bottom: 0; width: 1260px; padding-top: 29px; transition: all 0.4s ease-out}
-.gnb .gnb_container .gnb_content > .logo { display: block; width: 70px; height: 70px; background: url('../images/logo.png')no-repeat 0 0;margin: 0 auto}
+.gnb_container {position: fixed; top: 0; right: 0; bottom: 0; background-color: rgba(0,0,0,0.5); z-index: 3}
+.gnb_container .gnb_content {background-color: white; position: absolute; top: 0; right: -1260px; bottom: 0; width: 1260px; padding-top: 29px; transition: all 0.4s ease-out}
+.gnb_container .gnb_content > .logo { display: block; width: 70px; height: 70px; background: url('../images/logo.png')no-repeat 0 0;margin: 0 auto}
 
-.gnb .gnb_container .gnb_content nav {width: 247px; height: 312px; position: absolute; top: 50%; margin-top: -244px; left: 50%; margin-left: -123.5px; text-align: center}
-.gnb .gnb_container .gnb_content nav ul li + li {margin-top: 68px;}
+.gnb_container .gnb_content nav {width: 247px; height: 312px; position: absolute; top: 50%; margin-top: -244px; left: 50%; margin-left: -123.5px; text-align: center}
+.gnb_container .gnb_content nav ul li + li {margin-top: 68px;}
 
-.gnb .gnb_container .gnb_content nav ul li a {display: inline-block; text-indent: -99999px; height: 27px; position: relative;}
-.gnb .gnb_container .gnb_content nav ul li a:hover {background-position: 0 -27px}
-.gnb .gnb_container .gnb_content nav ul li a::after {content: ''; position: absolute; bottom: -13px; left: 45%; right: 45%; height: 2px; background-color: transparent; transition: all 0.4s ease}
-.gnb .gnb_container .gnb_content nav ul li:hover a::after {left: 0; right: 0; background-color: #f37321}
-.gnb .gnb_container .gnb_content nav ul .nav_pleasure a {width: 196px; background: url('../images/gnb_Pleasure.png')no-repeat 0 0}
-.gnb .gnb_container .gnb_content nav ul .nav_innovation a {width: 247px; background: url('../images/gnb_innovation.png')no-repeat 0 0}
-.gnb .gnb_container .gnb_content nav ul .nav_about63 a {width: 170px; background: url('../images/gnb_about63.png')no-repeat 0 0}
-.gnb .gnb_container .gnb_content nav ul .nav_festival a {width: 181px; background: url('../images/gnb_festival.png')no-repeat 0 0}
+.gnb_container .gnb_content nav ul li a {display: inline-block; text-indent: -99999px; height: 27px; position: relative;}
+.gnb_container .gnb_content nav ul li a:hover {background-position: 0 -27px}
+.gnb_container .gnb_content nav ul li a::after {content: ''; position: absolute; bottom: -13px; left: 45%; right: 45%; height: 2px; background-color: transparent; transition: all 0.4s ease}
+.gnb_container .gnb_content nav ul li:hover a::after {left: 0; right: 0; background-color: #f37321}
+.gnb_container .gnb_content nav ul .nav_pleasure a {width: 196px; background: url('../images/gnb_Pleasure.png')no-repeat 0 0}
+.gnb_container .gnb_content nav ul .nav_innovation a {width: 247px; background: url('../images/gnb_innovation.png')no-repeat 0 0}
+.gnb_container .gnb_content nav ul .nav_about63 a {width: 170px; background: url('../images/gnb_about63.png')no-repeat 0 0}
+.gnb_container .gnb_content nav ul .nav_festival a {width: 181px; background: url('../images/gnb_festival.png')no-repeat 0 0}
 
-.gnb .gnb_container .gnb_content .sub_menu {position: absolute; bottom: 130px; left: 50%; margin-left: -419px; width: 838px;}
-.gnb .gnb_container .gnb_content .sub_menu li {display: inline-block; font-size: 0;}
-.gnb .gnb_container .gnb_content .sub_menu li:hover {background-position: 0 -24px;}
-.gnb .gnb_container .gnb_content .sub_menu li:hover a {color: #f37321}
-.gnb .gnb_container .gnb_content .sub_menu li + li {margin-left: 126px;}
-.gnb .gnb_container .gnb_content .sub_menu li a {display: inline-block}
+.gnb_container .gnb_content .sub_menu {position: absolute; bottom: 130px; left: 50%; margin-left: -419px; width: 838px;}
+.gnb_container .gnb_content .sub_menu li {display: inline-block; font-size: 0;}
+.gnb_container .gnb_content .sub_menu li:hover {background-position: 0 -24px;}
+.gnb_container .gnb_content .sub_menu li:hover a {color: #f37321}
+.gnb_container .gnb_content .sub_menu li + li {margin-left: 126px;}
+.gnb_container .gnb_content .sub_menu li a {display: inline-block}
 
-.gnb .gnb_container .gnb_content .sub_menu .nowon {width: 67px; height: 24px; padding-left: 33px; background: url('../images/gnb_icon_nowon.png')no-repeat 0 0;}
-.gnb .gnb_container .gnb_content .sub_menu .nowon a {width: 66px; background: url('../images/gnb_txt_nowon.png')no-repeat 0 0; text-indent: -99999px;}
-.gnb .gnb_container .gnb_content .sub_menu .nowon:hover a {background-position: 0 -24px;}
-.gnb .gnb_container .gnb_content .sub_menu .guide {width: 94px; height: 24px; padding-left: 30px; background: url('../images/gnb_icon_guide.png')no-repeat 0 0}
-.gnb .gnb_container .gnb_content .sub_menu .partner {width: 78px; height: 24px; padding-left: 31px; background: url('../images/gnb_icon_partner.png')no-repeat 0 0}
-.gnb .gnb_container .gnb_content .sub_menu .online {width: 82px; height: 24px; padding-left: 35px; background: url('../images/gnb_icon_online.png')no-repeat 0 0}
-.gnb .gnb_container .gnb_content .sub_menu .online a {background: url('../images/gnb_icon_logo.png')no-repeat 0 5px; padding-left: 19px}
-.gnb .gnb_container .gnb_content .sub_menu .online:hover a {background-position: 0 -16px;}
-
-
-.gnb .gnb_container .gnb_content .utill.on {top: 130px; bottom: auto; height: 100%}
-.gnb .gnb_container .gnb_content .utill {background-color: white; position: absolute; left: 0; right: 0; bottom: 0; height: 92px; border-top: 1px solid #d6d6d6}
-
-.gnb .gnb_container .gnb_content .utill div > a {display: inline-block; text-indent: -99999px; width: 100%; height: 92px; position: relative;}
-.gnb .gnb_container .gnb_content .utill .family > a {background: url('../images/gnb_sub_family.png')no-repeat center 53px}
-.gnb .gnb_container .gnb_content .utill .lang > a {background: url('../images/gnb_sub_language.png')no-repeat center 53px}
-
-.gnb .gnb_container .gnb_content .utill > div > a::before {content: ''; position: absolute; top: 31px; left: 317px; width: 1px; height: 8px; background-color: #333; transform: rotate(-45deg); transition: transform 0.2s ease }
-.gnb .gnb_container .gnb_content .utill > div > a::after {content: ''; position: absolute; top: 31px; left: 312px; width: 1px; height: 8px; background-color: #333; transform: rotate(45deg); transition: transform 0.2s ease} 
-.gnb .gnb_container .gnb_content .utill:hover > div > a::before {transform: rotate(45deg)}
-.gnb .gnb_container .gnb_content .utill:hover > div > a::after {transform: rotate(-45deg)}
-.gnb .gnb_container .gnb_content .utill.on > div > a::before {transform: rotate(45deg)}
-.gnb .gnb_container .gnb_content .utill.on > div > a::after {transform: rotate(-45deg)} 
-.gnb .gnb_container .gnb_content .utill.on:hover > div > a::before {transform: rotate(-45deg)}
-.gnb .gnb_container .gnb_content .utill.on:hover > div > a::after {transform: rotate(45deg)}
-
-.gnb .gnb_container .gnb_content .utill div {height: 100%; position: relative;}
-.gnb .gnb_container .gnb_content .utill .family {float: left; width: 630px}
-.gnb .gnb_container .gnb_content .utill .lang {float: right; width: 629px; border-left: 1px solid #d6d6d6}
-
-.gnb .gnb_container .gnb_content .utill div ul {position: absolute; top: 380px; bottom: 0; left: 50%; text-align: center; margin-top: 0; opacity: 0; transition: opacity 0.8s 0.5s}
-.gnb .gnb_container .gnb_content .utill.on div ul {opacity: 1; top: 50%}
-.gnb .gnb_container .gnb_content .utill div ul > li > a {position: relative;}
-.gnb .gnb_container .gnb_content .utill div ul > li > a::after {content: ''; position: absolute; left: 45%; right: 45%; height: 2px; background-color: transparent; transition: all 0.2s ease}
-.gnb .gnb_container .gnb_content .utill .family ul > li > a::after {bottom: -3px;}
-.gnb .gnb_container .gnb_content .utill .lang ul > li > a::after {bottom: -11px;}
-.gnb .gnb_container .gnb_content .utill div ul > li:hover > a::after {left: 0; right: 0; background-color: #f37321}
+.gnb_container .gnb_content .sub_menu .nowon {width: 67px; height: 24px; padding-left: 33px; background: url('../images/gnb_icon_nowon.png')no-repeat 0 0;}
+.gnb_container .gnb_content .sub_menu .nowon a {width: 66px; background: url('../images/gnb_txt_nowon.png')no-repeat 0 0; text-indent: -99999px;}
+.gnb_container .gnb_content .sub_menu .nowon:hover a {background-position: 0 -24px;}
+.gnb_container .gnb_content .sub_menu .guide {width: 94px; height: 24px; padding-left: 30px; background: url('../images/gnb_icon_guide.png')no-repeat 0 0}
+.gnb_container .gnb_content .sub_menu .partner {width: 78px; height: 24px; padding-left: 31px; background: url('../images/gnb_icon_partner.png')no-repeat 0 0}
+.gnb_container .gnb_content .sub_menu .online {width: 82px; height: 24px; padding-left: 35px; background: url('../images/gnb_icon_online.png')no-repeat 0 0}
+.gnb_container .gnb_content .sub_menu .online a {background: url('../images/gnb_icon_logo.png')no-repeat 0 5px; padding-left: 19px}
+.gnb_container .gnb_content .sub_menu .online:hover a {background-position: 0 -16px;}
 
 
-.gnb .gnb_container .gnb_content .utill.on .family ul {margin-top: -216px;}
-.gnb .gnb_container .gnb_content .utill .family ul {width: 130px; height: 380px; margin-left: -65px}
-.gnb .gnb_container .gnb_content .utill .family ul > li + li {margin-top: 25px}
-.gnb .gnb_container .gnb_content .utill .family ul > li > a:hover {color: #f37321}
+.gnb_container .gnb_content .utill.on {top: 130px; bottom: auto; height: 100%}
+.gnb_container .gnb_content .utill {background-color: white; position: absolute; left: 0; right: 0; bottom: 0; height: 92px; border-top: 1px solid #d6d6d6}
 
-.gnb .gnb_container .gnb_content .utill.on .lang ul {margin-top: -218px;}
-.gnb .gnb_container .gnb_content .utill .lang ul {width: 77px; margin-left: -38.5px; height: 282px;}
-.gnb .gnb_container .gnb_content .utill .lang ul > li + li {margin-top: 62px;}
-.gnb .gnb_container .gnb_content .utill .lang ul > li > a {display: inline-block; text-indent: -99999px; height: 24px;}
-.gnb .gnb_container .gnb_content .utill .lang ul > li > a:hover {background-position: 0 -25px}
-.gnb .gnb_container .gnb_content .utill .lang ul .kor > a {width: 73px; background: url('../images/gnb_lang_kor.png')no-repeat 0 0;}
-.gnb .gnb_container .gnb_content .utill .lang ul .eng > a {width: 73px; background: url('../images/gnb_lang_eng.png')no-repeat 0 0;}
-.gnb .gnb_container .gnb_content .utill .lang ul .chn > a {width: 77px; background: url('../images/gnb_lang_chn.png')no-repeat 0 0;}
-.gnb .gnb_container .gnb_content .utill .lang ul .jpn > a {width: 67px; background: url('../images/gnb_lang_jpn.png')no-repeat 0 0;}
+.gnb_container .gnb_content .utill div > a {display: inline-block; text-indent: -99999px; width: 100%; height: 92px; position: relative;}
+.gnb_container .gnb_content .utill .family > a {background: url('../images/gnb_sub_family.png')no-repeat center 53px}
+.gnb_container .gnb_content .utill .lang > a {background: url('../images/gnb_sub_language.png')no-repeat center 53px}
 
-.gnb .gnb_container .gnb_content .btn_close {right: 68px;}
+.gnb_container .gnb_content .utill > div > a::before {content: ''; position: absolute; top: 31px; left: 317px; width: 1px; height: 8px; background-color: #333; transform: rotate(-45deg); transition: transform 0.2s ease }
+.gnb_container .gnb_content .utill > div > a::after {content: ''; position: absolute; top: 31px; left: 312px; width: 1px; height: 8px; background-color: #333; transform: rotate(45deg); transition: transform 0.2s ease} 
+.gnb_container .gnb_content .utill:hover > div > a::before {transform: rotate(45deg)}
+.gnb_container .gnb_content .utill:hover > div > a::after {transform: rotate(-45deg)}
+.gnb_container .gnb_content .utill.on > div > a::before {transform: rotate(45deg)}
+.gnb_container .gnb_content .utill.on > div > a::after {transform: rotate(-45deg)} 
+.gnb_container .gnb_content .utill.on:hover > div > a::before {transform: rotate(-45deg)}
+.gnb_container .gnb_content .utill.on:hover > div > a::after {transform: rotate(45deg)}
+
+.gnb_container .gnb_content .utill div {height: 100%; position: relative;}
+.gnb_container .gnb_content .utill .family {float: left; width: 630px}
+.gnb_container .gnb_content .utill .lang {float: right; width: 629px; border-left: 1px solid #d6d6d6}
+
+.gnb_container .gnb_content .utill div ul {position: absolute; top: 380px; bottom: 0; left: 50%; text-align: center; margin-top: 0; opacity: 0; transition: opacity 0.8s 0.5s}
+.gnb_container .gnb_content .utill.on div ul {opacity: 1; top: 50%}
+.gnb_container .gnb_content .utill div ul > li > a {position: relative;}
+.gnb_container .gnb_content .utill div ul > li > a::after {content: ''; position: absolute; left: 45%; right: 45%; height: 2px; background-color: transparent; transition: all 0.2s ease}
+.gnb_container .gnb_content .utill .family ul > li > a::after {bottom: -3px;}
+.gnb_container .gnb_content .utill .lang ul > li > a::after {bottom: -11px;}
+.gnb_container .gnb_content .utill div ul > li:hover > a::after {left: 0; right: 0; background-color: #f37321}
 
 
+.gnb_container .gnb_content .utill.on .family ul {margin-top: -216px;}
+.gnb_container .gnb_content .utill .family ul {width: 130px; height: 380px; margin-left: -65px}
+.gnb_container .gnb_content .utill .family ul > li + li {margin-top: 25px}
+.gnb_container .gnb_content .utill .family ul > li > a:hover {color: #f37321}
+
+.gnb_container .gnb_content .utill.on .lang ul {margin-top: -218px;}
+.gnb_container .gnb_content .utill .lang ul {width: 77px; margin-left: -38.5px; height: 282px;}
+.gnb_container .gnb_content .utill .lang ul > li + li {margin-top: 62px;}
+.gnb_container .gnb_content .utill .lang ul > li > a {display: inline-block; text-indent: -99999px; height: 24px;}
+.gnb_container .gnb_content .utill .lang ul > li > a:hover {background-position: 0 -25px}
+.gnb_container .gnb_content .utill .lang ul .kor > a {width: 73px; background: url('../images/gnb_lang_kor.png')no-repeat 0 0;}
+.gnb_container .gnb_content .utill .lang ul .eng > a {width: 73px; background: url('../images/gnb_lang_eng.png')no-repeat 0 0;}
+.gnb_container .gnb_content .utill .lang ul .chn > a {width: 77px; background: url('../images/gnb_lang_chn.png')no-repeat 0 0;}
+.gnb_container .gnb_content .utill .lang ul .jpn > a {width: 67px; background: url('../images/gnb_lang_jpn.png')no-repeat 0 0;}
+
+.gnb_container .gnb_content .btn_close {right: 68px;}
 
 
 /* SNB */
-.snb {background-color: blue;}
-.snb .snb_open_btn {position: absolute; top: 30px; left: 50px; width: 68px; height: 68px; border: 1px solid white;}
-.snb .snb_open_btn > a {position: absolute; top: 0; left: 0; width: 22px; height: 22px; padding: 23px;}
-.snb .snb_open_btn > a > .icon_wrap {position: absolute; width:23px; height: 23px;}
-.snb .snb_open_btn > a > .icon_wrap i {position: absolute; width: 3px; height: 3px; background-color: white; transition: all 0.5s ease}
-.snb .snb_open_btn > a > .icon_wrap i.dot_1 {top: 0; left: 0}
-.snb .snb_open_btn > a > .icon_wrap i.dot_2 {top: 0; left: 10px}
-.snb .snb_open_btn > a > .icon_wrap i.dot_3 {top: 0; left: 20px}
-.snb .snb_open_btn > a > .icon_wrap i.dot_4 {top: 10px; left: 0}
-.snb .snb_open_btn > a > .icon_wrap i.dot_5 {top: 10px; left: 10px}
-.snb .snb_open_btn > a > .icon_wrap i.dot_6 {top: 10px; left: 20px}
-.snb .snb_open_btn > a > .icon_wrap i.dot_7 {top: 20px; left: 0}
-.snb .snb_open_btn > a > .icon_wrap i.dot_8 {top: 20px; left: 10px}
-.snb .snb_open_btn > a > .icon_wrap i.dot_9 {top: 20px; left: 20px}
-.snb .snb_open_btn:hover > a > .icon_wrap i {animation: hover_dot 0.6s forwards; -webkit-animation:hover_dot 0.6s forwards;}
+.snb_open_btn {position: absolute; top: 30px; left: 50px; width: 68px; height: 68px; border: 1px solid white;}
+.snb_open_btn > a {position: absolute; top: 0; left: 0; padding: 23px; width: 22px; height: 22px;}
+.snb_open_btn > a > .icon_wrap {position: absolute; width:23px; height: 23px;}
+.snb_open_btn > a > .icon_wrap i {position: absolute; width: 3px; height: 3px; background-color: white; transition: all 0.5s ease}
+.snb_open_btn > a > .icon_wrap i.dot_1 {top: 0; left: 0}
+.snb_open_btn > a > .icon_wrap i.dot_2 {top: 0; left: 10px}
+.snb_open_btn > a > .icon_wrap i.dot_3 {top: 0; left: 20px}
+.snb_open_btn > a > .icon_wrap i.dot_4 {top: 10px; left: 0}
+.snb_open_btn > a > .icon_wrap i.dot_5 {top: 10px; left: 10px}
+.snb_open_btn > a > .icon_wrap i.dot_6 {top: 10px; left: 20px}
+.snb_open_btn > a > .icon_wrap i.dot_7 {top: 20px; left: 0}
+.snb_open_btn > a > .icon_wrap i.dot_8 {top: 20px; left: 10px}
+.snb_open_btn > a > .icon_wrap i.dot_9 {top: 20px; left: 20px}
+.snb_open_btn:hover > a > .icon_wrap i {animation: hover_dot 0.6s forwards;}
 @keyframes hover_dot{50% { top: 10px; left: 10px;}}
-@-webkit-keyframes hover_snb_icon{50% { top: 10px; left: 10px;}}
 
 
-.snb .snb_container.on {right: 0;}
-.snb .snb_container.on .snb_content {left: 0;}
+.snb_container.on {right: 0;}
+.snb_container.on .snb_content {left: 0;}
 
-.snb .snb_container {position: fixed; top: 0; left: 0; bottom: 0; background-color: rgba(0,0,0,0.5); z-index: 3}
-.snb .snb_container .snb_content {position: absolute; top: 0; left: -1260px; background-color: white; width: 1260px;}
-.snb .snb_container .snb_content .intro p {text-indent: -99999px; width: 515px; height: 36px; background: url('../images/partner_title.png')no-repeat 0 0; margin: 105px auto 50px}
-.snb .snb_container .snb_content .partner_container {width: 1225px; height: 764px; overflow-y: auto; margin: 0 auto}
-.snb .snb_container .snb_content .partner_container .partner_list {width: 1145px; margin: 0 auto; padding-top: 20px}
-.snb .snb_container .snb_content .partner_container .partner_list li {width: 320px; height: 290px; position: relative; display: inline-block; margin: 20px 29px}
-.snb .snb_container .snb_content .partner_container .partner_list li a {font-size: 14px; text-align: center; line-height: 23px}
-.snb .snb_container .snb_content .partner_container .partner_list li a img {width: 100%}
-.snb .snb_container .snb_content .partner_container .partner_list li a span {background-color: white; position: absolute; width: 100%; height: 100px; top: 190px; left: 0; bottom: 0; right: 0; display: table; transition: all 0.4s ease }
-.snb .snb_container .snb_content .partner_container .partner_list li a span > strong {display: table-cell; vertical-align: middle; font-weight: 300}
-.snb .snb_container .snb_content .partner_container .partner_list li::after {content: ''; position: absolute; left: 50%; bottom: 20px; margin-left: -11.5px; width: 23px; height: 23px; background: url('../images/icon_more.gif')no-repeat 0 0 ; opacity: 0; transition: opacity 0.3s 0.5s ease-out}
+.snb_container {position: fixed; top: 0; left: 0; bottom: 0; z-index: 3; background-color: rgba(0,0,0,0.5);}
+.snb_container .snb_content {position: absolute; top: 0; left: -1260px; width: 1260px; background-color: white;}
+.snb_container .snb_content .intro p {margin: 105px auto 50px; width: 515px; height: 36px; background: url('../images/partner_title.png')no-repeat 0 0; text-indent: -99999px;}
+.snb_container .snb_content .partner_container {overflow-y: auto; margin: 0 auto; width: 1225px; height: 764px;}
+.snb_container .snb_content .partner_container .partner_list {margin: 0 auto; padding-top: 20px; width: 1145px;}
+.snb_container .snb_content .partner_container .partner_list li {display: inline-block; position: relative; margin: 20px 29px; width: 320px; height: 290px;}
+.snb_container .snb_content .partner_container .partner_list li a {font-size: 14px; text-align: center; line-height: 23px}
+.snb_container .snb_content .partner_container .partner_list li a img {width: 100%}
+.snb_container .snb_content .partner_container .partner_list li a span {display: table; position: absolute; width: 100%; height: 100px; top: 190px; left: 0; bottom: 0; right: 0; background-color: white; transition: all 0.4s ease }
+.snb_container .snb_content .partner_container .partner_list li a span > strong {display: table-cell; vertical-align: middle; font-weight: 300}
+.snb_container .snb_content .partner_container .partner_list li::after {content: ''; position: absolute; left: 50%; bottom: 20px; margin-left: -11.5px; width: 23px; height: 23px; background: url('../images/icon_more.gif')no-repeat 0 0; opacity: 0; transition: opacity 0.3s 0.5s ease-out}
 
-.snb .snb_container .snb_content .partner_container .partner_list li:hover {box-shadow: 0 0 16px 0 rgba(0,0,0,0.3)}
-.snb .snb_container .snb_content .partner_container .partner_list li:hover a figure::after {content: ''; position: absolute; height: 190px; top: 0; left: 0; right: 0; background-color: rgba(0,0,0,0.5);}
-.snb .snb_container .snb_content .partner_container .partner_list li:hover a span {top: 150px; }
-.snb .snb_container .snb_content .partner_container .partner_list li:hover::after {opacity: 1; }
+.snb_container .snb_content .partner_container .partner_list li:hover {box-shadow: 0 0 16px 0 rgba(0,0,0,0.3)}
+.snb_container .snb_content .partner_container .partner_list li:hover a figure::after {content: ''; position: absolute; height: 190px; top: 0; left: 0; right: 0; background-color: rgba(0,0,0,0.5);}
+.snb_container .snb_content .partner_container .partner_list li:hover a span {top: 150px;}
+.snb_container .snb_content .partner_container .partner_list li:hover::after {opacity: 1;}
 
-
-.snb .snb_container .snb_content .btn_close {right: auto; left: 60px}
+.snb_container .snb_content .btn_close {right: auto; left: 60px}
 
 
 
 /* section */
-section {height: 100%; position: absolute; top: 0; left: 0; right: 0; transition: all 0.5s 0.3s ease-in-out}
+section {position: absolute; top: 0; left: 0; right: 0; height: 100%; transition: all 0.5s 0.3s ease-in-out}
 section.pleasure {z-index: 5;}
 section.innovation {top: 60%; z-index: 4;}
 section.about63 {top: 60%; z-index: 3;}
@@ -211,54 +198,18 @@ section.festival {top: 60%; z-index: 2;}
 
 .content_wrap {position: relative; height: 100%;}
 .content_wrap .teaser_container.off {display: none;}
-.content_wrap .teaser_container{position: absolute; top: 30%; left: 0; right: 0; text-align: center; z-index: 1; height: 545px; display: block; }
+.content_wrap .teaser_container{position: absolute; top: 30%; left: 0; right: 0; z-index: 1; height: 545px; text-align: center;}
 .content_wrap .teaser_container h2 {position: relative; display: inline-block; opacity: 0; animation: h2 0.5s 0.5s forwards }
 .content_wrap .teaser_container h2::after {content: ''; position: absolute; bottom: -9px; left: 50%; right: 0; height: 2px; width: 10px; opacity: 0; background-color: white; animation: h_line 1s 0.5s forwards}
 
-@keyframes h2 {
- 	from {opacity: 0;}
- 	to {opacity: 1;}
-}
-
-@keyframes h_line {
-	from {opacity: 0; left: 50%}
-	to {opacity: 1; left: 0; right: 0; width: 100%}
-}
-
-
-.content_wrap .teaser_container .title {padding: 48px 0 33px; opacity: 0; transform: translateY(-10px); animation: title 0.6s 0.6s forwards }
-@keyframes title {
-	from {opacity: 0; transform: translateY(-10px)}
-	to {opacity: 1; transform: translateY(0px)}
-}
-
+.content_wrap .teaser_container .title {padding: 48px 0 33px; opacity: 0; transform: translateY(-10px); animation: title 0.6s 0.6s forwards}
 .content_wrap .teaser_container .comment {color: white; line-height: 26px; transform: translateY(-10px); opacity: 0; animation: comment 0.7s 0.7s forwards}
-
-@keyframes comment {
-	from {opacity: 0; transform: translateY(-10px)}
-	to {opacity: 1; transform: translateY(0)}
-}
-.content_wrap .teaser_container .go_btn {position: relative; display: inline-block; font-size: 14px; margin-top: 34px; border:1px solid white; color: white; padding: 15px 74px; opacity: 0; animation: go_btn 0.5s 1.5s forwards}
-
-@keyframes go_btn {
-	from { opacity: 0;}
-	to {opacity: 1;}
-}
+.content_wrap .teaser_container .go_btn {display: inline-block; position: relative; font-size: 14px; margin-top: 34px; border:1px solid white; color: white; padding: 15px 74px; opacity: 0; animation: go_btn 0.5s 1.5s forwards}
 .content_wrap .teaser_container .go_btn::after {content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 0; background-color: white; animation: btn_full 1s 1.5s ease-in-out}
 
-@keyframes btn_full {
-	from {width: 0;}
-	50% {width: 100%}
-	to {width: 0}
-}
-.content_wrap .icon_wheel {width: 28px; height: 27px; border:1px solid white; border-radius: 20px; padding-top: 15px; position: absolute; bottom: 0; left: 50%; margin-left: -15px}
-.content_wrap .icon_wheel > i {display: block; width: 10px; height: 6px; background: url('../images/arrow_wheel.gif')no-repeat 0 0; margin: 0 auto; animation: blank 0.5s infinite}
+.content_wrap .icon_wheel {position: absolute; bottom: 0; left: 50%; margin-left: -15px; padding-top: 15px; width: 28px; height: 27px; border:1px solid white; border-radius: 20px;}
+.content_wrap .icon_wheel > i {display: block; margin: 0 auto; width: 10px; height: 6px; background: url('../images/arrow_wheel.gif')no-repeat 0 0; animation: blank 0.5s infinite}
 .content_wrap .icon_wheel > i:first-child {animation: blank 1s infinite}
-
-@keyframes blank {
-	from {opacity: 0.2;}
-	to {opacity: 1;}
-}
 
 section .content_wrap .content_bg {position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
 .pleasure .content_wrap .content_bg {background: url('../images/section_01_type2.jpg')no-repeat center 0; background-size: cover;}
@@ -266,20 +217,26 @@ section .content_wrap .content_bg {position: absolute; top: 0; left: 0; width: 1
 .about63 .content_wrap .content_bg {background: url('../images/section_03_type2.jpg')no-repeat center 0;background-size: cover;}
 .festival .content_wrap .content_bg {background: url('../images/section_04_type2.jpg')no-repeat center 0;background-size: cover;}
 
+@keyframes h2 {from {opacity: 0;}to {opacity: 1;}}
+@keyframes h_line {from{opacity: 0; left: 50%} to{opacity: 1; left: 0; right: 0; width: 100%}}
+@keyframes title {from{opacity: 0; transform: translateY(-10px)} to{opacity: 1; transform: translateY(0px)}}
+@keyframes comment {from{opacity: 0; transform: translateY(-10px)} to{opacity: 1; transform: translateY(0)}}
+@keyframes go_btn {from{opacity: 0;} to{opacity: 1;}}
+@keyframes btn_full {from{width: 0;} 50%{width: 100%} to{width: 0}}
+@keyframes blank {from{opacity: 0.2;} to{opacity: 1;}}
 
 
 
 /* 슬라이드 버튼 */
-main .sequence {width: 30px; height: 116px; border-radius: 20px; position: fixed; right: 50px; top: 50%; margin-top: -58px; background-color: rgba(0,0,0,0.3); z-index: 100;}
-
-main .sequence a {display: block; width: 6px; height: 6px; border-radius: 50%; background-color: white; margin: 19px auto; transition: all 0.3s ease }
+main .sequence {position: fixed; right: 50px; top: 50%; z-index: 100; margin-top: -58px; width: 30px; height: 116px; border-radius: 20px; background-color: rgba(0,0,0,0.3);}
+main .sequence a {display: block; margin: 19px auto; width: 6px; height: 6px; border-radius: 50%; background-color: white; transition: all 0.3s ease }
 main .sequence a.on {background-color: #f37321; transform: scale(1.5);}
 
 
 /* footer */
-.address_wrap {width: 683px; float: left;}
+.address_wrap {float: left; width: 683px;}
 .address_wrap * {display: inline-block;}
-.address_wrap > .ceo_info { padding: 0 8px; border-left: 1px solid #d6d6d6; border-right: 1px solid #d6d6d6; margin: 0 6px; }
+.address_wrap > .ceo_info {margin: 0 6px; padding: 0 8px; border-left: 1px solid #d6d6d6; border-right: 1px solid #d6d6d6;}
 
 .company_info {float: right; width: 381px;}
 .company_info a {font-size: 12px;}
@@ -288,22 +245,22 @@ main .sequence a.on {background-color: #f37321; transform: scale(1.5);}
 .company_info .footer_sub li + li {border-left: 1px solid #d6d6d6;}
 
 .company_info .goto_family {float: right; margin-top: -4px;}
-.company_info .goto_family .open_btn {border:1px solid #d6d6d6; display: inline-block; width: 123px; height: 28px; padding-left: 15px; font-size: 12px; line-height: 27px; position: relative;}
+.company_info .goto_family .open_btn {display: inline-block; position: relative; padding-left: 15px; width: 123px; height: 28px; font-size: 12px; line-height: 27px; border:1px solid #d6d6d6; }
 .company_info .goto_family .open_btn::after {content: ''; position: absolute; top: 11px; right: 13px; width: 7px; height: 3.5px; background: url('../images/footer_bullet.gif')no-repeat 0 0;}
 
-.company_info .goto_family ul {width: 238px; height: 103px; background-color: white; border:1px solid #d6d6d6; padding: 20px 10px; position: absolute; bottom: 28px; right: 50px; opacity: 0; z-index: 500; }
-.company_info .goto_family ul.on {opacity: 1;}
+.company_info .goto_family ul {position: absolute; bottom: 28px; right: 50px; z-index: 1; padding: 20px 10px; width: 238px; height: 103px; background-color: white; border:1px solid #d6d6d6; opacity: 0;}
+.company_info .goto_family ul.on {opacity: 1; z-index: 10;}
 .company_info .goto_family ul li {display: inline-block; width: 113px;}
 .company_info .goto_family ul li + li {margin-top: 5px;}
 .company_info .goto_family ul li a {font-size: 13px;}
-/*-------------------------------------------------------------------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------------------------------------------------------------------*/
 
 
+/*----------------------------------media---------------------------------------------*/
+/*----------------------------------media---------------------------------------------*/
+/*----------------------------------media---------------------------------------------*/
 
 @media screen and (max-height:769px){
-	.gnb .gnb_container .gnb_content nav {height: 222px; top: 50%; margin-top: -154px}
-	.gnb .gnb_container .gnb_content nav ul li + li {margin-top: 38px;}
-	.gnb .gnb_container .gnb_content .utill .family ul > li + li {margin-top: 20px}
+.gnb_container .gnb_content nav {top: 50%; margin-top: -154px; height: 222px;}
+.gnb_container .gnb_content nav ul li + li {margin-top: 38px;}
+.gnb_container .gnb_content .utill .family ul > li + li {margin-top: 20px;}
 }

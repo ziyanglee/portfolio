@@ -47,62 +47,62 @@ function csActive(){
         ev.preventDefault();
 
         attachActive(ev.target.parentNode);
-    })
+    });
 }
 
 
-// nav 하단메뉴 열리기 
+//nav 하단메뉴 열리기 
 function navOpen(){
-    
     var headerWrap = document.querySelector(".header_wrap");
-    var navUl = headerWrap.querySelector("nav > ul");
-    var navLi = navUl.querySelectorAll("ul > li");
-    var currentWidth = window.innerWidth;
+    var navUl = document.querySelector("nav > ul");
+    var navLi = navUl.querySelectorAll("nav > ul > li");
+    var gnbMenu = headerWrap.querySelector(".gnb");
 
-    navUl.addEventListener("mouseover",attachOn);
+    navMenu();
 
-    navUl.addEventListener("mouseleave",detachOn);
+    var resizeWork;
 
-    window.addEventListener("resize",work);
+    window.addEventListener("resize",function(){
+        clearTimeout(resizeWork);
+        resizeWork = this.setTimeout(navMenu,150);
+    });
 
-    attachOn();
-    detachOn();
 
-    if ( currentWidth < 768 ){
-        work();
-    };
+    function navMenu(){ 
+        var currentWidth = window.innerWidth;
+        if(currentWidth < 768){
+            navUl.removeEventListener("mouseover",attachOn); 
+            navUl.removeEventListener("mouseleave",detachOn); 
 
-    function work(){
-
-        var width = window.innerWidth;
-
-        if ( width < 768 ){
-            navUl.removeEventListener("mouseover",attachOn);
-            navUl.removeEventListener("mouseleave",detachOn);
+            // 패드 사이즈일때 상세메뉴 열리기 
+            for(let i = 0; i < navLi.length; i++){
+                navLi[i].addEventListener("click",function(ev){
+                    ev.preventDefault();
+                    
+                    navLi.forEach(function(liElem){
+                        
+                        if(liElem.classList.contains("active")){
+                            liElem.classList.remove("active");
+                        } 
+                        navLi[i].classList.add("active");
+                    });
+                });
+            }
         }
-        if ( width > 768) {
-            navUl.addEventListener("mouseover",attachOn);
+
+        if(currentWidth > 768){
+            navUl.addEventListener("mouseover",attachOn); 
             navUl.addEventListener("mouseleave",detachOn);
+            gnbMenu.classList.remove("on");
         }
     }
 
-
     function attachOn(){
-        headerWrap.classList.add("on")
-    };
-
+        headerWrap.classList.add("on");
+    }
 
     function detachOn(){
-        headerWrap.classList.remove("on")
-    };
-
-
-    for(let i = 0; i < navLi.length; i++){
-
-        navLi[i].addEventListener("click",function(ev){
-            ev.preventDefault();
-            attachActive(ev.target.parentNode);
-        });
+        headerWrap.classList.remove("on");
     }
 }
 
@@ -115,6 +115,9 @@ function searchOpen(){
 
     searchDiv.addEventListener("click",function(ev){
         ev.preventDefault();
+        if(ev.target.tagName !== "A"){
+            return;
+        }
         attachOn(ev.target.parentNode);
     });
 }
@@ -164,15 +167,15 @@ function scrollEvent(){
     var circle = document.querySelectorAll(".circle_wrap i");
     var gotoBtn = document.querySelector(".goto_top");
 
-    document.addEventListener("scroll",work);
 
-    function work(){
 
+    document.addEventListener("scroll", function(){
         var target = document.querySelector("html");
         var currentSpot = target.scrollTop;
 
-        movingCircle();
-        gotoTop();
+        movingCircle(); 
+        gotoTop(); 
+
 
         // 컨텐츠안에 움직이는 원형배경들 
         function movingCircle(){
@@ -192,6 +195,7 @@ function scrollEvent(){
             }
         }
 
+
         // 맨 위로 
         function gotoTop(){
 
@@ -202,19 +206,18 @@ function scrollEvent(){
                 gotoBtn.style.opacity = "1";
                 gotoBtn.style.bottom = "50px";
             }
-            if (currentSpot > 3178){
+            if (currentSpot > 4000){
                 gotoBtn.style.bottom = "290px";
             }
             if (currentSpot == 0){
                 gotoBtn.style.opacity = "0";
             }
         }
-    }
+    });
 }
 
 
 // 계열사버튼 클래스 on,off 주기
-
 function familyOn(){
 
     var famElem = document.querySelector("footer .link .family > a");

@@ -9,141 +9,112 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     <script>
-    // $(document).ready(function(){
-    //   $('.slider').bxSlider({
-    //   	minSlides:5,
-    //   	maxSlides:5,
-    //   	moveSlides:5,
-    //   	slideWidth:260,
-    //   	slideMargin:87,
-    //   });
-    //   $('.press_slider').bxSlider({
-    //   	minSlides:4,
-    //   	maxSlides:4,
-    //   	moveSlides:4,
-    //   	slideWidth:230,
-    //   	slideMargin:100,
-    //   })
-    // });
+   	// 슬라이더 부분 
+	$(document).ready(function(){
 
+	  // 슬라이더 기본형
+	  var slider = $('.slider').bxSlider({
+	      minSlides:5,
+	      maxSlides:5,
+	      moveSlides:5,
+	      slideWidth:260,
+	      slideMargin:87,
+	      hideControlOnEnd: true,
+	      infiniteLoop: false
+	  });
 
-$(document).ready(function(){
-  var windowWidth = window.innerWidth;
+	  var pressSlider = $('.press_slider').bxSlider({
+	      minSlides:4,
+	      maxSlides:4,
+	      moveSlides:4,
+	      slideWidth:230,
+	      slideMargin:100,
+	      hideControlOnEnd: true,
+	      infiniteLoop: false
+	  });
 
-  var slider = $('.slider').bxSlider({
-      minSlides:5,
-      maxSlides:5,
-      moveSlides:5,
-      slideWidth:260,
-      slideMargin:87,
-      hideControlOnEnd: true,
-      infiniteLoop: false
-  });
+ 	  var sizeWork;
 
-  var pressSlider = $('.press_slider').bxSlider({
-      minSlides:4,
-      maxSlides:4,
-      moveSlides:4,
-      slideWidth:230,
-      slideMargin:100,
-      hideControlOnEnd: true,
-      infiniteLoop: false
-  });
+		slideNum();
 
+	  window.addEventListener("resize",function(){
 
-  if(windowWidth <= 1400){
-    slideNum();
-  }
+	  	clearTimeout(sizeWork);
+	 
+	  	sizeWork = setTimeout(slideNum, 150);
 
-  if (windowWidth <= 991){
-    slideNum();
-  }
+	  });
+	 
+	  function slideNum(){
+	    var width = window.innerWidth;
 
-  if (windowWidth <= 575){
-    slideNum();
-  }
-
- 
-  window.addEventListener("resize",slideNum);
- 
-  function slideNum(){
-    var width = window.innerWidth;
-
-    if (width > 1400 ){ 
-      slider.reloadSlider({
-       minSlides:5,
-       maxSlides:5,
-       moveSlides:5,
-       slideWidth:260,
-       slideMargin:87,
-       hideControlOnEnd: true,
-       infiniteLoop:false
-     });
-      pressSlider.reloadSlider({
-       minSlides:4,
-       maxSlides:4,
-       moveSlides:4,
-       slideWidth:250,
-       slideMargin:100,
-       hideControlOnEnd: true,
-       infiniteLoop:false
-      })
-    }
- 
-    if (width <= 1400){
-       slider.reloadSlider({
-         minSlides:3,
-         maxSlides:3,
-         slideWidth:300,
-         slideMargin:50,
-         hideControlOnEnd:true,
-         infiniteLoop:false
-       });
-     } 
-     
-    if (width <= 991){
-      pressSlider.reloadSlider({
-        minSlides:3,
-        maxSlides:3,
-        moveSlides:3,
-        slideWidth:300,
-        slideMargin:87,
-        hideControlOnEnd:true,
-        infiniteLoop:false
-      })
-    }; 
-    if (width <= 575){
-       slider.reloadSlider({
-         minSlides:1,
-         maxSlides:1,
-         slideWidth:300,
-         slideMargin:10,
-         stopAutoOnClick:true,
-         hideControlOnEnd:true,
-         infiniteLoop: false
-       })
-       pressSlider.reloadSlider({
-         minSlides:3,
-         maxSlides:3,
-         moveSlides:1,
-         slideWidth:500,
-         slideMargin:20,
-         hideControlOnEnd:true,
-         infiniteLoop:false
-       });
-     }
-    
-  }; // slideNum
-});
- 
- 
-
-
-
-
-
-    </script>
-    <script src="js/ui.js"></script>
+	    if (width > 1400 ){ 
+	      slider.reloadSlider({
+	       minSlides:5,
+	       maxSlides:5,
+	       moveSlides:5,
+	       slideWidth:260,
+	       slideMargin:87,
+	       hideControlOnEnd: true,
+	       infiniteLoop:false
+	     });
+	      pressSlider.reloadSlider({
+	       minSlides:4,
+	       maxSlides:4,
+	       moveSlides:4,
+	       slideWidth:250,
+	       slideMargin:100,
+	       hideControlOnEnd: true,
+	       infiniteLoop:false
+	      });
+	    }
+	 
+	    if (width <= 1400){
+	       slider.reloadSlider({
+	         minSlides:3,
+	         maxSlides:3,
+	         slideWidth:300,
+	         slideMargin:50,
+	         hideControlOnEnd:true,
+	         infiniteLoop:false
+	       });
+	     } 
+	     
+	    if (width <= 991){
+	      pressSlider.reloadSlider({
+	        minSlides:3,
+	        maxSlides:3,
+	        moveSlides:3,
+	        slideWidth:300,
+	        slideMargin:87,
+	        hideControlOnEnd:true,
+	        infiniteLoop:false
+	      })
+	    }; 
+	    if (width <= 575){
+	       slider.reloadSlider({
+	         minSlides:1,
+	         maxSlides:1,
+	         slideWidth:300,
+	         slideMargin:10,
+	         stopAutoOnClick:true,
+	         hideControlOnEnd:true,
+	         infiniteLoop: false
+	       })
+	       pressSlider.reloadSlider({
+	         minSlides:3,
+	         maxSlides:3,
+	         moveSlides:1,
+	         slideWidth:500,
+	         slideMargin:20,
+	         hideControlOnEnd:true,
+	         infiniteLoop:false
+	       });
+	     }
+	  }
+	});
+</script>
+<script src="js/ui.js"></script>
 </head>
 <body>
 	<!-- wrap 시작  -->
