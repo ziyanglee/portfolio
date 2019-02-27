@@ -21,7 +21,9 @@ $(document).ready(function(){
         onSliderLoad: slideColor,
         onSlideBefore: slideColor,
     });
+
     createPager();
+
     function createPager(){
         var controls = document.querySelector(".bx-controls");
         var pager = document.querySelector(".bx-pager");
@@ -34,7 +36,7 @@ $(document).ready(function(){
     
         pagerWrap.classList.add("pager_wrap");
     
-    }; // createPager
+    }
 
     function slideColor(){
         var slideLi = document.querySelectorAll(".slider > li");
@@ -48,12 +50,8 @@ $(document).ready(function(){
         } else {
           	 bxWrapper.classList.remove("white");
         }
-
     }
-
-})
-
-     
+});
   </script>
   <script src="js/ui.js"></script>
 </head>
@@ -896,12 +894,12 @@ function tabBrand(){
 		brandList(tabData); 
 	};
 	
-
+	// 해당 제휴브랜드 부분
 	function brandList(tabData){
 		var tabA = document.querySelectorAll(".brand_tab > li a");
 		var brandlistDiv = document.querySelector(".brand_list");
 		var brandItemLi = document.querySelectorAll(".brand_list > li");
-		var brandItemA = document.querySelectorAll(".brand_list > li > a")
+		var brandItemA = document.querySelectorAll(".brand_list > li > a");
 
 		for(let i = 0; i < tabA.length; i++){
 			tabA[i].onclick = function(ev){
@@ -910,7 +908,7 @@ function tabBrand(){
 				tabA.forEach(function(item){
 					item.classList.remove("on");
 					ev.target.classList.add("on");
-				})
+				});
 				
 				var currentLi = document.querySelectorAll(".brand_list > li");
 				
@@ -923,9 +921,9 @@ function tabBrand(){
 				// 전체를 눌렀을때 브랜드 전체 보이기 
 				if(i == 0){
 					brandItemLi.forEach(function(item, index){
-						brandlistDiv.appendChild(item)
+						brandlistDiv.appendChild(item);
 					});
-				};
+				}
 
 				// brand_list 태그 추가 
 				for(let j = 0; j < tabData.brandItems[i].length; j++){
@@ -934,7 +932,7 @@ function tabBrand(){
 
 				var liElem = document.createElement("li");
 				brandlistDiv.appendChild(liElem);
-				liElem.classList.add("brand_item")
+				liElem.classList.add("brand_item");
 
 				var aElem = document.createElement("a");
 				aElem.setAttribute("href", "");
@@ -945,23 +943,22 @@ function tabBrand(){
 				aElem.appendChild(imgElem);
 
 				var spanElem = document.createElement("span");
-				spanElem.innerHTML = "<em>"+ item.detailInfo +"</em><strong>"+ item.detailSum +"</strong>"
+				spanElem.innerHTML = "<em>"+ item.detailInfo +"</em><strong>"+ item.detailSum +"</strong>";
 				liElem.appendChild(spanElem);
 
-				}; 
+				}
+
 				brandHover();
-			};
-		};	
-		
-	} // brandList
-	
-} //tabBrand 
+			}
+		}
+	} 
+}
 
 
-//브랜드 디데일열기
+//브랜드 상세정보 열기
 function brandHover(){
 	
-	var brandItemA = document.querySelectorAll(".brand_list > li > a")
+	var brandItemA = document.querySelectorAll(".brand_list > li > a");
 
 	brandItemA.forEach(function(item){
 		item.addEventListener("mouseenter", function(ev){
@@ -971,7 +968,7 @@ function brandHover(){
 			ev.target.nextElementSibling.classList.remove("on");
 		});
 	});
-};
+}
 	
 </script>
 </body>
