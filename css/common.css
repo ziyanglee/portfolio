@@ -96,8 +96,8 @@ section h2:after {content: ''; position: absolute; top: 0; left: 10px; right: 10
 
 /* footer */
 footer h3 {font-size: 20px; margin-bottom: 45px}
-footer a {display: block; margin: 0 auto; width: 200px; background: url('../images/icon_bg.png')no-repeat 0 -5px;}
-footer .email_addr{padding-left: 20px; width: 220px; background-position: 0 -37px;}
+footer a {display: block; margin: 0 auto; width: 200px;}
+footer .email_addr{padding-left: 20px; width: 220px;}
 footer address {margin-top: 20px; font-size: 20px; line-height: 32px}
 footer address:hover {color: #FF653F;}
 footer p {margin-top: 50px; font-size: 28px; font-weight: bold;}
