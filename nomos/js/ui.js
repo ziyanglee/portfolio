@@ -1,44 +1,48 @@
 window.onload = function(){
 
-var htmlElem = document.querySelector("html");
-var headerTab = htmlElem.querySelector("header");
-var navTab = htmlElem.querySelector(".nav_tab");
+const htmlElem = document.querySelector("html");
+const headerTab = htmlElem.querySelector("header");
+const navTab = htmlElem.querySelector(".nav_tab");
 
 headerMove();
 subScribe();
 
 
-// 스크롤 여부에 따라 header 노출여부
+//휠 방향여부에 따라 header 노출여부
 function headerMove(){
 
   var wheelEvnt;
 
-  document.addEventListener("wheel", function(event){
-   
+  window.addEventListener("wheel", wheelCheck)
+
+  function wheelCheck(ev){
+
     clearTimeout(wheelEvnt);
-    wheelEvnt = setTimeout(scrollWork(event), 150);
-  });
 
-  function scrollWork(ev){
-    var value = ev.deltaY;        
-    var topValue = htmlElem.scrollTop;
-    console.log(ev);
-    
-    
-    //스크롤 내렸을 때
-    if(value > 0){
-      navTab.classList.remove("on");
-      headerTab.classList.remove("on");
-    
-    //스크롤 올렸을 때
-    } else {
-      navTab.classList.add("on");
-      headerTab.classList.add("on");
-    }
+    wheelEvnt = setTimeout(scrollWork, 100);
 
-    if(topValue < 400){
-  
-      headerTab.classList.remove("on");
+
+    //휠 방향 파악하기
+    function scrollWork(){
+      var value = ev.deltaY;        
+      var topValue = htmlElem.scrollTop;
+      
+      
+      //휠 내렸을 때
+      if(value > 0){
+        navTab.classList.remove("on");
+        headerTab.classList.remove("on");
+      
+      //휠 올렸을 때
+      } else {
+        navTab.classList.add("on");
+        headerTab.classList.add("on");
+      }
+
+      if(topValue < 400){
+    
+        headerTab.classList.remove("on");
+      }
     }
   }
 }
@@ -54,8 +58,6 @@ function subScribe(){
   inputEmail.addEventListener("click",function(){
     persnInfo.classList.add("active");
   });
-
 }
 
-
-}
+} // end
