@@ -98,6 +98,7 @@ section h2:after {content: ''; position: absolute; top: 0; left: 10px; right: 10
 /* footer */
 footer h3 {font-size: 20px; margin-bottom: 45px}
 footer a {display: block; margin: 0 auto; width: 200px;}
+
 footer a.email_addr {width: 230px;}
 footer address {margin-top: 20px;font-family: Montserrat; font-size: 20px; font-weight: 500; line-height: 32px}
 footer address:hover {color: #de0092;}
