@@ -79,7 +79,7 @@ section h2:after {content: ''; position: absolute; top: 0; left: 10px; right: 10
 .cover_letter h2 {width: 100px;}
 .cover_letter h3 {margin-top: 50px; font-size: 30px; line-height: 55px}
 
-.cover_letter {margin: 0 auto; width: 1000px;} 
+.cover_letter {margin: 0 auto;} 
 .cover_letter div {margin-top: 50px; font-weight: 600;}
 .cover_letter div p + p {margin-top: 23px}
 
