@@ -1,0 +1,392 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic|Noto+Sans+KR:400,500|Nunito');
+
+html {
+	font-size:12px;
+}
+body {
+	position: relative;
+	font-family: 'Noto Sans KR', sans-serif;
+	line-height:1.4;
+	color: rgb(17,17,17);
+	margin:0;
+	padding:0;
+	font-weight: 500;
+	background-color: black;
+	letter-spacing: -0.25px;
+}
+br	{
+	letter-spacing: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size:1em;
+	font-weight: 300;
+
+}
+h1, h2, h3, h4, h5, h6, div, p, dl, dt, dd, ul, ol, li, form, fieldset, blockquote, address, table, thead, tbody, tfoot, tr, td, caption {
+	margin:0;
+	padding:0;
+}
+ul, ol {
+	list-style:none;
+}
+img {
+	border:0;
+	vertical-align: top;
+}
+
+a:link, a:visited {
+	color: rgb(17,17,17);
+	text-decoration:none;
+}
+a:hover {
+	color: rgb(17,17,17);
+	text-decoration:none;
+}
+
+select, input, textarea {
+	font:normal 1em 'Montserrat', sans-serif; 
+	color: rgb(17,17,17);
+	border:none;
+	vertical-align:middle;
+}
+strong {font-weight: normal}
+
+em {font-style: normal;}
+
+address {font-style: normal;}
+
+i {font-style: normal;}
+
+.check {position: absolute; top: 2700px; left: 0; opacity: 0.3; display: block; }
+
+
+/* layout */
+.wrap {position: absolute; top: 0; left: 0; right: 0; background-color: pink}
+.wrap header {background-color: rgba(0,0,0,0.5); position: fixed; top: 0; right: 0; left: 0; z-index: 900}
+.wrap main {}
+.wrap main section {display: none;}
+.wrap footer {display: none; border:1px solid black;}
+/**/
+
+/* 전체 공통 사항 */
+.haze {visibility: hidden; width: 0; height: 0;}
+a.btn {padding: 13px 20px; border-radius: 100px; background-color: #00bff0; color: white}
+section .teaser {padding-left: 16px; margin-bottom: 35px}
+section .teaser > h3 {position: relative; font-size: 24px; color: #00bff0; letter-spacing: -1.5px;}
+section .teaser > h3:after {content: ''; position: absolute; top: 5px; left: -20px; bottom: 4px; width: 12px; background-color: #00bff0}
+section .teaser > em {font-size: 13px; color: #555; letter-spacing: -0.5px}
+
+
+
+
+
+
+
+
+/* header */
+
+/* fix 클래스네임 추가로 header 사이즈변경 */
+body.fix .header_wrap .gnb {top: 0; padding: 10px 24px 10px 10px; background-color: rgba(13,31,53,0.9)}
+body.fix .header_wrap .sns_tab {visibility: hidden; opacity: 0;}
+body.fix .header_wrap .gnb h1 a {padding-top: 3px; width: 125px; height: 23px}
+body.fix .header_wrap .gnb ul > li > a {padding: 4px 10px;}
+
+
+.header_wrap .gnb {position: absolute; top: 43px; left: 0; right: 0; padding: 19px 24px 19px 20px; letter-spacing: -0.5px; transition: all 0.2s ease;}
+.header_wrap .gnb h1 a {float: left; padding-top: 6px; width: 150px; height: 28px}
+.header_wrap .gnb h1 a img {width:100%}
+
+.header_wrap .gnb ul {float: right; font-size: 0;}
+.header_wrap .gnb ul > li {display: inline-block;}
+.header_wrap .gnb ul > li + li {margin-left: 4px;}
+.header_wrap .gnb ul > li > a {display: inline-block; padding: 8px 20px; border:1px solid transparent; border-radius: 100px; font-size: 13px; line-height: 20px; font-weight: 500; color: white; transition: all 0.1s ease 0.1s;}
+.header_wrap .gnb ul > li > a:hover {border-color: white}
+.header_wrap .gnb ul > li:last-child a {background-color: #00bff0}
+.header_wrap .gnb ul > li:last-child a::before {background-color: #00bff0}
+
+.header_wrap .sns_tab {position: absolute; top: 0; left: 0; right: 0; padding: 0 10px 0 20px; height: 40px; background: rgba(0,0,0,0.2); color: white;}
+.header_wrap .sns_tab span {float: left; padding: 11px 0; letter-spacing: -1px}
+.header_wrap .sns_tab ul {float: right; font-size: 0;}
+.header_wrap .sns_tab ul > li {display: inline-block;}
+.header_wrap .sns_tab ul > li > a {display: inline-block; padding: 12px 10px 10px 14px; font-size: 12px; letter-spacing: -1px; color: white;}
+.header_wrap .sns_tab ul > li > a:hover {background-color: rgba(255,255,255,0.1);}
+.header_wrap .sns_tab ul > li > a > i {font-size: 16px; padding-right: 7px; vertical-align: bottom;}
+.header_wrap .sns_tab ul > li > a > img {width: 18px; height: 18px; margin-right: 4px}
+.header_wrap .sns_tab ul > li:first-child > a > i {padding: 0 5px}
+.header_wrap .sns_tab ul > li:first-child > a > img {margin-right: -2px; width: auto; height: 15px; vertical-align: sub;}
+.header_wrap .sns_tab ul > li.facebook > a {padding: 12px 7px 10px 16px}
+.header_wrap .sns_tab ul > li.facebook > a > i.fa-facebook-f {padding-right: 11px;}
+
+.mobile_btn_wrap{display: none;}
+
+
+/* main */
+
+main section.slider {overflow: hidden; display: block; position: absolute; top: 0; left: 0; right: 0; height: 500px; 
+	background: rgba(0,0,0,0.35) url('../images/bg_slider_1.jpg') no-repeat 50% 100% fixed;
+	background-blend-mode: darken; 
+	background-size: cover; 
+	transition: background-image 1.2s ease-in-out;
+
+}
+
+	
+.slider .slider_inner {position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+	background: rgba(0,0,0,0.35) url('../images/bg_slider_1.jpg') no-repeat 50% 100% fixed;
+	background-blend-mode: darken; 
+	background-size: cover;
+	transform: translateX(100%);
+	transition: transform 0.7s ease-in-out;
+}
+
+
+.slider .slider_teaser {position: absolute; bottom: 64px; left: 0; right: 0; color: white; font-size: 0;}
+.slider .slider_teaser .teaser_txt {margin: 0 auto; width: 1170px;}
+.slider .slider_teaser .teaser_txt em {display: block; font-size: 15px; font-weight: 300;}
+.slider .slider_teaser .teaser_txt span {display: block; margin-top: 4px}
+.slider .slider_teaser .teaser_txt span img {display: inline-block; height: 43px;}
+.slider .slider_teaser .teaser_txt span strong {display: inline-block; font-size: 32px; font-weight: 500}
+.slider .slider_teaser .teaser_txt .slide_btn {display: inline-block; margin-top: 50px; padding: 13px 20px; border:2px solid white; border-radius: 100px; background-color: transparent; color: white; font-size: 14px; font-weight: 400;}
+.slider .slider_teaser .teaser_txt .slide_btn:hover {background-color: #0E2036}
+.slider .slider_teaser .teaser_txt .btn_membership {margin-left: 30px; border-color: transparent; background-color: #00bff0}
+.slider .slider_teaser .teaser_txt .slide_btn i {margin-right: 5px; font-size: 19px; vertical-align: sub}
+
+
+main section.summary {display: block; margin: 502px auto 0px; padding-top: 43px; width: 1140px;}
+main section.summary:after {content: ''; display: block; clear: both}
+
+/* summary 공통 */
+.summary .summary_txt {float: left; font-size: 14px;}
+.summary .summary_txt em {display: block; color: #777;}
+.summary .summary_txt strong {display: block; margin-top: 3px; font-size: 14px;}
+.summary .summary_contents {float: right;}
+/**/
+
+.summary .summary_info {overflow: hidden;}
+.summary .summary_info .summary_contents li {display: inline-block; width: 265px; margin-left: 25px;}
+.summary .summary_info .summary_contents li img {padding-top: 13px; margin-right: 30px; height: 39px;}
+.summary .summary_info .summary_contents li span {display: inline-block;}
+.summary .summary_info .summary_contents em {display: block; font-size: 12px; color: #00bff0}
+.summary .summary_info .summary_contents strong {display: block;font-family: 'Nunito';  font-size: 30px; font-weight: 500; letter-spacing: 1px}
+
+.summary .summary_list {clear: both; margin-top: 69px}
+.summary .summary_list .summary_txt em {line-height: 21px;}
+.summary .summary_list .summary_contents {padding-top: 4px; width: 850px; font-size: 0;}
+.summary .summary_list .summary_contents li {display: inline-block;margin-bottom: 45px; width: 82px; height: 50px; text-align: center;}
+.summary .summary_list .summary_contents li img {height: 20px}
+.summary .summary_list .summary_contents li em {display: block; margin-top: 9px; font-size: 12px; color: #888}
+.summary .summary_list .summary_contents li:last-child {width: auto; height: auto; text-align: left;}
+
+main section.membership {display: block; margin: 0 auto; padding-top: 20px; width: 1176px; font-size: 0}
+.membership > ul > li {display: inline-block; margin: 0 15px 48px 16px; animation: position 1s ease}
+.membership > ul > li > span {display: block}
+.membership > ul > li > span > strong {display: block; font-size: 20px; letter-spacing: -1px}
+.membership > ul > li > span > em {display: block; font-size: 14px; letter-spacing: -0.5px; line-height: 28px}
+.membership > ul > li img {margin-top: 6px; width: 555px; border-radius: 8px}
+
+
+main section.join {display: block; padding: 78px 0; text-align: center; font-size: 24px; color: #555; background-color: lime;}
+.join p {font-weight: 100; line-height: 46px}
+.join strong {font-weight: 600}
+.join .btn_join {display: inline-block; margin-top: 58px; background-color: #00bff0; font-size: 14px; font-weight: 100; letter-spacing: -0.5px}
+.join .btn_join > i {margin-right: 8px; font-size: 18px; vertical-align: bottom}
+
+
+main section.store {display: block; margin: 0 auto; width: 1176px; background-color: tomato}
+main section.store::after {content: ''; display: block; clear: both;}
+.store .store_list {background-color: turquoise;}
+.store .store_list > li {float: left; width: 25%;}
+.store .store_list > li.col_span {width: 50%}
+.store .store_list > li > a {overflow: hidden; display: block; position: relative; padding: 4px 2px; height: 190px; border-radius: 3px; color: white}
+.store .store_list > li > a:hover > span {opacity: 1; background-color: #00bff0}
+.store .store_list > li > a > img {width: 100%;}
+.store .store_list > li > a > span {opacity: 0.8; position: absolute; top: 30%; left: 0; right: 0; bottom: 0; text-align: center}
+.store .store_list > li > a > span * {display: block}
+.store .store_list > li > a > span strong {font-size: 20px}
+.store .store_list > li > a > span b {margin-top: 40px; font-family: 'Nunito'; font-size: 13px}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes position {from{transform: translateY(50px)} to{transform: translateY(0)}}
+/*-----------------media--------------------------- media --------------------------*/
+/*-----------------media--------------------------- media --------------------------*/
+@media screen and (max-width: 1199px){
+.slider .slider_teaser .teaser_txt {width: 1138px;}
+
+main section.membership {width: 980px}
+.membership > ul > li img {width: 455px;}
+
+main section.summary {width: 940px;}
+.summary .summary_info .summary_contents {clear: both; margin-top: 65px}
+.summary .summary_info .summary_contents li {margin-left: 0px; margin-right: 56px;}
+.summary .summary_info .summary_contents li:last-child {margin-right: 0}
+.summary .summary_list .summary_contents {width: 698px;}
+
+
+main section.store {width: 970px}
+
+
+
+
+
+}
+
+@media screen and (max-width: 1170px){
+.slider .slider_teaser .teaser_txt {width: 970px;}
+
+}
+@media screen and (max-width: 1000px){
+.header_wrap .gnb ul > li > a {padding: 8px 10px;}
+}
+
+
+@media screen and (max-width: 991px){
+.header_wrap .gnb ul > li > a {padding: 8px 5px;}
+.slider .slider_teaser .teaser_txt {width: 920px;}
+
+main section.summary {width: 720px;}
+.summary .summary_info .summary_contents {margin-top: -40px}
+.summary .summary_info .summary_contents li:first-child {margin-left: 374px; margin-right: 0;}
+.summary .summary_info .summary_contents li:nth-child(2) {margin-top: 67px; margin-right: 108px;}
+.summary .summary_list .summary_contents {float: none; clear: both; padding-top: 46px;}
+
+main section.membership {width: 752px}
+.membership > ul > li {margin: 0 10px 48px 16px}
+.membership > ul > li > span {width: 350px}
+.membership > ul > li img {width: 345px;}
+.membership > ul > li > span > em {line-height: 24px}
+
+
+main section.store {width: 750px}
+.store .store_list > li {width: 50%}
+.store .store_list > li.col_span {width: 100%}
+
+
+
+}
+@media screen and (max-width: 767px){
+
+body.active {overflow: hidden;}
+body.active header {bottom: 0;}
+body.active .header_wrap .gnb ul {right: 0}
+body.active .header_wrap .sns_tab {right: 0;}
+body.active .header_wrap .gnb {top:0; height: 42px; background-color: #00bff0}
+body.active .header_wrap .gnb h1 a {left: -50%;}
+
+body.fix .header_wrap .gnb {height: 30px;}
+body.fix .header_wrap .gnb h1 a {top: 10px; left: 10px;}
+body.fix .mobile_btn_wrap .btn_open {top: 13px; right: 13px;}
+body.fix .mobile_btn_wrap .btn_open b {opacity: 0;}
+body.fix .mobile_btn_wrap .btn_login {top: 11px; right: 68px;}
+
+.header_wrap .gnb {top:0; height: 42px; background-color: rgba(0,191,240,0.1); transition: background 0.3s ease-out}
+.header_wrap .gnb h1 a {position: absolute; top: 28px; left: 15px; padding-top: 0; transition: left 0.2s ease}
+
+.header_wrap .gnb ul {position: absolute; top: 0; right: -100%; padding: 7px 10px 10px 10px; width: 250px; background-color: #0d1f35;}
+.header_wrap .gnb ul > li {display: block;}
+.header_wrap .gnb ul > li + li {margin-left: 0;}
+.header_wrap .gnb ul > li > a {display: block; padding: 15px; border: none; border-bottom: 1px solid #253B57; border-radius: 0; letter-spacing: -0.5px; transition: none;}
+.header_wrap .gnb ul > li > a:hover {color: #00bff0}
+.header_wrap .gnb ul > li:last-child a {background-color: rgba(200,200,200,0.1); color: #00bff0}
+.header_wrap .gnb ul > li:last-child a:hover {background-color: white}
+
+.header_wrap .sns_tab {top: 364px; left: auto; right: -100%; bottom: 0; padding: 10px; width: 250px; height: auto; background-color: #0d1f35;}
+.header_wrap .sns_tab span {display: none;}
+.header_wrap .sns_tab ul {float: none}
+.header_wrap .sns_tab ul > li {display: block; margin-bottom: 10px; text-align: center;}
+.header_wrap .sns_tab ul > li > a {display: block; position: relative; border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; line-height: 17px; letter-spacing: -0.25px; transition: border 0.2s ease;}
+.header_wrap .sns_tab ul > li > a:hover {background-color: transparent; border: 1px solid rgba(255,255,255,0.2); color: #00bff0;}
+.header_wrap .sns_tab ul > li > a > i {font-size: 12px; vertical-align: unset;}
+.header_wrap .sns_tab ul > li > a > img {margin-right: 57px; width: 16px; height: 15px; vertical-align: sub;}
+.header_wrap .sns_tab ul > li:first-child > a > img {opacity: 0; width: 0;}
+.header_wrap .sns_tab ul > li:first-child > a > i {padding: 0 1px;}
+.header_wrap .sns_tab ul > li:first-child > a > i.fa-android {padding-right: 56px}
+.header_wrap .sns_tab ul > li.facebook > a > i.fa-facebook-f {padding-right: 58px;}
+.header_wrap .sns_tab ul > li.instagram > a > i{padding-right: 56px;}
+.header_wrap .sns_tab ul > li > a::after {content: 'TLX PASS'; position: absolute; top: 12px; left: 71px; font-size: 12px; font-weight: 500;}
+.header_wrap .sns_tab ul > li.facebook > a::after {left: 83px;}
+.header_wrap .sns_tab ul > li.blog > a::after {left: 93px;}
+.header_wrap .sns_tab ul > li.instagram > a::after {left: 80px;}
+
+
+
+.mobile_btn_wrap {display: block;}
+.mobile_btn_wrap .btn_open {position: absolute; top: 20px; right: 20px; padding-top: 10px; width: 35px; height: 37px; transition: right 0.2s ease}
+.mobile_btn_wrap .btn_open i {display: block; width: 34px; height: 5px; border-radius: 5px; background-color: white;}
+.mobile_btn_wrap .btn_open i::before {content: ''; position: absolute; left: 0; top: 0; width: 34px; height: 5px; background-color: white; border-radius: 5px;}
+.mobile_btn_wrap .btn_open i::after {content: ''; position: absolute; left: 0; top: 20px; width: 34px; height: 5px; background-color: white; border-radius: 5px;}
+.mobile_btn_wrap .btn_open b {position: absolute; top: 30px; right: 8px; font-size: 11px; color: white;}
+
+.mobile_btn_wrap .btn_login {display: inline-block; position: absolute; top: 90px; right: 10px; padding: 5px 15px; border-radius: 50px; background-color: white; letter-spacing: -1px; line-height: 19px; color: #00bff0}
+
+
+body.active .mobile_btn_wrap .btn_open {right: 282px;}
+body.active .mobile_btn_wrap .btn_open i {background-color: transparent;}
+body.active .mobile_btn_wrap .btn_open i::before {top: 10px; left: 1px; transform: rotate(45deg); transition: all 0.1s ease}
+body.active .mobile_btn_wrap .btn_open i::after {top: 10px; left: 1px; transform: rotate(-45deg); transition: all 0.1s ease}
+
+body.active .mobile_btn_wrap .btn_login {display: none;}
+
+.slider .slider_teaser {bottom: 70px}
+.slider .slider_teaser .teaser_txt {width: 100%; text-align: center;}
+.slider .slider_teaser .teaser_txt a {width: 215px;}
+.slider .slider_teaser .teaser_txt .slide_btn {display: block; margin: 81px auto 0;}
+.slider .slider_teaser .teaser_txt .btn_join {margin: 10px auto 0;}
+
+main section.summary {margin-top: 489px; width: 100%; text-align: center;}
+/* summary 공통사항 */
+.summary .summary_txt {float: none; display: block;}
+.summary .summary_contents {float: none;}
+/**/
+.summary .summary_info .summary_contents {margin-top: 41px}
+.summary .summary_info .summary_contents li {display: block;}
+.summary .summary_info .summary_contents li:first-child {margin: 41px auto 0}
+.summary .summary_info .summary_contents li:nth-child(2) {margin: 41px auto 0}
+.summary .summary_info .summary_contents li:last-child {margin: 41px auto 0}
+.summary .summary_info .summary_contents li img {padding-top: 0; margin: 0 auto; height: 39px;}
+.summary .summary_info .summary_contents li span {display: block; margin-top: 8px}
+.summary .summary_info .summary_contents li span strong {margin-top: 5px}
+
+.summary .summary_list {margin: 25px auto 0; width: 90%}
+.summary .summary_list .summary_contents {margin: 0 auto; padding-top: 49px; width: 100%; background-color: yellow}
+.summary .summary_list .summary_contents li:last-child {width: auto; height: auto; text-align: left;}
+
+main section.membership {width: 100%}
+.membership > ul > li {display: block; margin: 0 10px 48px 16px}
+.membership > ul > li > span {width: auto}
+.membership > ul > li img {width: 100%;}
+.membership > ul > li > span > em {line-height: 24px}
+
+main section.join {font-size: 17px;}
+.join p {line-height: 37px}
+.join .btn_join {margin-top: 40px; padding: 13px 83px}
+
+
+main section.store {width: 100%}
+.store .store_list > li {width: 100%}
+.store .store_list > li > a {height: 140px;}
+.store .store_list > li > a > span {top: 20%; padding: 0 20px}
+.store .store_list > li > a > span em {text-align: left}
+.store .store_list > li > a > span strong {text-align: left}
+.store .store_list > li > a > span b {margin-top: 10px; text-align: right}
+
+
+
+
+
+
+
+
+
+}
