@@ -58,15 +58,15 @@ address {font-style: normal;}
 
 i {font-style: normal;}
 
-.check {position: absolute; top: 2700px; left: 0; opacity: 0.3; display: block; }
+.check_img {position: absolute; top: -50px; left: 0; opacity: 0.3; display: block; }
 
 
 /* layout */
 .wrap {position: absolute; top: 0; left: 0; right: 0; background-color: pink}
-.wrap header {background-color: rgba(0,0,0,0.5); position: fixed; top: 0; right: 0; left: 0; z-index: 900}
+.wrap header {position: fixed; top: 0; right: 0; left: 0; z-index: 900; background-color: rgba(0,0,0,0.5);}
 .wrap main {}
-.wrap main section {display: none;}
-.wrap footer {display: none; border:1px solid black;}
+.wrap main section {}
+.wrap footer {border:1px solid black;}
 /**/
 
 /* 전체 공통 사항 */
@@ -123,7 +123,7 @@ body.fix .header_wrap .gnb ul > li > a {padding: 4px 10px;}
 
 /* main */
 
-main section.slider {overflow: hidden; display: block; position: absolute; top: 0; left: 0; right: 0; height: 500px; 
+.slider {overflow: hidden; position: absolute; top: 0; left: 0; right: 0; height: 500px; 
 	background: rgba(0,0,0,0.35) url('../images/bg_slider_1.jpg') no-repeat 50% 100% fixed;
 	background-blend-mode: darken; 
 	background-size: cover; 
@@ -153,8 +153,8 @@ main section.slider {overflow: hidden; display: block; position: absolute; top: 
 .slider .slider_teaser .teaser_txt .slide_btn i {margin-right: 5px; font-size: 19px; vertical-align: sub}
 
 
-main section.summary {display: block; margin: 502px auto 0px; padding-top: 43px; width: 1140px;}
-main section.summary:after {content: ''; display: block; clear: both}
+.summary {margin: 502px auto 0px; padding-top: 43px; width: 1140px;}
+.summary:after {content: ''; display: block; clear: both}
 
 /* summary 공통 */
 .summary .summary_txt {float: left; font-size: 14px;}
@@ -178,7 +178,7 @@ main section.summary:after {content: ''; display: block; clear: both}
 .summary .summary_list .summary_contents li em {display: block; margin-top: 9px; font-size: 12px; color: #888}
 .summary .summary_list .summary_contents li:last-child {width: auto; height: auto; text-align: left;}
 
-main section.membership {display: block; margin: 0 auto; padding-top: 20px; width: 1176px; font-size: 0}
+.membership {margin: 0 auto; padding-top: 20px; width: 1176px; font-size: 0}
 .membership > ul > li {display: inline-block; margin: 0 15px 48px 16px; animation: position 1s ease}
 .membership > ul > li > span {display: block}
 .membership > ul > li > span > strong {display: block; font-size: 20px; letter-spacing: -1px}
@@ -186,29 +186,93 @@ main section.membership {display: block; margin: 0 auto; padding-top: 20px; widt
 .membership > ul > li img {margin-top: 6px; width: 555px; border-radius: 8px}
 
 
-main section.join {display: block; padding: 78px 0; text-align: center; font-size: 24px; color: #555; background-color: lime;}
+.join {padding: 78px 0; text-align: center; font-size: 24px; color: #555; background-color: lime;}
 .join p {font-weight: 100; line-height: 46px}
 .join strong {font-weight: 600}
 .join .btn_join {display: inline-block; margin-top: 58px; background-color: #00bff0; font-size: 14px; font-weight: 100; letter-spacing: -0.5px}
 .join .btn_join > i {margin-right: 8px; font-size: 18px; vertical-align: bottom}
 
 
-main section.store {display: block; margin: 0 auto; width: 1176px; background-color: tomato}
-main section.store::after {content: ''; display: block; clear: both;}
-.store .store_list {background-color: turquoise;}
-.store .store_list > li {float: left; width: 25%;}
+.store {margin: 0 auto; width: 1176px;}
+.store .store_list::after {content: ''; display: block; clear: both; border-radius: 10px;}
+.store .store_list > li {float: left; padding: 2px; width: 25%; box-sizing: border-box}
 .store .store_list > li.col_span {width: 50%}
-.store .store_list > li > a {overflow: hidden; display: block; position: relative; padding: 4px 2px; height: 190px; border-radius: 3px; color: white}
-.store .store_list > li > a:hover > span {opacity: 1; background-color: #00bff0}
+.store .store_list > li > a {overflow: hidden; position: relative; display: block; height: 190px; border-radius: 2px;}
+.store .store_list > li > a:hover > span {background-color:rgba(0,191,240,0.7)}
 .store .store_list > li > a > img {width: 100%;}
-.store .store_list > li > a > span {opacity: 0.8; position: absolute; top: 30%; left: 0; right: 0; bottom: 0; text-align: center}
-.store .store_list > li > a > span * {display: block}
+.store .store_list > li > a > span {position: absolute; top: 0; left: 0; right: 0; bottom: 0; padding-top: 50px; text-align: center; color: rgb(241, 241, 241)}
 .store .store_list > li > a > span strong {font-size: 20px}
+.store .store_list > li > a > span * {display: block}
 .store .store_list > li > a > span b {margin-top: 40px; font-family: 'Nunito'; font-size: 13px}
 
 
 
+.tlx_sns {width: 1170px; margin: 0 auto;}
+.tlx_sns .sns_list:after {content: ''; display: block; clear: both;}
+.tlx_sns .sns_list > li {float: left; padding: 2px; width: 16.6666667%; box-sizing: border-box}
+.tlx_sns .sns_list > li > a {overflow: hidden; position: relative; display: block}
+.tlx_sns .sns_list > li > a > img {width: 100%; transition: all 0.5s ease}
+.tlx_sns .sns_list > li > a:hover > img {transform: scale(1.2)}
+.tlx_sns .sns_list > li > a:hover > .sns_txt {opacity: 1; background-color:rgba(0,191,240,0.7)}
+.tlx_sns .sns_list > li > a .sns_txt {opacity: 0; position: absolute; top: 0; left: 0; right: 0; bottom: 0; padding: 20px; transition: all 0.5s ease}
+.tlx_sns .sns_list > li > a .sns_txt span {display: block; margin-bottom: 15px}
+.tlx_sns .sns_list > li > a .sns_txt span i {overflow: hidden; display: inline-block; margin-right: 3px; width: 30px; height: 30px; border: 2px solid white; border-radius: 50%; vertical-align: middle}
+.tlx_sns .sns_list > li > a .sns_txt span i img {width: 100%}
+.tlx_sns .sns_list > li > a .sns_txt span b {font-size: 15px; color: white; vertical-align: middle}
+.tlx_sns .sns_list > li > a .sns_txt em {color: rgba(255,255,255,0.7);}
 
+
+
+.tlx_tip {margin: 0 auto; width: 1170px;}
+.tlx_tip .tip_list:after {content: ''; display: block; clear: both;}
+.tlx_tip .tip_list > li {float: left; padding: 0 15px; width: 25%; height: 260px; box-sizing: border-box;} 
+.tlx_tip .tip_list > li > a {overflow: hidden; display: block; height: 150px; border: 1px solid #ddd; border-top-left-radius: 5px; border-top-right-radius: 5px} 
+.tlx_tip .tip_list > li > a > img {width: 100%; height: 100%; object-fit: cover}
+.tlx_tip .tip_list > li > span {display: block; margin-top: -1px; padding: 17px 20px; height: 73px; border: 1px solid #ddd; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; letter-spacing: -1px} 
+.tlx_tip .tip_list > li > span > a {overflow: hidden; display: block; font-size: 16px; text-overflow: ellipsis; white-space: nowrap;} 
+.tlx_tip .tip_list > li > span > a:hover {color: #23527c; text-decoration: underline} 
+.tlx_tip .tip_list > li > span > em {display: block; margin-top: 10px; font-size: 13px; color: #777} 
+
+
+.tlx_app {display: block; background-color: #f4f5f4; color: #666;}
+.tlx_app .app_inner {margin: 0 auto; padding: 90px 0; width: 1170px; height: 610px; text-align: right;}
+.tlx_app .app_inner:after {content: 'TLX PASS'; position: absolute; left: 50%; bottom: 22px; margin-left: -40px; padding-top: 70px; display: block; width: 64px; height: 22px; background: url('../images/app_ico_64@2x.png')no-repeat 0 0; background-size: contain; text-align: center}
+
+.tlx_app .app_inner .app_info {float: left; padding-top: 72px; width: 31.2%;}
+.tlx_app .app_inner .app_info h3 {font-size: 30px; font-family: 'Nunito'; font-weight: 900; color: #00bff0; letter-spacing: 2.3px}
+.tlx_app .app_inner .app_info em {font-size: 30px; font-weight: 100; line-height: 31px; letter-spacing: -1px;}
+
+.tlx_app .app_inner .app_info .app_install {margin-top: 149px; letter-spacing: -1px}
+.tlx_app .app_inner .app_info .app_install .app_link {margin-bottom: 44px; font-size: 0}
+.tlx_app .app_inner .app_info .app_install .app_link > p {margin-bottom: 10px; font-size: 14px; font-weight: 100; color: #888;}
+.tlx_app .app_inner .app_info .app_install .app_link > input {margin-right: -1px; padding: 5px; width: 200px; border:1px solid #ddd; border-top-left-radius: 3px; border-bottom-left-radius: 3px; font-size: 12px; font-weight: 700; color: #00bff0; line-height: 20px}
+.tlx_app .app_inner .app_info .app_install .app_link > input::placeholder {font-family: 'Noto Sans KR'; font-size: 12px; font-weight: 500; color: #888}
+.tlx_app .app_inner .app_info .app_install .app_link > button {padding: 6px 12px; border: 1px solid #8de8ff; border-top-right-radius: 3px; border-bottom-right-radius: 3px; background-color: white; font-family: 'Noto Sans KR'; font-size: 12px; font-weight: 700; color: #00bff0; vertical-align: bottom}
+.tlx_app .app_inner .app_info .app_install .app_download {font-size: 0}
+.tlx_app .app_inner .app_info .app_install .app_download p {margin-bottom: 13px; padding-right: 10px; font-size: 14px; font-weight: 500; color: #555;}
+.tlx_app .app_inner .app_info .app_install .app_download a {display: inline-block; width: 140px;}
+.tlx_app .app_inner .app_info .app_install .app_download a + a {margin-left: 9px}
+.tlx_app .app_inner .app_info .app_install .app_download a img {width: 100%}
+
+.tlx_app .app_inner .app_slider {float: left; position: relative; width: 68.8%; text-align: left}
+.tlx_app .app_inner .app_slider > img {position: absolute; left: 76px; width: 270px;}
+.tlx_app .app_inner .app_slider .slider_wrap {position: absolute; top: 66px; left: 102px; width: 223px;}
+.tlx_app .app_inner .app_slider .slider_wrap .slider_inner {overflow: hidden; height: 396px;}
+.tlx_app .app_inner .app_slider .slider_wrap span {position: absolute; top: 55px; right: 100px;}
+.tlx_app .app_inner .app_slider .slider_wrap .bx-wrapper {padding: 0; border: none;}
+.tlx_app .app_inner .app_slider .slider_wrap .bx-wrapper .bx-controls-direction a {top:57.2%; width: 35px; height: 35px; border:1px solid #00bff0; border-radius: 50% }
+.tlx_app .app_inner .app_slider .slider_wrap .bx-wrapper .bx-controls-direction a.bx-prev {left: -214%; background: white url('../images/chevron-thin-left_blue@2x.png')no-repeat 8px 8px; background-size: 17px}
+.tlx_app .app_inner .app_slider .slider_wrap .bx-wrapper .bx-controls-direction a.bx-next {right: -212%; background: white url('../images/chevron-thin-right_blue@2x.png')no-repeat 10px 8px; background-size: 17px}
+.tlx_app .app_inner .app_slider .slider_wrap .bx-pager, .bx-wrapper .bx-controls-auto {bottom: -111px;}
+.bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active, .bx-wrapper .bx-pager.bx-default-pager a:focus {background-color: #00bff0 }
+.bx-wrapper .bx-pager.bx-default-pager a {background-color: #ccc}
+
+.tlx_app .app_inner .app_slider .slide_txt {position: absolute; top: 72px; right: 126px; width: 261px; line-height: 31px;}
+.tlx_app .app_inner .app_slider .slide_txt li {visibility: hidden; height: 0;}
+.tlx_app .app_inner .app_slider .slide_txt li.on {visibility: visible; height: auto; animation: fadeIn 1s ease}
+.tlx_app .app_inner .app_slider .slide_txt li h4 {margin-bottom: 30px; width: 82%; font-size: 24px; font-weight: 100; color: #00bff0; letter-spacing: -1.5px;}
+.tlx_app .app_inner .app_slider .slide_txt li em {font-size: 17px; font-weight: 100; color: #777; letter-spacing: -0.5px}
+.tlx_app .app_inner .app_slider .slide_txt li p {margin-top: 25px; width: 67%; font-size: 17px; font-weight: 100; color: #777; line-height: 29px; letter-spacing: normal}
 
 
 
@@ -219,24 +283,37 @@ main section.store::after {content: ''; display: block; clear: both;}
 
 
 @keyframes position {from{transform: translateY(50px)} to{transform: translateY(0)}}
+@keyframes fadeIn {from{opacity: 0;} to{opacity: 1;}}
+
 /*-----------------media--------------------------- media --------------------------*/
 /*-----------------media--------------------------- media --------------------------*/
 @media screen and (max-width: 1199px){
 .slider .slider_teaser .teaser_txt {width: 1138px;}
 
-main section.membership {width: 980px}
+.membership {width: 980px}
 .membership > ul > li img {width: 455px;}
 
-main section.summary {width: 940px;}
+.summary {width: 940px;}
 .summary .summary_info .summary_contents {clear: both; margin-top: 65px}
 .summary .summary_info .summary_contents li {margin-left: 0px; margin-right: 56px;}
 .summary .summary_info .summary_contents li:last-child {margin-right: 0}
 .summary .summary_list .summary_contents {width: 698px;}
 
 
-main section.store {width: 970px}
+.store {width: 970px}
+.tlx_sns {width: 970px}
+.tlx_tip {width: 970px}
 
-
+.tlx_app .app_inner {width: 970px;}
+.tlx_app .app_inner:after {margin-left: -26px;}
+.tlx_app .app_inner .app_info .app_install .app_download a {width: 112px}
+.tlx_app .app_inner .app_info .app_install .app_link > input {width: 162px}
+.tlx_app .app_inner .app_slider > img {left: 52px;}
+.tlx_app .app_inner .app_slider .slider_wrap {left: 77px;}
+.tlx_app .app_inner .app_slider .slider_wrap .bx-wrapper .bx-controls-direction a.bx-prev {left: -175%}
+.tlx_app .app_inner .app_slider .slider_wrap .bx-wrapper .bx-controls-direction a.bx-next {right: -165%}
+.tlx_app .app_inner .app_slider .slide_txt {right: 30px;}
+.tlx_app .app_inner .app_info .app_install .app_link > button {padding: 6px 7px}
 
 
 
@@ -255,26 +332,46 @@ main section.store {width: 970px}
 .header_wrap .gnb ul > li > a {padding: 8px 5px;}
 .slider .slider_teaser .teaser_txt {width: 920px;}
 
-main section.summary {width: 720px;}
+.summary {width: 720px;}
 .summary .summary_info .summary_contents {margin-top: -40px}
 .summary .summary_info .summary_contents li:first-child {margin-left: 374px; margin-right: 0;}
 .summary .summary_info .summary_contents li:nth-child(2) {margin-top: 67px; margin-right: 108px;}
 .summary .summary_list .summary_contents {float: none; clear: both; padding-top: 46px;}
 
-main section.membership {width: 752px}
+.membership {width: 752px}
 .membership > ul > li {margin: 0 10px 48px 16px}
 .membership > ul > li > span {width: 350px}
 .membership > ul > li img {width: 345px;}
 .membership > ul > li > span > em {line-height: 24px}
 
 
-main section.store {width: 750px}
+.store {width: 750px}
 .store .store_list > li {width: 50%}
-.store .store_list > li.col_span {width: 100%}
+.store .store_list > li.col_span {width: 100%} 
+
+.tlx_sns {width: 750px}
+.tlx_sns .sns_list > li {width: 25%}
+
+.tlx_tip {width: 750px;}
+.tlx_tip .tip_list > li {margin-bottom: 15px; padding: 0 5px; width: 50%}
 
 
+.tlx_app .app_inner {width: 750px}
+.tlx_app .app_inner:after {margin-left: -25px;}
+.tlx_app .app_inner .app_info .app_install .app_link > button {padding: 6px 7px}
 
+.tlx_app .app_inner .app_slider > img {left: 15px;}
+.tlx_app .app_inner .app_slider .slider_wrap {left: 40px;}
+.tlx_app .app_inner .app_slider .slider_wrap .bx-wrapper .bx-controls-direction a {top: 49%}
+.tlx_app .app_inner .app_slider .slider_wrap .bx-wrapper .bx-controls-direction a.bx-prev {left: -114%}
+.tlx_app .app_inner .app_slider .slider_wrap .bx-wrapper .bx-controls-direction a.bx-next {right: -110%}
+
+.tlx_app .app_inner .app_slider .slide_txt {right: 0; width: 215px}
+.tlx_app .app_inner .app_slider .slide_txt li h4 {font-size: 22px}
+.tlx_app .app_inner .app_slider .slide_txt li em {font-size: 15px}
+.tlx_app .app_inner .app_slider .slide_txt li p {font-size: 15px}	
 }
+
 @media screen and (max-width: 767px){
 
 body.active {overflow: hidden;}
@@ -344,7 +441,7 @@ body.active .mobile_btn_wrap .btn_login {display: none;}
 .slider .slider_teaser .teaser_txt .slide_btn {display: block; margin: 81px auto 0;}
 .slider .slider_teaser .teaser_txt .btn_join {margin: 10px auto 0;}
 
-main section.summary {margin-top: 489px; width: 100%; text-align: center;}
+.summary {margin-top: 489px; width: 100%; text-align: center;}
 /* summary 공통사항 */
 .summary .summary_txt {float: none; display: block;}
 .summary .summary_contents {float: none;}
@@ -362,27 +459,49 @@ main section.summary {margin-top: 489px; width: 100%; text-align: center;}
 .summary .summary_list .summary_contents {margin: 0 auto; padding-top: 49px; width: 100%; background-color: yellow}
 .summary .summary_list .summary_contents li:last-child {width: auto; height: auto; text-align: left;}
 
-main section.membership {width: 100%}
+.membership {width: 100%}
 .membership > ul > li {display: block; margin: 0 10px 48px 16px}
 .membership > ul > li > span {width: auto}
 .membership > ul > li img {width: 100%;}
 .membership > ul > li > span > em {line-height: 24px}
 
-main section.join {font-size: 17px;}
+.join {font-size: 17px;}
 .join p {line-height: 37px}
 .join .btn_join {margin-top: 40px; padding: 13px 83px}
 
 
-main section.store {width: 100%}
+.store {width: 100%}
 .store .store_list > li {width: 100%}
 .store .store_list > li > a {height: 140px;}
-.store .store_list > li > a > span {top: 20%; padding: 0 20px}
+.store .store_list > li > a > span {padding: 20px}
 .store .store_list > li > a > span em {text-align: left}
 .store .store_list > li > a > span strong {text-align: left}
-.store .store_list > li > a > span b {margin-top: 10px; text-align: right}
+.store .store_list > li > a > span b {margin-top: 10px; text-align: right} 
 
 
 
+.tlx_sns {width: 100%}
+.tlx_sns .sns_list > li {width: 33.333%}
+
+.tlx_tip {width: 100%}
+
+.tlx_app .app_inner {padding: 30px 0 90px; width: 100%; height: 982px;}
+.tlx_app .app_inner:after {margin-left: -29px;}
+.tlx_app .app_inner .app_info {float: none; padding-top: 0; width: 100%; text-align: center}
+.tlx_app .app_inner .app_info .app_install {margin-top: 50px}
+.tlx_app .app_inner .app_info .app_install .app_link {visibility: hidden; margin: 0; width: 0; height: 0;}
+.tlx_app .app_inner .app_info .app_install .app_download a {width: 175px}
+
+.tlx_app .app_inner .app_slider {padding-top: 60px; width: 100%; height: 660px; text-align: center;}
+.tlx_app .app_inner .app_slider > img {left: 50%; margin-left: -135px}
+.tlx_app .app_inner .app_slider .slider_wrap {top: 126px; left: 50%; margin-left: -109.5px;}
+.tlx_app .app_inner .app_slider .slider_wrap .bx-wrapper .bx-controls-direction a.bx-prev {left: -30%;}
+.tlx_app .app_inner .app_slider .slider_wrap .bx-wrapper .bx-controls-direction a.bx-next {right: -30%;}
+
+.tlx_app .app_inner .app_slider .slide_txt {top: auto; right: auto; bottom: 0; left: 0; width: 100%;}
+.tlx_app .app_inner .app_slider .slide_txt li h4 {margin-bottom: 0; width: auto; font-size: 16px; line-height: 14px}
+.tlx_app .app_inner .app_slider .slide_txt li em {font-size: 13px}
+.tlx_app .app_inner .app_slider .slide_txt li p {margin-top: 0; width: auto; font-size: 13px; line-height: 14px}
 
 
 

@@ -8,10 +8,44 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/brands.css" integrity="sha384-BKw0P+CQz9xmby+uplDwp82Py8x1xtYPK3ORn/ZSoe6Dk3ETP59WCDnX+fI1XCKK" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/fontawesome.css" integrity="sha384-4aon80D8rXCGx9ayDt85LbyUHeMWd3UiBaWliBlJ53yzm9hqN21A+o1pqoyK04h+" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/regular.css" integrity="sha384-IG162Tfx2WTn//TRUi9ahZHsz47lNKzYOp0b6Vv8qltVlPkub2yj9TVwzNck6GEF" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">	
 	<link rel="stylesheet" media="all" href="css/common.css"/>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		$('.slider_inner').bxSlider({
+		onSlideBefore: removeTxt,
+		onSlideAfter: addTxt,
+		touchEnabled: false
+		});
+		const txtElems = document.querySelectorAll('.slide_txt li');
+
+		// slider_txt 보이기
+		function addTxt(){
+		let slideNum = this.getCurrentSlide(); 
+			
+		for(let i = 0; i < txtElems.length; i++){
+			if(slideNum == i){
+				txtElems.forEach(function(item){
+					item.classList.remove("on");
+				});
+				txtElems[i].classList.add("on");
+			}
+		}
+		}
+		//
+		function removeTxt(){
+			txtElems.forEach(function(item){
+					item.classList.remove("on");
+				});
+		}
+	});
+	</script>
 	<script src="js/ui.js"></script>
-	<style type="text/css"></style>
+	<style type="text/css">
+	.tlx_app .app_inner .app_slider .slider_wrap img {width: 100%}
+	</style>
 </head>
 <body>
 	<!-- wrap start -->
@@ -382,14 +416,14 @@
 					</li>
 				</ul>
 			</section>
-			<section class="sns">
+			<section class="tlx_sns">
 				<h2 class="haze">인스타그램 이용후기</h2>
 				<div class="teaser">
 					<h3>인스타그램</h3>
 					<a href="">#TLXPASS</a>
 					<em>해시태그로 이용하는 모습을 남겨주세요!</em>
 				</div>
-				<ul>
+				<ul class="sns_list">
 					<li>
 						<a href="https://www.instagram.com/p/BtOXvqRHntm/">
 							<img src="images/img_sns_1_profile.jpg" alt="angel9028님 프로필사진">
@@ -536,114 +570,123 @@
 					</li>
 				</ul>
 			</section>
-			<section>
+			<section class="tlx_tip">
 				<h2 class="haze">TLX 생활정보 안내</h2>
 				<div class="teaser">
 					<h3>TLX 꿀팁</h3>
 					<em>생활밀착형 다이어트 & 운동법</em>
 				</div>
-				<ul>
+				<ul class="tip_list">
 					<li>
-						<a href=""><img src="images/img_tip_1" alt="모델과 트레이너"></a>
+						<a href=""><img src="images/img_tip_1" alt="토마토, 당근등 피해야 할 음식사진"></a>
 						<span>
-							<a href="">엉덩이에 플러그를 꽂아라</a>
-							<em>모델 안젤라킴과 트레이너 김동하가 함께하는 본격 힙운동</em>
+							<a href="">다이어트 중 피해야 할 음식! -BEST 5-</a>
+							<em>작심삼일은 이제그만! 이 것 만은 피하자!</em>
 						</span>
 					</li>
 					<li>
-						<a href=""><img src="images/img_tip_2" alt="장갑낀 손"></a>
+						<a href=""><img src="images/img_tip_2" alt="다이어트 사진"></a>
 						<span>
-							<a href="">손이 시려워 꽁</a>
-							<em>겨울, 또 다시 찾아온 수족냉증 본격 타파!</em>
+							<a href="">우리들의 워너비! 연예인 다이어트 식단.2</a>
+							<em>연예인분들의 비밀스러운 다이어트식단! 그 두 번째, 함께보시죠</em>
 						</span>
 					</li>
 					<li>
-						<a href=""><img src="images/img_tip_3" alt="직장인 스트레칭하는 모습"></a>
+						<a href=""><img src="images/img_tip_3" alt="다이어트하는 여성사진"></a>
 						<span>
-							<a href="">오피스 다이어트</a>
-							<em>회사-집-회사..! 직장인들을 위한 오피스 다이어트 TIP</em>
+							<a href="">우리들의 워너비! 연예인 다이어트 식단.1</a>
+							<em>연예인분들의 비밀스러운 다이어트식단! 그 두 번째, 함께보시죠</em>
 						</span>
 					</li>
 					<li>
-						<a href=""><img src="images/img_tip_4" alt="어깨 스트레칭하는 모습"></a>
+						<a href=""><img src="images/img_tip_4" alt="당뇨에 좋은 음식"></a>
 						<span>
-							<a href="">어깨통증 타파!</a>
-							<em>어깨 통증에 효과적인 초간단 스트레칭</em>
+							<a href="">당뇨병이여 물러가라! 당뇨병에 좋은 음식 BEST 5!</a>
+							<em>식습관이 불러오는 당뇨병! 식단부터 개선해야합니다.</em>
 						</span>
 					</li>
 				</ul>
 			</section>
-			<section class="mobile_app">
+			<section class="tlx_app">
 				<h2 class="haze">모바일 앱 안내</h2>
-				<div class="app_info">
-					<div class="teaser">
-						<h3>TLX PASS</h3>
-						<em>모바일 앱</em>
-					</div>
-					<div class="app_install">
-						<div class="app_link">
-							<p>문자로 다운로드 링크를 보내 드릴까요?</p>
-							<input type="tel" name="" placeholder="휴대전화번호를 숫자만 입력해주세요" required/>
-							<button type="submit">전송</button>
+				<div class="app_inner">
+					<div class="app_info">
+						<div>
+							<h3>TLX PASS</h3>
+							<em>모바일 앱</em>
 						</div>
-						<div class="app_download">
-							<p>지금 앱스토어에서 설치하세요!</p>
-							<a href=""><img src="images/badge_appstore.png" alt="앱스토어 바로가기"></a>
-							<a href=""><img src="images/badge_googleplay.png" alt="구글플레이 바로가기"></a>
+						<div class="app_install">
+							<div class="app_link">
+								<p>문자로 다운로드 링크를 보내 드릴까요?</p>
+								<input type="tel" name="" placeholder="휴대전화번호를 숫자만 입력해주세요" required/>
+								<button type="submit">전송</button>
+							</div>
+							<div class="app_download">
+								<p>지금 앱스토어에서 설치하세요!</p>
+								<a href=""><img src="images/badge_appstore.png" alt="앱스토어 바로가기"></a>
+								<a href=""><img src="images/badge_googleplay.png" alt="구글플레이 바로가기"></a>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="app_slider">
-					<ul>
-						<li>
-							<img src="images/img_app_ios1.jpg" alt="TLX PASS 사용법">
-							<span>
-								<h4 class="title">모바일 앱을 설치하고 제휴시설 이용을 더욱 편리하게!</h4>
-								<em>스마트폰에 앱을 설치하세요!</em>
-								<p>대한민국 1등 자기관리 솔루션 TLX PASS 와 함께 오늘부터 시작!</p>
-							</span>
-						</li>
-						<li>
-							<img src="images/img_app_ios2.jpg" alt="TLX PASS 사용법">
-							<span>
-								<h4 class="title">회원가입부터 멤버십 결제까지 한번에 완료</h4>
-								<em>오늘부터 바로 이용하실 수 있습니다.</em>
-								<p>지금 앱을 설치하고 회원가입 &sol; 멤버십 결제를 한번에 진행하세요!</p>
-							</span>
-						</li>
-						<li>
-							<img src="images/img_app_ios3.jpg" alt="TLX PASS 사용법">
-							<span>
-								<h4 class="title">지금 나와 가까운 제휴시설 확인하기</h4>
-								<em>멀지 않은 곳에 TLX 제휴시설이 있습니다.</em>
-								<p>가까운 제휴시설을 검색에서 확인하세요!</p>
-							</span>
-						</li>
-						<li>
-							<img src="images/img_app_ios4.jpg" alt="TLX PASS 사용법">
-							<span>
-								<h4 class="title">제휴시설 상세 검색하기</h4>
-								<em>오늘은 강남으로 운동하러 가실까요? 이 제휴시설은 어떻게 이용하죠?</em>
-								<p>이용 지역과 이용 종목을 필터와 지도로 보다 자세히 검색하세요.</p>
-							</span>
-						</li>
-						<li>
-							<img src="images/img_app_ios5.jpg" alt="TLX PASS 사용법">
-							<span>
-								<h4 class="title">제휴시설 입장하기</h4>
-								<em><b>TLX PASS</b>앱만 있으면, 다른것은 필요 없습니다.</em>
-								<p>이용 종목과 차감될 패스 확인 후 모바일 앱 인증으로 간편하고 편리하게 입장하세요!</p>
-							</span>
-						</li>
-						<li>
-							<img src="images/img_app_ios6.jpg" alt="TLX PASS 사용법">
-							<span>
-								<h4 class="title">원터치 모바일 인증</h4>
-								<em>모바일 인증 후<b>승인 완료</b>화면을 입장할 제휴시설 데스크에 보여주세요!</em>
-								<p>오늘도 즐거운 제휴시설 이용 되세요!</p>
-							</span>
-						</li>
-					</ul>
+					<div class="app_slider">
+						<img src="images/img_app_blank_phone.png" alt="아이폰 이미지">
+						<div class="slider_wrap">
+							<ul class="slider_inner">
+								<li>
+									<img src="images/img_app_ios1.jpg" alt="TLX PASS 앱 제휴시설 광고">
+								</li>
+								<li>
+									<img src="images/img_app_ios2.jpg" alt="TLX PASS 앱 멤버십 결제광고">
+								</li>
+								<li>
+									<img src="images/img_app_ios3.jpg" alt="제휴시설 안내">
+								</li>
+								<li>
+									<img src="images/img_app_ios4.jpg" alt="제휴시설 검색안내">
+								</li>
+								<li>
+									<img src="images/img_app_ios5.jpg" alt="제휴시설 입장안내">
+								</li>
+								<li>
+									<img src="images/img_app_ios6.jpg" alt="모바일 인증안내">
+								</li>
+							</ul>
+						</div>
+						<div class="slide_txt">
+							<ul>
+								<li class="on">
+									<h4>모바일 앱을 설치하고 제휴시설 이용을 더욱 편리하게!</h4>
+									<em>스마트폰에 앱을 설치하세요!</em>
+									<p>대한민국 1등 자기관리 솔루션 TLX PASS와 함께 오늘부터 시작!</p>
+								</li>
+								<li>
+									<h4>회원가입부터 멤버십 결제까지 한번에 완료</h4>
+									<em>오늘부터 바로 이용하실 수 있습니다.</em>
+									<p>지금 앱을 설치하고 회원가입 &sol; 멤버십 결제를 한번에 진행하세요!</p>
+								</li>
+								<li>
+									<h4>지금 나와 가까운 제휴시설 확인하기</h4>
+									<em>멀지 않은 곳에 TLX 제휴시설이 있습니다.</em>
+									<p>가까운 제휴시설을 검색에서 확인하세요!</p>
+								</li>
+								<li>
+									<h4>제휴시설 상세 검색하기</h4>
+									<em>오늘은 강남으로 운동하러 가실까요? 이 제휴시설은 어떻게 이용하죠?</em>
+									<p>이용 지역과 이용 종목을 필터와 지도로 보다 자세히 검색하세요.</p>									
+								</li>
+								<li>
+									<h4>제휴시설 입장하기</h4>
+									<em><b>TLX PASS</b> 앱만 있으면, 다른것은 필요 없습니다.</em>
+									<p>이용 종목과 차감될 패스 확인 후 모바일 앱 인증으로 간편하고 편리하게 입장하세요!</p>
+								</li>
+								<li>
+									<h4>원터치 모바일 인증</h4>
+									<em>모바일 인증 후 <b>승인 완료</b>화면을 입장할 제휴시설 데스크에 보여주세요!</em>
+									<p>오늘도 즐거운 제휴시설 이용 되세요!</p>
+								</li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</section>
 			<section class="join">
@@ -723,7 +766,7 @@
 		<!-- footer end -->
 	</div>
 	<!-- wrap end -->
-	<!-- <img class="check_img" src="screen_shot/section_join_767px.png"> -->
+	<!-- <img class="check_img" src="screen_shot/app.png"> -->
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
     <script src="ui/jquery.counterup.min.js"></script>
