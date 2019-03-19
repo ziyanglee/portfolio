@@ -12,7 +12,6 @@ body {
 	margin:0;
 	padding:0;
 	font-weight: 500;
-	background-color: black;
 	letter-spacing: -0.25px;
 }
 br	{
@@ -58,34 +57,31 @@ address {font-style: normal;}
 
 i {font-style: normal;}
 
-.check_img {position: absolute; top: -50px; left: 0; opacity: 0.3; display: block; }
 
 
 /* layout */
-.wrap {position: absolute; top: 0; left: 0; right: 0; background-color: pink}
+.wrap {position: absolute; top: 0; left: 0; right: 0;}
 .wrap header {position: fixed; top: 0; right: 0; left: 0; z-index: 900; background-color: rgba(0,0,0,0.5);}
-.wrap main {}
 .wrap main section {}
-.wrap footer {border:1px solid black;}
+.wrap footer {padding: 30px; background-color: #0d1f35}
 /**/
 
 /* 전체 공통 사항 */
+section {margin: 0 auto; padding: 30px 0;}
 .haze {visibility: hidden; width: 0; height: 0;}
-a.btn {padding: 13px 20px; border-radius: 100px; background-color: #00bff0; color: white}
+a.btn {padding: 13px 20px; border-radius: 100px; background-color: #00bff0; color: white; transition: all 0.3s ease}
 section .teaser {padding-left: 16px; margin-bottom: 35px}
 section .teaser > h3 {position: relative; font-size: 24px; color: #00bff0; letter-spacing: -1.5px;}
 section .teaser > h3:after {content: ''; position: absolute; top: 5px; left: -20px; bottom: 4px; width: 12px; background-color: #00bff0}
 section .teaser > em {font-size: 13px; color: #555; letter-spacing: -0.5px}
 
 
-
-
-
-
+/* 애니메이션 */
+@keyframes fadeUp {from{transform: translateY(50px)} to{transform: translateY(0)}}
+@keyframes fadeIn {from{opacity: 0;} to{opacity: 1;}}
 
 
 /* header */
-
 /* fix 클래스네임 추가로 header 사이즈변경 */
 body.fix .header_wrap .gnb {top: 0; padding: 10px 24px 10px 10px; background-color: rgba(13,31,53,0.9)}
 body.fix .header_wrap .sns_tab {visibility: hidden; opacity: 0;}
@@ -100,7 +96,7 @@ body.fix .header_wrap .gnb ul > li > a {padding: 4px 10px;}
 .header_wrap .gnb ul {float: right; font-size: 0;}
 .header_wrap .gnb ul > li {display: inline-block;}
 .header_wrap .gnb ul > li + li {margin-left: 4px;}
-.header_wrap .gnb ul > li > a {display: inline-block; padding: 8px 20px; border:1px solid transparent; border-radius: 100px; font-size: 13px; line-height: 20px; font-weight: 500; color: white; transition: all 0.1s ease 0.1s;}
+.header_wrap .gnb ul > li > a {display: inline-block; padding: 8px 20px; border:1px solid transparent; border-radius: 100px; font-size: 13px; line-height: 20px; font-weight: 500; color: white; transition: all 0.1s ease;}
 .header_wrap .gnb ul > li > a:hover {border-color: white}
 .header_wrap .gnb ul > li:last-child a {background-color: #00bff0}
 .header_wrap .gnb ul > li:last-child a::before {background-color: #00bff0}
@@ -122,47 +118,27 @@ body.fix .header_wrap .gnb ul > li > a {padding: 4px 10px;}
 
 
 /* main */
-
-.slider {overflow: hidden; position: absolute; top: 0; left: 0; right: 0; height: 500px; 
-	background: rgba(0,0,0,0.35) url('../images/bg_slider_1.jpg') no-repeat 50% 100% fixed;
-	background-blend-mode: darken; 
-	background-size: cover; 
-	transition: background-image 1.2s ease-in-out;
-
-}
-
-	
-.slider .slider_inner {position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-	background: rgba(0,0,0,0.35) url('../images/bg_slider_1.jpg') no-repeat 50% 100% fixed;
-	background-blend-mode: darken; 
-	background-size: cover;
-	transform: translateX(100%);
-	transition: transform 0.7s ease-in-out;
-}
-
-
-.slider .slider_teaser {position: absolute; bottom: 64px; left: 0; right: 0; color: white; font-size: 0;}
-.slider .slider_teaser .teaser_txt {margin: 0 auto; width: 1170px;}
-.slider .slider_teaser .teaser_txt em {display: block; font-size: 15px; font-weight: 300;}
-.slider .slider_teaser .teaser_txt span {display: block; margin-top: 4px}
-.slider .slider_teaser .teaser_txt span img {display: inline-block; height: 43px;}
-.slider .slider_teaser .teaser_txt span strong {display: inline-block; font-size: 32px; font-weight: 500}
-.slider .slider_teaser .teaser_txt .slide_btn {display: inline-block; margin-top: 50px; padding: 13px 20px; border:2px solid white; border-radius: 100px; background-color: transparent; color: white; font-size: 14px; font-weight: 400;}
-.slider .slider_teaser .teaser_txt .slide_btn:hover {background-color: #0E2036}
-.slider .slider_teaser .teaser_txt .btn_membership {margin-left: 30px; border-color: transparent; background-color: #00bff0}
-.slider .slider_teaser .teaser_txt .slide_btn i {margin-right: 5px; font-size: 19px; vertical-align: sub}
-
+.visual_slider {overflow: hidden; position: absolute; top: 0; left: 0; right: 0; padding:0; height: 500px; background: rgba(0,0,0,0.35) url('../images/bg_slider_1.jpg') no-repeat 50% 100% fixed; background-blend-mode: darken; background-size: cover; transition: background-image 1.2s ease-in-out;}	
+.visual_slider .visual_inner {position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.35) url('../images/bg_slider_1.jpg') no-repeat 50% 100% fixed;	background-blend-mode: darken; background-size: cover; transform: translateX(100%);	transition: transform 0.7s ease-in-out;}
+.visual_slider .slider_teaser {position: absolute; bottom: 64px; left: 0; right: 0; color: white; font-size: 0;}
+.visual_slider .slider_teaser .teaser_txt {margin: 0 auto; width: 1170px;}
+.visual_slider .slider_teaser .teaser_txt em {display: block; font-size: 15px; font-weight: 300;}
+.visual_slider .slider_teaser .teaser_txt span {display: block; margin-top: 4px}
+.visual_slider .slider_teaser .teaser_txt span img {display: inline-block; height: 43px;}
+.visual_slider .slider_teaser .teaser_txt span strong {display: inline-block; font-size: 32px; font-weight: 500}
+.visual_slider .slider_teaser .teaser_txt .slide_btn {display: inline-block; margin-top: 50px; padding: 13px 20px; border:2px solid white; border-radius: 100px; background-color: transparent; color: white; font-size: 14px; font-weight: 400;}
+.visual_slider .slider_teaser .teaser_txt .slide_btn:hover {background-color: #0E2036}
+.visual_slider .slider_teaser .teaser_txt .btn_membership {margin-left: 30px; border-color: transparent; background-color: #00bff0}
+.visual_slider .slider_teaser .teaser_txt .slide_btn i {margin-right: 5px; font-size: 19px; vertical-align: sub}
 
 .summary {margin: 502px auto 0px; padding-top: 43px; width: 1140px;}
 .summary:after {content: ''; display: block; clear: both}
-
 /* summary 공통 */
 .summary .summary_txt {float: left; font-size: 14px;}
 .summary .summary_txt em {display: block; color: #777;}
 .summary .summary_txt strong {display: block; margin-top: 3px; font-size: 14px;}
 .summary .summary_contents {float: right;}
 /**/
-
 .summary .summary_info {overflow: hidden;}
 .summary .summary_info .summary_contents li {display: inline-block; width: 265px; margin-left: 25px;}
 .summary .summary_info .summary_contents li img {padding-top: 13px; margin-right: 30px; height: 39px;}
@@ -179,19 +155,19 @@ body.fix .header_wrap .gnb ul > li > a {padding: 4px 10px;}
 .summary .summary_list .summary_contents li:last-child {width: auto; height: auto; text-align: left;}
 
 .membership {margin: 0 auto; padding-top: 20px; width: 1176px; font-size: 0}
-.membership > ul > li {display: inline-block; margin: 0 15px 48px 16px; animation: position 1s ease}
+.membership > ul > li {display: inline-block; margin: 0 15px 48px 16px; animation: fadeUp 1s ease}
 .membership > ul > li > span {display: block}
 .membership > ul > li > span > strong {display: block; font-size: 20px; letter-spacing: -1px}
 .membership > ul > li > span > em {display: block; font-size: 14px; letter-spacing: -0.5px; line-height: 28px}
 .membership > ul > li img {margin-top: 6px; width: 555px; border-radius: 8px}
 
-
-.join {padding: 78px 0; text-align: center; font-size: 24px; color: #555; background-color: lime;}
+.join {padding: 78px 0; text-align: center; font-size: 24px; color: #555;}
 .join p {font-weight: 100; line-height: 46px}
-.join strong {font-weight: 600}
+.join b {font-family: 'Nunito'; padding: 0 5px}
+.join strong {font-weight: 600;}
 .join .btn_join {display: inline-block; margin-top: 58px; background-color: #00bff0; font-size: 14px; font-weight: 100; letter-spacing: -0.5px}
+.join .btn_join:hover {background-color: #0E2036}
 .join .btn_join > i {margin-right: 8px; font-size: 18px; vertical-align: bottom}
-
 
 .store {margin: 0 auto; width: 1176px;}
 .store .store_list::after {content: ''; display: block; clear: both; border-radius: 10px;}
@@ -204,8 +180,6 @@ body.fix .header_wrap .gnb ul > li > a {padding: 4px 10px;}
 .store .store_list > li > a > span strong {font-size: 20px}
 .store .store_list > li > a > span * {display: block}
 .store .store_list > li > a > span b {margin-top: 40px; font-family: 'Nunito'; font-size: 13px}
-
-
 
 .tlx_sns {width: 1170px; margin: 0 auto;}
 .tlx_sns .sns_list:after {content: ''; display: block; clear: both;}
@@ -221,9 +195,7 @@ body.fix .header_wrap .gnb ul > li > a {padding: 4px 10px;}
 .tlx_sns .sns_list > li > a .sns_txt span b {font-size: 15px; color: white; vertical-align: middle}
 .tlx_sns .sns_list > li > a .sns_txt em {color: rgba(255,255,255,0.7);}
 
-
-
-.tlx_tip {margin: 0 auto; width: 1170px;}
+.tlx_tip {margin: 0 auto; padding-bottom: 65px; width: 1170px;}
 .tlx_tip .tip_list:after {content: ''; display: block; clear: both;}
 .tlx_tip .tip_list > li {float: left; padding: 0 15px; width: 25%; height: 260px; box-sizing: border-box;} 
 .tlx_tip .tip_list > li > a {overflow: hidden; display: block; height: 150px; border: 1px solid #ddd; border-top-left-radius: 5px; border-top-right-radius: 5px} 
@@ -233,11 +205,9 @@ body.fix .header_wrap .gnb ul > li > a {padding: 4px 10px;}
 .tlx_tip .tip_list > li > span > a:hover {color: #23527c; text-decoration: underline} 
 .tlx_tip .tip_list > li > span > em {display: block; margin-top: 10px; font-size: 13px; color: #777} 
 
-
 .tlx_app {display: block; background-color: #f4f5f4; color: #666;}
-.tlx_app .app_inner {margin: 0 auto; padding: 90px 0; width: 1170px; height: 610px; text-align: right;}
+.tlx_app .app_inner {position: relative; margin: 0 auto; padding: 90px 0; width: 1170px; height: 610px; text-align: right;}
 .tlx_app .app_inner:after {content: 'TLX PASS'; position: absolute; left: 50%; bottom: 22px; margin-left: -40px; padding-top: 70px; display: block; width: 64px; height: 22px; background: url('../images/app_ico_64@2x.png')no-repeat 0 0; background-size: contain; text-align: center}
-
 .tlx_app .app_inner .app_info {float: left; padding-top: 72px; width: 31.2%;}
 .tlx_app .app_inner .app_info h3 {font-size: 30px; font-family: 'Nunito'; font-weight: 900; color: #00bff0; letter-spacing: 2.3px}
 .tlx_app .app_inner .app_info em {font-size: 30px; font-weight: 100; line-height: 31px; letter-spacing: -1px;}
@@ -248,6 +218,7 @@ body.fix .header_wrap .gnb ul > li > a {padding: 4px 10px;}
 .tlx_app .app_inner .app_info .app_install .app_link > input {margin-right: -1px; padding: 5px; width: 200px; border:1px solid #ddd; border-top-left-radius: 3px; border-bottom-left-radius: 3px; font-size: 12px; font-weight: 700; color: #00bff0; line-height: 20px}
 .tlx_app .app_inner .app_info .app_install .app_link > input::placeholder {font-family: 'Noto Sans KR'; font-size: 12px; font-weight: 500; color: #888}
 .tlx_app .app_inner .app_info .app_install .app_link > button {padding: 6px 12px; border: 1px solid #8de8ff; border-top-right-radius: 3px; border-bottom-right-radius: 3px; background-color: white; font-family: 'Noto Sans KR'; font-size: 12px; font-weight: 700; color: #00bff0; vertical-align: bottom}
+
 .tlx_app .app_inner .app_info .app_install .app_download {font-size: 0}
 .tlx_app .app_inner .app_info .app_install .app_download p {margin-bottom: 13px; padding-right: 10px; font-size: 14px; font-weight: 500; color: #555;}
 .tlx_app .app_inner .app_info .app_install .app_download a {display: inline-block; width: 140px;}
@@ -259,6 +230,7 @@ body.fix .header_wrap .gnb ul > li > a {padding: 4px 10px;}
 .tlx_app .app_inner .app_slider .slider_wrap {position: absolute; top: 66px; left: 102px; width: 223px;}
 .tlx_app .app_inner .app_slider .slider_wrap .slider_inner {overflow: hidden; height: 396px;}
 .tlx_app .app_inner .app_slider .slider_wrap span {position: absolute; top: 55px; right: 100px;}
+
 .tlx_app .app_inner .app_slider .slider_wrap .bx-wrapper {padding: 0; border: none;}
 .tlx_app .app_inner .app_slider .slider_wrap .bx-wrapper .bx-controls-direction a {top:57.2%; width: 35px; height: 35px; border:1px solid #00bff0; border-radius: 50% }
 .tlx_app .app_inner .app_slider .slider_wrap .bx-wrapper .bx-controls-direction a.bx-prev {left: -214%; background: white url('../images/chevron-thin-left_blue@2x.png')no-repeat 8px 8px; background-size: 17px}
@@ -274,21 +246,50 @@ body.fix .header_wrap .gnb ul > li > a {padding: 4px 10px;}
 .tlx_app .app_inner .app_slider .slide_txt li em {font-size: 17px; font-weight: 100; color: #777; letter-spacing: -0.5px}
 .tlx_app .app_inner .app_slider .slide_txt li p {margin-top: 25px; width: 67%; font-size: 17px; font-weight: 100; color: #777; line-height: 29px; letter-spacing: normal}
 
+/* footer */
+.footer_inner {overflow: hidden; border-bottom: 1px solid #253b57; font-size: 12px; font-weight: 100; color: rgba(255, 255, 255, 0.5)}
+.footer_inner strong {margin-right: 5px; color: white;}
+.footer_inner a {color: #00BFF0}
+.footer_inner a:hover {text-decoration: underline}
+.footer_inner i {padding-right: 5px; font-size: 16px}
+.footer_inner .company_info {float: left; width: 36%}
+.footer_inner .company_info h2 > img {width: 110px}
+.footer_inner .company_info small {font-size: 12px; line-height: 24px}
 
+.footer_inner .company_info .offline {font-size: 0}
+.footer_inner .company_info .offline li {position: relative; display: inline-block; padding-right: 18px; font-size: 12px; line-height: 20px;}
+.footer_inner .company_info .offline li:nth-child(4) {padding-right: 0;}
+.footer_inner .company_info .offline li + li::after {content: ''; position: absolute; top: 6px; left: -9px; width: 2px; height: 10px; background-color: rgba(255, 255, 255, 0.1)}
+.footer_inner .company_info .offline li:nth-child(4)::after {width: 0;}
+.footer_inner .company_info .offline li > a {color: rgba(0,191,240,0.5)}
 
+.footer_inner .company_info .online li {margin: 15px 15px 0 0;}
+.footer_inner .company_info .online li:nth-child(3){display: inline-block}
+.footer_inner .company_info .online li:nth-child(4){display: inline-block;}
+.footer_inner .company_info .online li:last-child {display: inline-block; margin-top: 0}
+.footer_inner .company_info .online li:last-child a {color: white;}
+.footer_inner .company_info .online li b {color: white;}
+.footer_inner .company_info .online li i {font-size: 12px;}
 
+.footer_inner .company_info .util {padding: 30px 0; font-size: 0;}
+.footer_inner .company_info .util li {display: inline-block}
+.footer_inner .company_info .util li + li {margin-left: 15px}
+.footer_inner .company_info .util li a {font-size: 12px;}
 
+.footer_inner .company_etc {float: right; width: 60%}
+.footer_inner .company_etc li {float: left; width: 24%}
+.footer_inner .company_etc li:first-child {width: 40%}
+.footer_inner .company_etc li + li {margin-left: 30px}
+.footer_inner .company_etc li strong {display: block; font-size: 14px;}
+.footer_inner .company_etc li a {color: rgba(0,191,240,0.5)}
+.footer_inner .company_etc .etc_btn {display: inline-block; margin: 10px 0; padding: 5px 15px; background-color: rgba(0,0,0,0.2); border-radius: 5px; text-decoration: unset; color: #00BFF0}
+.footer_inner .company_etc .etc_btn:hover {background-color: white;}
 
-
-
-
-@keyframes position {from{transform: translateY(50px)} to{transform: translateY(0)}}
-@keyframes fadeIn {from{opacity: 0;} to{opacity: 1;}}
 
 /*-----------------media--------------------------- media --------------------------*/
 /*-----------------media--------------------------- media --------------------------*/
 @media screen and (max-width: 1199px){
-.slider .slider_teaser .teaser_txt {width: 1138px;}
+.visual_slider .slider_teaser .teaser_txt {width: 1138px;}
 
 .membership {width: 980px}
 .membership > ul > li img {width: 455px;}
@@ -298,7 +299,6 @@ body.fix .header_wrap .gnb ul > li > a {padding: 4px 10px;}
 .summary .summary_info .summary_contents li {margin-left: 0px; margin-right: 56px;}
 .summary .summary_info .summary_contents li:last-child {margin-right: 0}
 .summary .summary_list .summary_contents {width: 698px;}
-
 
 .store {width: 970px}
 .tlx_sns {width: 970px}
@@ -314,23 +314,20 @@ body.fix .header_wrap .gnb ul > li > a {padding: 4px 10px;}
 .tlx_app .app_inner .app_slider .slider_wrap .bx-wrapper .bx-controls-direction a.bx-next {right: -165%}
 .tlx_app .app_inner .app_slider .slide_txt {right: 30px;}
 .tlx_app .app_inner .app_info .app_install .app_link > button {padding: 6px 7px}
-
-
-
 }
 
 @media screen and (max-width: 1170px){
-.slider .slider_teaser .teaser_txt {width: 970px;}
-
+.visual_slider .slider_teaser .teaser_txt {width: 970px;}
 }
+
 @media screen and (max-width: 1000px){
 .header_wrap .gnb ul > li > a {padding: 8px 10px;}
 }
 
-
 @media screen and (max-width: 991px){
 .header_wrap .gnb ul > li > a {padding: 8px 5px;}
-.slider .slider_teaser .teaser_txt {width: 920px;}
+
+.visual_slider .slider_teaser .teaser_txt {width: 920px;}
 
 .summary {width: 720px;}
 .summary .summary_info .summary_contents {margin-top: -40px}
@@ -344,7 +341,6 @@ body.fix .header_wrap .gnb ul > li > a {padding: 4px 10px;}
 .membership > ul > li img {width: 345px;}
 .membership > ul > li > span > em {line-height: 24px}
 
-
 .store {width: 750px}
 .store .store_list > li {width: 50%}
 .store .store_list > li.col_span {width: 100%} 
@@ -355,12 +351,11 @@ body.fix .header_wrap .gnb ul > li > a {padding: 4px 10px;}
 .tlx_tip {width: 750px;}
 .tlx_tip .tip_list > li {margin-bottom: 15px; padding: 0 5px; width: 50%}
 
-
 .tlx_app .app_inner {width: 750px}
 .tlx_app .app_inner:after {margin-left: -25px;}
 .tlx_app .app_inner .app_info .app_install .app_link > button {padding: 6px 7px}
-
 .tlx_app .app_inner .app_slider > img {left: 15px;}
+
 .tlx_app .app_inner .app_slider .slider_wrap {left: 40px;}
 .tlx_app .app_inner .app_slider .slider_wrap .bx-wrapper .bx-controls-direction a {top: 49%}
 .tlx_app .app_inner .app_slider .slider_wrap .bx-wrapper .bx-controls-direction a.bx-prev {left: -114%}
@@ -370,6 +365,8 @@ body.fix .header_wrap .gnb ul > li > a {padding: 4px 10px;}
 .tlx_app .app_inner .app_slider .slide_txt li h4 {font-size: 22px}
 .tlx_app .app_inner .app_slider .slide_txt li em {font-size: 15px}
 .tlx_app .app_inner .app_slider .slide_txt li p {font-size: 15px}	
+
+.footer_inner .company_etc li:first-child {width: 33%}
 }
 
 @media screen and (max-width: 767px){
@@ -416,8 +413,6 @@ body.fix .mobile_btn_wrap .btn_login {top: 11px; right: 68px;}
 .header_wrap .sns_tab ul > li.blog > a::after {left: 93px;}
 .header_wrap .sns_tab ul > li.instagram > a::after {left: 80px;}
 
-
-
 .mobile_btn_wrap {display: block;}
 .mobile_btn_wrap .btn_open {position: absolute; top: 20px; right: 20px; padding-top: 10px; width: 35px; height: 37px; transition: right 0.2s ease}
 .mobile_btn_wrap .btn_open i {display: block; width: 34px; height: 5px; border-radius: 5px; background-color: white;}
@@ -427,19 +422,17 @@ body.fix .mobile_btn_wrap .btn_login {top: 11px; right: 68px;}
 
 .mobile_btn_wrap .btn_login {display: inline-block; position: absolute; top: 90px; right: 10px; padding: 5px 15px; border-radius: 50px; background-color: white; letter-spacing: -1px; line-height: 19px; color: #00bff0}
 
-
 body.active .mobile_btn_wrap .btn_open {right: 282px;}
 body.active .mobile_btn_wrap .btn_open i {background-color: transparent;}
 body.active .mobile_btn_wrap .btn_open i::before {top: 10px; left: 1px; transform: rotate(45deg); transition: all 0.1s ease}
 body.active .mobile_btn_wrap .btn_open i::after {top: 10px; left: 1px; transform: rotate(-45deg); transition: all 0.1s ease}
-
 body.active .mobile_btn_wrap .btn_login {display: none;}
 
-.slider .slider_teaser {bottom: 70px}
-.slider .slider_teaser .teaser_txt {width: 100%; text-align: center;}
-.slider .slider_teaser .teaser_txt a {width: 215px;}
-.slider .slider_teaser .teaser_txt .slide_btn {display: block; margin: 81px auto 0;}
-.slider .slider_teaser .teaser_txt .btn_join {margin: 10px auto 0;}
+.visual_slider .slider_teaser {bottom: 70px}
+.visual_slider .slider_teaser .teaser_txt {width: 100%; text-align: center;}
+.visual_slider .slider_teaser .teaser_txt a {width: 215px;}
+.visual_slider .slider_teaser .teaser_txt .slide_btn {display: block; margin: 81px auto 0;}
+.visual_slider .slider_teaser .teaser_txt .btn_join {margin: 10px auto 0;}
 
 .summary {margin-top: 489px; width: 100%; text-align: center;}
 /* summary 공통사항 */
@@ -469,7 +462,6 @@ body.active .mobile_btn_wrap .btn_login {display: none;}
 .join p {line-height: 37px}
 .join .btn_join {margin-top: 40px; padding: 13px 83px}
 
-
 .store {width: 100%}
 .store .store_list > li {width: 100%}
 .store .store_list > li > a {height: 140px;}
@@ -477,8 +469,6 @@ body.active .mobile_btn_wrap .btn_login {display: none;}
 .store .store_list > li > a > span em {text-align: left}
 .store .store_list > li > a > span strong {text-align: left}
 .store .store_list > li > a > span b {margin-top: 10px; text-align: right} 
-
-
 
 .tlx_sns {width: 100%}
 .tlx_sns .sns_list > li {width: 33.333%}
@@ -503,9 +493,9 @@ body.active .mobile_btn_wrap .btn_login {display: none;}
 .tlx_app .app_inner .app_slider .slide_txt li em {font-size: 13px}
 .tlx_app .app_inner .app_slider .slide_txt li p {margin-top: 0; width: auto; font-size: 13px; line-height: 14px}
 
-
-
-
-
-
+.footer_inner .company_info {float: none; width: 100%}
+.footer_inner .company_etc {float: none; width: 100%}
+.footer_inner .company_etc li {float: none; margin-bottom: 30px; width: 100%}
+.footer_inner .company_etc li:first-child {width: 100%}
+.footer_inner .company_etc li + li {margin-left: 0}
 }

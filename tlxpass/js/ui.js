@@ -96,8 +96,8 @@ function mobileMenu(fixed){
 
 
 function slider(){
-    var sliderElem = bodyElem.querySelector(".slider");
-    var sliderInner = sliderElem.querySelector(".slider_inner");
+    var sliderElem = bodyElem.querySelector(".visual_slider");
+    var sliderInner = sliderElem.querySelector(".visual_inner");
     var sliderUrl = ["images/bg_slider_1.jpg","images/bg_slider_2.jpg","images/bg_slider_3.jpg","images/bg_slider_4.jpg","images/bg_slider_5.jpg"]
 
     var value = 0;
