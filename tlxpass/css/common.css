@@ -62,7 +62,6 @@ i {font-style: normal;}
 /* layout */
 .wrap {position: absolute; top: 0; left: 0; right: 0;}
 .wrap header {position: fixed; top: 0; right: 0; left: 0; z-index: 900; background-color: rgba(0,0,0,0.5);}
-.wrap main section {}
 .wrap footer {padding: 30px; background-color: #0d1f35}
 /**/
 
@@ -79,6 +78,7 @@ section .teaser > em {font-size: 13px; color: #555; letter-spacing: -0.5px}
 /* 애니메이션 */
 @keyframes fadeUp {from{transform: translateY(50px)} to{transform: translateY(0)}}
 @keyframes fadeIn {from{opacity: 0;} to{opacity: 1;}}
+@keyframes fadeInup {from{opacity: 0; transform: translateY(50px) } to{opacity: 1; transform: translateY(0)}}
 
 
 /* header */
@@ -161,7 +161,7 @@ body.fix .header_wrap .gnb ul > li > a {padding: 4px 10px;}
 .membership > ul > li > span > em {display: block; font-size: 14px; letter-spacing: -0.5px; line-height: 28px}
 .membership > ul > li img {margin-top: 6px; width: 555px; border-radius: 8px}
 
-.join {padding: 78px 0; text-align: center; font-size: 24px; color: #555;}
+.join {padding: 78px 0; text-align: center; font-size: 24px; color: #555; animation: fadeInup 0.5s ease}
 .join p {font-weight: 100; line-height: 46px}
 .join b {font-family: 'Nunito'; padding: 0 5px}
 .join strong {font-weight: 600;}
@@ -169,7 +169,7 @@ body.fix .header_wrap .gnb ul > li > a {padding: 4px 10px;}
 .join .btn_join:hover {background-color: #0E2036}
 .join .btn_join > i {margin-right: 8px; font-size: 18px; vertical-align: bottom}
 
-.store {margin: 0 auto; width: 1176px;}
+.store {margin: 0 auto; width: 1176px; animation: fadeUp 0.5s ease}
 .store .store_list::after {content: ''; display: block; clear: both; border-radius: 10px;}
 .store .store_list > li {float: left; padding: 2px; width: 25%; box-sizing: border-box}
 .store .store_list > li.col_span {width: 50%}
@@ -181,7 +181,7 @@ body.fix .header_wrap .gnb ul > li > a {padding: 4px 10px;}
 .store .store_list > li > a > span * {display: block}
 .store .store_list > li > a > span b {margin-top: 40px; font-family: 'Nunito'; font-size: 13px}
 
-.tlx_sns {width: 1170px; margin: 0 auto;}
+.tlx_sns {width: 1170px; margin: 0 auto; animation: fadeUp 0.5s ease}
 .tlx_sns .sns_list:after {content: ''; display: block; clear: both;}
 .tlx_sns .sns_list > li {float: left; padding: 2px; width: 16.6666667%; box-sizing: border-box}
 .tlx_sns .sns_list > li > a {overflow: hidden; position: relative; display: block}
@@ -195,7 +195,7 @@ body.fix .header_wrap .gnb ul > li > a {padding: 4px 10px;}
 .tlx_sns .sns_list > li > a .sns_txt span b {font-size: 15px; color: white; vertical-align: middle}
 .tlx_sns .sns_list > li > a .sns_txt em {color: rgba(255,255,255,0.7);}
 
-.tlx_tip {margin: 0 auto; padding-bottom: 65px; width: 1170px;}
+.tlx_tip {margin: 0 auto; padding-bottom: 65px; width: 1170px; animation: fadeUp 0.5s ease}
 .tlx_tip .tip_list:after {content: ''; display: block; clear: both;}
 .tlx_tip .tip_list > li {float: left; padding: 0 15px; width: 25%; height: 260px; box-sizing: border-box;} 
 .tlx_tip .tip_list > li > a {overflow: hidden; display: block; height: 150px; border: 1px solid #ddd; border-top-left-radius: 5px; border-top-right-radius: 5px} 

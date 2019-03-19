@@ -20,7 +20,6 @@ function scrollWork(){
     window.addEventListener("scroll", function(){
         clearTimeout(scrollCheck);
         scrollCheck = setTimeout(headerFix, 100);
-        // headerFix();
     });
 
     function headerFix(){
@@ -29,17 +28,12 @@ function scrollWork(){
 
         if(currentY > 10){ //스크롤내림
             bodyElem.classList.add("fix");
-            
             mobileMenu(fixed);
         } 
-
         if(currentY === 0){
             bodyElem.classList.remove("fix");
         }
-        
     }
-
-
 }
 
 
@@ -95,10 +89,11 @@ function mobileMenu(fixed){
 }
 
 
+// visual_slider 배경전환
 function slider(){
     var sliderElem = bodyElem.querySelector(".visual_slider");
     var sliderInner = sliderElem.querySelector(".visual_inner");
-    var sliderUrl = ["images/bg_slider_1.jpg","images/bg_slider_2.jpg","images/bg_slider_3.jpg","images/bg_slider_4.jpg","images/bg_slider_5.jpg"]
+    var sliderUrl = ["images/bg_slider_1.jpg","images/bg_slider_2.jpg","images/bg_slider_3.jpg","images/bg_slider_4.jpg","images/bg_slider_5.jpg"];
 
     var value = 0;
    
@@ -108,16 +103,12 @@ function slider(){
                 value = 0;
             } else {
             value = value + 1
-
             }
-
             ani(value);
-            
-
         }, 5000);
             
 
-
+    // 배경전환과 fade 효과
     function ani(value){
 
         sliderElem.style.backgroundImage = "url("+ sliderUrl[value] +")";
@@ -135,15 +126,14 @@ function slider(){
 
 }
 
+// summary 숫자올라가는 카운터
 function counter(){
     $(window).on('load', function(){
          $('.counter').counterUp({
             delay: 10,
             time: 1500
          });
-
     });
-   
 }
 
 
