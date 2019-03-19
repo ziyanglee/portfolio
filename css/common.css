@@ -60,10 +60,10 @@ section h2:after {content: ''; position: absolute; top: 0; left: 10px; right: 10
 .portfolio ul > li span em {font-weight: 400}
 .portfolio ul > li .img_box {max-width: 60%}
 .portfolio ul > li .img_box img {width: 100%;}
-.portfolio ul > li.content_63 .img_box {float: right;}
-.portfolio ul > li.content_63 .txt_box {float: right; text-align: right;}
-.portfolio ul > li.content_hyosung .img_box {float: right;}
-.portfolio ul > li.content_hyosung .txt_box {float: right; text-align: right;}
+.portfolio ul > li:nth-child(2) .img_box {float: right;}
+.portfolio ul > li:nth-child(2) .txt_box {float: right; text-align: right;}
+.portfolio ul > li:nth-child(4) .img_box {float: right;}
+.portfolio ul > li:nth-child(4) .txt_box {float: right; text-align: right;}
 .portfolio ul > li.content_hyosung .txt_box .open_btn {width: 97px;}
 
 
@@ -118,11 +118,12 @@ footer p {margin-top: 50px; font-size: 28px; font-weight: bold;}
 .portfolio ul {max-width: 900px;}
 .portfolio ul > li span {display: block; float: none;}
 .portfolio ul > li .img_box {max-width: 100%;}
+.portfolio ul > li .txt_box {text-align: center;}
 
-.portfolio ul > li.content_63 .img_box {float: none;}
-.portfolio ul > li.content_63 .txt_box {float: none; text-align: left;}
-.portfolio ul > li.content_hyosung .img_box {float: none;}
-.portfolio ul > li.content_hyosung .txt_box {float: none; text-align: left;}
+.portfolio ul > li:nth-child(2) .img_box {float: none;}
+.portfolio ul > li:nth-child(2) .txt_box {float: none; text-align: center;}
+.portfolio ul > li:nth-child(4) .img_box {float: none;}
+.portfolio ul > li:nth-child(4) .txt_box {float: none; text-align: center;}
 
 .cover_letter h3 {font-size: 25px;}
 
@@ -159,7 +160,6 @@ nav h1 > a {top: 52px; left: 50%; margin-left: -22.955px}
 
 .wrap main {margin-top: 132px}
 
-.portfolio ul > li .txt_box {text-align: center;}
 .portfolio ul > li .txt_box h3 {font-size: 23px}
 .portfolio ul > li.content_63 .txt_box {text-align: center;}
 .portfolio ul > li.content_hyosung .txt_box {text-align: center;}

@@ -127,6 +127,7 @@ body.fix .header_wrap .gnb ul > li > a {padding: 4px 10px;}
 .visual_slider .slider_teaser .teaser_txt span img {display: inline-block; height: 43px;}
 .visual_slider .slider_teaser .teaser_txt span strong {display: inline-block; font-size: 32px; font-weight: 500}
 .visual_slider .slider_teaser .teaser_txt .slide_btn {display: inline-block; margin-top: 50px; padding: 13px 20px; border:2px solid white; border-radius: 100px; background-color: transparent; color: white; font-size: 14px; font-weight: 400;}
+.visual_slider .slider_teaser .teaser_txt .slide_btn + .slide_btn {margin-top: 10px}
 .visual_slider .slider_teaser .teaser_txt .slide_btn:hover {background-color: #0E2036}
 .visual_slider .slider_teaser .teaser_txt .btn_membership {margin-left: 30px; border-color: transparent; background-color: #00bff0}
 .visual_slider .slider_teaser .teaser_txt .slide_btn i {margin-right: 5px; font-size: 19px; vertical-align: sub}
