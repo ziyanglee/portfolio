@@ -11,7 +11,7 @@ mobileMenu();
 slider();
 counter();
 
-// 스크롤 되었을 때
+// 스크롤 이벤트
 function scrollWork(){
     var scrollCheck;
 
@@ -22,13 +22,17 @@ function scrollWork(){
         scrollCheck = setTimeout(headerFix, 100);
     });
 
+    // header 고정시키기 
     function headerFix(){
-        var currentY = window.scrollY; //현재위치 측정
+        var currentY = window.scrollY; //현재 스크롤위치 측정
         var fixed = true;
 
-        if(currentY > 10){ //스크롤내림
+        if(bodyElem.classList.contains("active")){ //모바일메뉴가 열린상태에선 종료
+            return
+        }
+        if(currentY > 10){ //스크롤내렸을 때
             bodyElem.classList.add("fix");
-            mobileMenu(fixed);
+            mobileMenu(fixed); //모바일메뉴 동작
         } 
         if(currentY === 0){
             bodyElem.classList.remove("fix");
@@ -40,7 +44,7 @@ function scrollWork(){
 
 
 
-// 리사이즈 되었을때 
+// 리사이즈 이벤트 
 function resizeWork(){
     var sizeCheck;
 
@@ -52,13 +56,12 @@ function resizeWork(){
     function headerActive(){ // 모바일 메뉴 닫힘
         var innerWidth = window.innerWidth;
         
-        if(innerWidth > 767 && bodyElem.classList.contains("active")){ 
+        if(innerWidth > 767 && bodyElem.classList.contains("active")){ //모바일메뉴가 열린상태에서 PC크기로 리사이즈되면 모바일 메뉴 닫힘
             bodyElem.classList.remove("active");            
         } else {
             return
         }
-    }   
-    
+    }       
 }
 
 
@@ -69,8 +72,7 @@ function mobileMenu(fixed){
         ev.preventDefault();
         
         if (fixed === true) { //스크롤이 된 상태에서 메뉴를 클릭했을 때
-            console.log(fixed);
-            
+
             bodyElem.classList.remove("fix"); 
 
             if(bodyElem.classList.contains("active")){ //body에 active를 주면 메뉴열림
@@ -80,7 +82,7 @@ function mobileMenu(fixed){
             }
         }        
 
-        if(bodyElem.classList.contains("active")){ //body에 active를 주면 메뉴열림
+        if(bodyElem.classList.contains("active")){ 
             bodyElem.classList.remove("active");
         } else {
             bodyElem.classList.add("active");
@@ -93,7 +95,7 @@ function mobileMenu(fixed){
 function slider(){
     var sliderElem = bodyElem.querySelector(".visual_slider");
     var sliderInner = sliderElem.querySelector(".visual_inner");
-    var sliderUrl = ["images/bg_slider_1.jpg","images/bg_slider_2.jpg","images/bg_slider_3.jpg","images/bg_slider_4.jpg","images/bg_slider_5.jpg"];
+    var sliderUrl = ["images/bg_slider_1.jpg","images/bg_slider_2.jpg","images/bg_slider_3.jpg","images/bg_slider_4.jpg","images/bg_slider_5.jpg"]; // 변경될 배경 주소
 
     var value = 0;
    
@@ -112,7 +114,6 @@ function slider(){
     function ani(value){
 
         sliderElem.style.backgroundImage = "url("+ sliderUrl[value] +")";
-        
         sliderInner.style.backgroundImage = "url("+ sliderUrl[value] +")";
         sliderInner.style.opacity = "1";
         sliderInner.style.transform = "translateX(0%)";
@@ -120,10 +121,8 @@ function slider(){
         setTimeout(function(){
             sliderInner.style.opacity = "0";
             sliderInner.style.transform = "translateX(100%)";
-        }, 2000)
-    
+        }, 2000);
     }
-
 }
 
 // summary 숫자올라가는 카운터
@@ -135,9 +134,6 @@ function counter(){
          });
     });
 }
-
-
-
 
 
 } //window

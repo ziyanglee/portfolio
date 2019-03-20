@@ -233,7 +233,7 @@ body.fix .header_wrap .gnb ul > li > a {padding: 4px 10px;}
 .tlx_app .app_inner .app_slider .slider_wrap span {position: absolute; top: 55px; right: 100px;}
 
 .tlx_app .app_inner .app_slider .slider_wrap .bx-wrapper {padding: 0; border: none;}
-.tlx_app .app_inner .app_slider .slider_wrap .bx-wrapper .bx-controls-direction a {top:57.2%; width: 35px; height: 35px; border:1px solid #00bff0; border-radius: 50% }
+.tlx_app .app_inner .app_slider .slider_wrap .bx-wrapper .bx-controls-direction a {top:57.2%; z-index: 100; width: 35px; height: 35px; border:1px solid #00bff0; border-radius: 50% }
 .tlx_app .app_inner .app_slider .slider_wrap .bx-wrapper .bx-controls-direction a.bx-prev {left: -214%; background: white url('../images/chevron-thin-left_blue@2x.png')no-repeat 8px 8px; background-size: 17px}
 .tlx_app .app_inner .app_slider .slider_wrap .bx-wrapper .bx-controls-direction a.bx-next {right: -212%; background: white url('../images/chevron-thin-right_blue@2x.png')no-repeat 10px 8px; background-size: 17px}
 .tlx_app .app_inner .app_slider .slider_wrap .bx-pager, .bx-wrapper .bx-controls-auto {bottom: -111px;}
@@ -450,7 +450,7 @@ body.active .mobile_btn_wrap .btn_login {display: none;}
 .summary .summary_info .summary_contents li span strong {margin-top: 5px}
 
 .summary .summary_list {margin: 25px auto 0; width: 90%}
-.summary .summary_list .summary_contents {margin: 0 auto; padding-top: 49px; width: 100%; background-color: yellow}
+.summary .summary_list .summary_contents {margin: 0 auto; padding-top: 49px; width: 100%;}
 .summary .summary_list .summary_contents li:last-child {width: auto; height: auto; text-align: left;}
 
 .membership {width: 100%}
