@@ -118,7 +118,7 @@ body.fix .header_wrap .gnb ul > li > a {padding: 4px 10px;}
 
 
 /* main */
-.visual_slider {overflow: hidden; position: absolute; top: 0; left: 0; right: 0; padding:0; height: 500px; background: rgba(0,0,0,0.35) url('../images/bg_slider_1.jpg') no-repeat 50% 100% fixed; background-blend-mode: darken; background-size: cover; transition: background-image 1.2s ease-in-out;}	
+.visual_slider {overflow: hidden; position: absolute; top: 0; left: 0; right: 0; padding:0; height: 500px; background: rgba(0,0,0,0.35) url('../images/bg_slider_1.jpg') no-repeat 50% 100% fixed; background-blend-mode: darken; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; transition: background-image 1.2s ease-in-out;}	
 .visual_slider .visual_inner {position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.35) url('../images/bg_slider_1.jpg') no-repeat 50% 100% fixed;	background-blend-mode: darken; background-size: cover; transform: translateX(100%);	transition: transform 0.7s ease-in-out;}
 .visual_slider .slider_teaser {position: absolute; bottom: 64px; left: 0; right: 0; color: white; font-size: 0;}
 .visual_slider .slider_teaser .teaser_txt {margin: 0 auto; width: 1170px;}
