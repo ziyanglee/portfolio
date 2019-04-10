@@ -429,6 +429,7 @@ body.active .mobile_btn_wrap .btn_open i::before {top: 10px; left: 1px; transfor
 body.active .mobile_btn_wrap .btn_open i::after {top: 10px; left: 1px; transform: rotate(-45deg); transition: all 0.1s ease}
 body.active .mobile_btn_wrap .btn_login {display: none;}
 
+.visual_slider .visual_inner {background-attachment: scroll}
 .visual_slider .slider_teaser {bottom: 70px}
 .visual_slider .slider_teaser .teaser_txt {width: 100%; text-align: center;}
 .visual_slider .slider_teaser .teaser_txt a {width: 215px;}
