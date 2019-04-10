@@ -114,7 +114,9 @@ function slider(){
     function ani(value){
 
         sliderElem.style.backgroundImage = "url("+ sliderUrl[value] +")";
+        sliderElem.style.backgroundSize = "scroll";
         sliderInner.style.backgroundImage = "url("+ sliderUrl[value] +")";
+        sliderInner.style.backgroundSize = "scroll";
         sliderInner.style.opacity = "1";
         sliderInner.style.transform = "translateX(0%)";
         
