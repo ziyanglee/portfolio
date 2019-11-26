@@ -1,5 +1,5 @@
 @charset 'utf-8';
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300|Montserrat:400,500,600');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400|Montserrat:400,500,600');
 
 body {
 	font: normal 16px 'Montserrat','Noto Sans KR', sans-serif;
@@ -54,25 +54,40 @@ section {margin: 0 auto; max-width: 1400px;}
 section h2 {position: relative; margin: 0 auto; width: 70px; line-height: 50px}
 section h2:after {content: ''; position: absolute; top: 0; left: 10px; right: 10px; height: 2px; background-color: #FF653F;}
 
-.portfolio ul > li {overflow: hidden; margin-top: 50px; border-bottom: 2px solid rgba(0,0,0,0.1)}
-.portfolio ul > li + li {margin-top: 176px;}
-.portfolio ul > li span {float: left;}
-.portfolio ul > li span em {font-weight: 400}
-.portfolio ul > li .img_box {float: left; max-width: 60%}
-.portfolio ul > li .img_box img {width: 100%;}
-.portfolio ul > li .txt_box {float: right; width: 39%; padding: 50px 0}
-.portfolio ul > li .txt_box * {display: block; line-height: 20px;}
+/* 공통사항 */
 .portfolio ul > li .txt_box h3 {font-size: 35px}
-.portfolio ul > li .txt_box strong {margin-top: 20px}
-.portfolio ul > li .txt_box em {margin-top: 20px}
-
-.portfolio ul > li:nth-child(2n) .img_box {float: right;}
-.portfolio ul > li:nth-child(2n) .txt_box {float: left; text-align: right;}
-.portfolio ul > li.content_hyosung .txt_box .open_btn {width: 97px;}
-
-.portfolio ul > li .txt_box .open_btn {display: inline-block; position: relative; margin-top: 20px; width: 150px; border: 1px solid #de0092; background-color: #de0092; font-size: 13px; color: white; text-align: center; line-height: 33px;}
-.portfolio ul > li .txt_box .open_btn:hover:before {content: ''; position: absolute; top: -1px; left: -1px; bottom: -1px; width: 0; background-color: white; animation: btn_action 0.6s ease;}
+.portfolio > ul > li {overflow: hidden; margin-top: 50px; padding-bottom: 50px; border-bottom: 2px solid rgba(0,0,0,0.1)}
+.portfolio > ul > li .img_box {float: left;}
+.portfolio > ul > li .img_box img {width: 100%;}
+.portfolio > ul > li .txt_box {float: right;}
+.portfolio > ul > li .txt_box .open_btn {display: inline-block; position: relative; margin-top: 20px; width: 150px; border: 1px solid #de0092; background-color: #de0092; font-size: 13px; color: white; text-align: center; line-height: 33px;}
+.portfolio > ul > li .txt_box .open_btn:hover:before {content: ''; position: absolute; top: -1px; left: -1px; bottom: -1px; width: 0; background-color: white; animation: btn_action 0.6s ease;}
 @keyframes btn_action {from {width: 0;} 50% {width: 100%;} to {width: 0}}
+
+/* part_1 */
+.portfolio .part_1 > li .img_box {width: 60%;}
+.portfolio .part_1 > li .txt_box {padding-left: 2%; width: 35%; border-left: 2px solid #eee;}
+.portfolio .part_1 > li:first-child .txt_box {padding: 0; border-left: 0;}
+.portfolio .part_1 > li .txt_box em {display: block; margin-top: 20px}
+.portfolio .part_1 > li .txt_box .project_list li {margin: 70px 0}
+.portfolio .part_1 > li .txt_box .project_list li h4 {position: relative; font-weight: 700;}
+.portfolio .part_1 > li .txt_box .project_list li h4::after {content: ''; position: absolute; top: 10%; left: -7.2%; width: 13px; height: 13px; border-radius: 50%; background-color: #eee;}
+
+
+/* part_2 */
+.portfolio .part_2 > li + li {margin-top: 176px;}
+.portfolio .part_2 > li span {float: left;}
+.portfolio .part_2 > li span em {font-weight: 400}
+.portfolio .part_2 > li .img_box {float: left; max-width: 60%}
+.portfolio .part_2 > li .txt_box {float: right; width: 39%; padding: 50px 0}
+.portfolio .part_2 > li .txt_box * {display: block; line-height: 20px;}
+.portfolio .part_2 > li .txt_box strong {margin-top: 20px}
+.portfolio .part_2 > li .txt_box em {margin-top: 20px}
+
+.portfolio .part_2 > li:nth-child(2n) .img_box {float: right;}
+.portfolio .part_2 > li:nth-child(2n) .txt_box {float: left; text-align: right;}
+.portfolio .part_2 > li.content_hyosung .txt_box .open_btn {width: 97px;}
+
 
 .cover_letter {clear: both; padding-top: 200px; font-family: Noto Sans KR; text-align: center;}
 .cover_letter h2 {width: 100px;}
