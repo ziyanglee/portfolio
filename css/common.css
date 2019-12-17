@@ -69,7 +69,8 @@ section h2:after {content: ''; position: absolute; top: 0; left: 10px; right: 10
 .portfolio .part_1 > li .img_box {width: 60%;}
 .portfolio .part_1 > li .txt_box {padding-left: 2%; width: 35%; border-left: 2px solid #eee;}
 .portfolio .part_1 > li:first-child .txt_box {padding: 0; border-left: 0;}
-.portfolio .part_1 > li .txt_box em {display: block; margin-top: 20px; line-height: 1.8;}
+.portfolio .part_1 > li .txt_box em {display: block; margin-top: 20px; line-height: 1.8; word-wrap: break-word; word-break: keep-all;}
+.portfolio .part_1 > li .txt_box em i {display: block;}
 .portfolio .part_1 > li .txt_box .project_list li {margin: 70px 0}
 .portfolio .part_1 > li .txt_box .project_list li h4 {position: relative; font-size: 1.12em; font-weight: 700;}
 .portfolio .part_1 > li .txt_box .project_list li h4::after {content: ''; position: absolute; top: 25%; left: -7.45%; width: 13px; height: 13px; border-radius: 50%; background-color: #eee;}
@@ -179,6 +180,8 @@ nav h1 > a {top: 52px; left: 50%; margin-left: -22.955px}
 .portfolio ul {margin: 20% auto 0}
 .portfolio ul > li .txt_box h3 {font-size: 1.3em}
 .portfolio > ul > li .txt_box strong {font-size: 0.9em;}
+
+.portfolio .part_1 > li .txt_box em i {display: inline-block; margin-right: 5px}
 
 .cover_letter {padding-top: 106px;}
 .cover_letter h3 {font-size: 18px;}
