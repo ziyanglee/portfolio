@@ -1,0 +1,69 @@
+
+@media screen and (max-width: 1400px){
+    /* header */
+    .header_wrap { width: 100%; margin: 0; position: relative;}
+    .header_wrap nav {margin-left: 3.571428571428571% /*50/1400*/}
+    .header_wrap nav > ul > li + li {margin-left: 24px;}
+    .header_wrap nav > ul > li > a {font-size: 21px;}
+    /* section */
+    .sec01 .slide_container {width: 70%}
+    .sec01 .slide_container .slide_wrapper .slide {}
+    
+    
+    }
+    
+    
+    @media screen and (max-width: 991px){
+    html {font-size: 16px;}
+    /* header */    
+    .header_wrap {padding: 24px 0}
+    .header_wrap nav {float: right; margin-right: 2rem}
+    .header_wrap nav > ul > li + li {margin-left: 1rem;}
+    .header_wrap h1 {left: 8rem;}
+
+    /* section */
+    .sec01 .slide_container {width: 100%}
+    
+    }
+    
+    
+    
+    
+    @media screen and (max-width: 768px){
+    html {font-size: 14px;}
+    /* header */
+    .header_wrap nav {float: right; margin-right:6.51890482399%/*50/767*/}
+    .header_wrap nav > ul > li + li {margin-left: 25px;}
+    .header_wrap nav > ul > li > a {font-size: 19px; font-weight: 500}
+    .header_wrap h1 {top: 1.5rem; width: 150px;}
+
+    /* section */
+    .sec01 .slide_container {padding-top: 14rem; width: 60vw}
+    
+    
+    }
+    
+    
+    
+    
+    @media screen and (max-width: 575px){
+    html {font-size: 12px;}
+    
+    header {position: static;}
+    .header_wrap { height: 27px; }
+    .header_wrap h1 {width: 130px; top: 25px; left: 50%; margin-left: -62.5px}
+    .header_wrap nav {position: fixed; z-index: 1000; left: 0; right: 0; bottom: 0; padding: 17px 0; margin: 0; background-color: white; box-shadow: 1px 4px 10px rgba(0,0,0,0.5); transition: all 0.5s cubic-bezier(.1,.6,.4,1)}
+    .header_wrap nav.nav_tab.on {bottom: -60px;}
+    .header_wrap nav > ul {margin-left: 10px;}
+    .header_wrap nav > ul > li > a {font-size: 16px;}
+    .header_wrap nav > ul > li + li {margin-left: 20px}
+    .header_wrap .find_retailer > a {display: none;}
+    
+    /* section */
+    .sec01 .slide_container {padding-top: 6rem; width: 90vw}
+    .sec01 .slide_container .slide_wrapper .slide .img_box figure {height: 230px}
+    .swiper-button-next, .swiper-button-prev {display: none;}
+    .sec02 .bg_box {width: 74%}
+    
+    }
+    

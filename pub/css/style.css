@@ -1,0 +1,81 @@
+
+/* 공통사항 */
+html {scroll-behavior: smooth;}
+section {overflow: hidden; position: relative;}
+h2 {position: absolute; top: 10rem; left: 10.5rem; border-bottom: 4px solid #000; font-size: 2rem; font-weight: 300; color: #111 }
+
+
+
+/* header */
+header {position: fixed; top: 0; left: 0; right: 0; background: white; z-index: 300; transition: all 0.5s cubic-bezier(.1,.6,.4,1)}
+header.on {top: -125px}
+.header_wrap { width: 84.895833333333%; /*1630/1920*/ margin: 0 auto; overflow: hidden; padding: 2rem 0;}
+.header_wrap nav {float: left;}
+.header_wrap nav > ul {display: flex;}
+.header_wrap nav > ul > li {padding: 0.25rem 1rem; border-radius: 50px; border: 1px solid #333; transition: all 0.5s cubic-bezier(0.1, 0.9, 0.3, 1);} 
+.header_wrap nav > ul > li + li {margin-left: 32px;}
+.header_wrap nav > ul > li > a {line-height: 1; font-size: 1.2rem; font-weight: 300;}
+.header_wrap nav > a.mobile_menu {display: none}
+
+.header_wrap nav > ul > li.on {background: #333;}
+.header_wrap nav > ul > li.on a {color: #fff;}
+
+.header_wrap h1 {position: absolute; top: 2rem; left: 50%; margin-left: -100px; width: 200px; font-size: 1.3rem; text-align: center; transition: all 0.5s cubic-bezier(0.1, 0.9, 0.3, 1);}
+.header_wrap h1::after {content: ''; position: absolute; left: 50%; bottom: -0.7rem; z-index: -1; width: 70%; height: 3px; border-top: 1px solid #333; border-bottom: 1px solid #333; transform: translate(-50%, -50%); transition: all 0.2s ease }
+.header_wrap h1:hover::after {height: 25px}
+
+.header_wrap h1 a em {font-size: 1.1rem;}
+
+
+/*section sec01 */
+.sec01 {height: 100vh;}
+.sec01::before {content: ''; position: absolute; top: 0; left: 50%; margin-left: -15rem; width: 30rem; height: 100%; bottom: 0; background: #000; transform: skew(-45deg); animation: gradient 50s ease infinite;}
+ 
+@keyframes gradient {
+	0% {
+		transform: skew(-45deg) scale(1);
+	}
+	50% {
+		transform: skew(-85deg) scale(5);
+	}
+	100% {
+		transform: skew(-45deg) scale(1);
+	}
+}
+
+
+.sec01 .slide_container {overflow: visible; margin: 0 auto; padding: 20rem 0 15rem;  max-width: 100%; width: 1080px}
+.sec01 .slide_container .slide_wrapper .slide {opacity: 0.8; overflow: hidden; position: relative; padding: 0; width: 26.66rem; min-height: 30rem; border-radius: 10px; background: #fff; box-shadow: 0 0 30px rgba(0,0,0,0.05); transition: all 0.5s ease-in-out;}
+.sec01 .slide_container .slide_wrapper .slide::after {content: ''; opacity: 0.5; position: absolute; top: 0; right: 0; left: 0; bottom: 0; background: #000; transition: all 1s ease;}
+.sec01 .slide_container .slide_wrapper .slide .img_box figure {width: 100%; height: 290px; border-bottom: 1px solid #eee;}
+.sec01 .slide_container .slide_wrapper .slide .img_box img {width: 100%; height: 100%; object-fit: cover;}
+.sec01 .slide_container .slide_wrapper .slide .txt_box {padding: 0.5rem 1rem 0; font-family: 'Noto Sans KR',sans-serif;}
+.sec01 .slide_container .slide_wrapper .slide .txt_box .tit {padding: 1rem 0; line-height: 1.2; font-size: 1.2rem; font-weight: 300; color: #000}
+.sec01 .slide_container .slide_wrapper .slide .txt_box .desc {font-size: 0.9rem; font-weight: 300;}
+.sec01 .slide_container .slide_wrapper .slide .txt_box .desc p {line-height: 2;}
+
+.sec01 .slide_container .slide_wrapper .slide.swiper-slide-active {opacity: 1; padding: 1.5rem 0; border:1px solid #333; background: #fff url('../images/bg_sec01.png')no-repeat center -2px / 100%; box-shadow: 0 0 30px rgba(0,0,0,0.15); }
+.sec01 .slide_container .slide_wrapper .slide.swiper-slide-active::after {opacity: 0; top: auto; height: 0;}
+
+.swiper-button-next, .swiper-button-prev {top: auto; left: auto; bottom: 9rem; color: #333;}
+.swiper-button-next, .swiper-container-rtl .swiper-button-prev {right: -4.5rem}
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next {right: -2rem}
+.swiper-container-horizontal>.swiper-scrollbar {opacity: 1 !important; bottom: 10rem; background: none; border-bottom: 1px solid #ccc}
+.swiper-scrollbar-drag {background: #eee; box-shadow: 0px 2px 0px rgb(0 0 0 / 0.8) }
+
+/*section sec02 */
+.sec02 {height: 80vh;}
+.sec02 .bg_box {position: absolute; top: 39%; left: 50%; padding-top: 10%; max-width: 100%; width: 1500px; height: 0; transform: translate(-50%, -50%);}
+.sec02 .bg_box .back_face {opacity: 0; position: absolute; left: 0; bottom: 1px; right: 0; width: 100%; height: 0; background: #222938; transition: opacity 2s, height 0.9s cubic-bezier(0.215, 0.61, 0.355, 1)}
+.sec02 .bg_box.active .back_face {opacity: 1; height: 97%;} 
+.sec02 .bg_box .front_face {position: absolute; top: 0%; left: 0%; width: 100%; height: 100%; background: url('../images/bg_sec02.png')no-repeat center / 100%; }
+
+.sec02 .letter_box {overflow-y: scroll; position:  absolute; top: 0%; left: 0%; right: 0; bottom: 0;  width: 100%; height: 100%; text-align: center; -ms-overflow-style: none; /* IE and Edge */ scrollbar-width: none;}
+.sec02 .letter_box::-webkit-scrollbar {display: none;}
+.sec02 .letter_box ul {margin: 75vh auto 20vh; padding: 4rem 0; max-width: 90%; width: 52rem; border: 1px solid #222938; border-bottom-width: 5px; background: #fff;}
+.sec02 .letter_box ul li {line-height: 2; transition: all 0.7s cubic-bezier(0.55, 0.055, 0.675, 0.19);}
+.sec02 .letter_box ul li + li {margin-top: 2rem; letter-spacing: -1px;}
+.sec02 .letter_box ul li:first-child {font-size: 1.5rem; font-weight: 500;}
+.sec02 .letter_box ul li.contact_box p {font-weight: 700;}
+.sec02 .letter_box ul li.contact_box a:hover {text-decoration: underline; text-underline-position: under;}
+

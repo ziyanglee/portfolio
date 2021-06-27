@@ -1,0 +1,71 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@200;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+* {margin: 0; padding: 0; box-sizing: border-box; -webkit-box-sizing: border-box; word-break: keep-all;}
+
+/* reset  */
+html {font-size: 18px;}
+body {margin:0; padding:0; background-color:#fff;font-family: 'Montserrat', sans-serif; line-height:1.3; color:#333;}
+br	{letter-spacing: 0;}
+h1, h2, h3, h4, h5, h6 {font-size:1em;}
+h1, h2, h3, h4, h5, h6, div, p, dl, dt, dd, ul, ol, li, form, fieldset, blockquote, address, table, thead, tbody, tfoot, tr, td, caption {margin:0; padding:0;}
+ul, ol {list-style:none;}
+img {border:0; vertical-align: top;}
+table {width:100%; border-collapse:collapse;}
+table caption {position:absolute; top:0; left:-999999px;}
+a:link, a:visited {color: #222; text-decoration:none;}
+a:hover {color: #222; text-decoration:none;}
+button {border:none; padding: 0;}
+em, i {font-style: normal;}
+address{font-style: normal;}
+textarea {resize: none}
+
+/* common 공통사항 */
+.hide {visibility: hidden; width: 0; height: 0;}
+.haze {text-indent: -99999px;}
+.clearfix::after {content: ''; display: block; clear: both;}
+.for_m {display: none;}
+.for_pc {display: block;}
+
+.f_noto {font-family: 'Roboto', sans-serif;}
+.under_line {text-decoration: underline}
+.info {font-size: 14px; color: #999}
+
+
+/* custom input */
+input[type="radio"].custom {appearance: none} 
+input.in_txt,
+textarea.in_txt {appearance: none; padding-left: 10px; background: none; border:1px solid #ddd; font-family: 'Noto Sans KR', sans-serif; font-weight: 300; transition: all 0.5s ease}
+textarea.in_txt {padding: 10px}
+input.in_txt::placeholder,
+textarea.in_txt::placeholder {font-size: 14px; color: #9a9a9a; letter-spacing: -0.75px} 
+input.in_txt:focus {outline: none; border-bottom: 1px solid #3ebe85}
+textarea.in_txt:focus {outline: none; border: 1px solid #3ebe85}
+input.in_txt {height: 30px; line-height: 29px;}
+
+
+.inp_chk {position: relative; font-size: 13px}
+.inp_chk .check {padding-left: 27px; font-weight: 300}
+.inp_chk .check input {display: none}
+.inp_chk .check input + i {position: absolute; top: 0; left: 0; width: 15px; height: 15px; border: 1px solid #ddd;}
+.inp_chk .check input:checked + i {background: url('/pub/images/common/icon_check.png')no-repeat center;}
+
+/* color */
+.org {color: #faa21a}
+
+/* margin */
+/* top */
+.mt_mi45 {margin-top: -45px}
+.mt5 {margin-top: 5px}
+.mt25 {margin-top: 25px}
+.mt35 {margin-top: 35px}
+.mt60 {margin-top: 60px}
+
+/* text-align */
+.tac {text-align: center !important;}
+.tar {text-align: right !important;}
+.tal {text-align: left !important;}
+
+

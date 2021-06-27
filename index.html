@@ -10,337 +10,330 @@
 
 	  gtag('config', 'UA-161573163-1');
 	</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이지양 포트폴리오</title>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
 
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>이지양 포트폴리오</title>
-	<meta name="author" content="이지양">
-	<meta name="description" content="안녕하세요, 신입 프론트엔드 개발자 이지양 포트폴리오 페이지입니다.">
-	<meta name="keywords" content="프론트엔드, 퍼블리셔, frontend, publisher, 웹개발, 포트폴리오, portfolio">
-	<!-- open graph  -->
-	<meta property="og:title" content="이지양 포트폴리오">
-	<meta property="og:description" content="안녕하세요, 신입 프론트엔드 개발자 이지양 포트폴리오 페이지입니다."/>
-	<meta property="og:type" content="website"/>
-	<meta property="og:url" content="https://ziyanglee.github.io/portfolio"/>
-	<link rel="stylesheet" media="all" href="css/common.css"/>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="js/ui.js"></script>
+	<link rel="stylesheet" type="text/css" href="./pub/css/swiper-bundle.min.css">
+	<link rel="stylesheet" type="text/css" href="./pub/css/jquery.mCustomScrollbar.min.css">
+	<link rel="stylesheet" type="text/css" href="./pub/css/common.css" />
+	<link rel="stylesheet" type="text/css" href="./pub/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="./pub/css/reactive.css" />
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="./pub/js/jquery.mCustomScrollbar.min.js"></script>
+	<script src="./pub/js/swiper-bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
 <body>
 	<!-- wrap 시작  -->
 	<div class="wrap">
-		<!-- header 시작  -->
-		<header> 
-			<nav>
-				<a class="btn_portfolio" href="">Portfolio</a>
+		<!-- header 시작 -->
+		<header>
+			<div class="header_wrap">
+				<nav class="nav_tab">
+					<ul>
+						<li class="on"><a href="javascript:void(0);">portfolio</a></li>
+						<li><a href="javascript:void(0);">cover letter</a></li>
+					</ul>
+				</nav>
 				<h1>
-					<a href="#">LZY</a>
+					<a href="/" class="logo" >
+						<em>@</em>leeziyang
+					</a>
 				</h1>
-				<a class="btn_cover" href="">Cover Letter</a>
-			</nav>
+			</div>
 		</header>
 		<!-- header 끝  -->
 		<!-- main 시작  -->
 		<main>
-			<section class="portfolio">
-				<h2>Portfolio</h2>
-				<ul class="part_1">
-					<li>
-						<span class="img_box">
-							<img src="images/content_beosyong2.jpg" alt="버숑">
-						</span>
-						<div class="txt_box">
-							<h3>그로스체인 버숑</h3>
-							<strong>HTML5, CSS3, PHP, Javascript, jQuery, Ajax, 그누보드</strong>
-							<em>체험단 마케팅 서비스</em>
-							<em>메인 &#47; 서브페이지, 관리자페이지</em>
-							<em>크로스 브라우징, 반응형</em>
-							<em>프론트엔드 개발</em>
-							<em>참여도 100%</em>
-							<em>PC, Pad, Mobile</em>
-							<a class="open_btn" href="http://beosyong.com/">VIEW</a>
+			<!-- section 시작 -->
+			<section class="sec sec01">
+				<!--<h2>Portfolio</h2>-->
+				<!-- slide -->
+				<div class="slide_container swiper-container mySwiper">
+					<div class="slide_wrapper swiper-wrapper">
+
+						<div class="swiper-slide slide">
+							<a href="http://anam.kumc.or.kr/rsrv/reserve2.do" target="_blank">
+								<div class="img_box">
+									<figure>
+										<img src="./pub/images/slide_00.jpg" alt="고려대학교 의료원 영문페이지 리뉴얼 ">
+									</figure>
+								</div>
+								<div class="txt_box">
+									<p class="tit">고려대학교 의료원 영문페이지 리뉴얼</p>
+									<div class="desc">
+										<p>PC 적응형 퍼블리싱</p>
+										<p>참여도 100%</p>
+										<p>전자정부 프레임워크 기반, Java, eclipse, Javascript, CSS3</p>
+									</div>
+								</div>
+							</a>
 						</div>
-					</li>
-					<li>
-						<span class="img_box">
-							<img src="images/content_vroad.jpg" alt="V로드">
-						</span>
-						<div class="txt_box">
-							<h3>V로드</h3>
-							<strong>안드로이드 하이브리드 APP</strong>
-							<em>Google Play 출시</em>
-							<a class="open_btn" href="https://play.google.com/store/apps/details?id=vmp.company.vexmall&hl=ko">VIEW</a>
-							<ul class="project_list">
-								<li>
-									<h4>QR코드 결제 서비스</h4>
-									<em>QR코드를 통해 회원 간 포인트 전송을 할 수 있으며<i></i>가맹점 상품결제도 가능한 서비스</em>
-									<em>메인 &#47; 서브페이지, 관리자페이지</em>
-									<em>프론트엔드 개발</em>
-									<em>참여도 100%</em>
-									<em>Pad, Mobile</em>
-									<em>HTML5, CSS3, Javascript, jQuery, Ajax</em>
-								</li>
-								<li>
-									<h4>벤더맵 영수증관리</h4>
-									<em>가맹점 결제 영수증을 등록하고 포인트를 지급 받는 서비스</em>
-									<em>메인페이지 &#47; 관리자페이지</em>
-									<em>프론트엔드 개발</em>
-									<em>참여도 100%</em>
-									<em>Pad, Mobile</em>
-									<em>HTML5, CSS3, PHP, jQuery, Ajax</em>
-								</li>
-								<li>
-									<h4>스토어</h4>
-									<em>V로드의 쇼핑몰</em>
-									<em>메인페이지 &#47; 서브페이지 &#47; 관리자페이지</em>
-									<em>프론트엔드 개발</em>
-									<em>참여도 50% (기존 V로드 쇼핑몰 리뉴얼)</em>
-									<em>Pad, Mobile</em>
-									<em>HTML5, CSS3, PHP, jQuery, Ajax</em>
-								</li>
-							</ul>
+
+						<div class="swiper-slide slide">
+							<a href="http://anam.kumc.or.kr/language/ENG/main/index.do" target="_blank">	
+								<div class="img_box">
+									<figure>
+										<img src="./pub/images/slide_01.jpg" alt="고려대학교 의료원 국문 예약시스템 리뉴얼 ">
+									</figure>
+								</div>
+								<div class="txt_box">
+									<p class="tit">고려대학교 의료원 국문 예약시스템 리뉴얼</p>
+									<div class="desc">
+										<p>PC 적응형 퍼블리싱</p>
+										<p>참여도 100%</p>
+										<p>전자정부 프레임워크 기반, Java, eclipse, Javascript, CSS3</p>
+									</div>
+								</div>
+							</a>
 						</div>
-					</li>
-					<li>
-						<span class="img_box">
-							<img src="images/content_vmp2.jpg" alt="VMP">
-						</span>
-						<div class="txt_box">
-							<h3>VMP</h3>
-							<strong>HTML5, CSS3, jQuery</strong>
-							<em>VMP 회원용으로 제작된 웹사이트</em>
-							<a class="open_btn" href="http://vmp.company/">VIEW</a>
-							<ul class="project_list">
-								<li>
-									<h4>VMP 광고센터</h4>
-									<em>VMP 인트라넷의 회원들이 배너 또는 텍스트 광고를 게재할 수 있는 서비스</em>
-									<em>메인 &#47; 서브페이지, 관리자페이지</em>
-									<em>프론트엔드 개발</em>
-									<em>참여도 100%</em>
-									<em>HTML5, CSS3, PHP, jQuery, Ajax, 그누보드</em>
-								</li>
-								<li>
-									<h4>VMP 중고장터</h4>
-									<em>회원들 간의 중고 거래서비스</em>
-									<em>메인 &#47; 서브페이지, 관리자페이지</em>
-									<em>프론트엔드 개발</em>
-									<em>참여도 100%</em>
-									<em>HTML5, CSS3, PHP, jQuery, Ajax, 그누보드</em>
-								</li>
-								<li>
-									<h4>VMP 서명관리</h4>
-									<em>계약서 또는 출금신청 시 제공되는 서명 서비스 </em>
-									<em>메인페이지 &#47; 관리자페이지</em>
-									<em>프론트엔드 개발</em>
-									<em>참여도 100%</em>
-									<em>HTML5, CSS3, PHP, Javascript, Ajax</em>
-								</li>
-								<li>
-									<h4>VMP 카드결제서비스</h4>
-									<em>간편하게 카드 결제할 수 있는 서비스</em>
-									<em>메인 &#47; 서브페이지, 관리자페이지</em>
-									<em>프론트엔드 개발</em>
-									<em>참여도 100%</em>
-									<em>HTML5, CSS3, PHP, jQuery, Ajax, 그누보드</em>
-								</li>
-								<li>
-									<h4>VMP 신분증 인증 서비스</h4>
-									<em>출금신청 회원을 대상으로 한 신분증 인증 서비스</em>
-									<em>메인 &#47; 서브페이지, 관리자페이지</em>
-									<em>프론트엔드 개발</em>
-									<em>참여도 100%</em>
-									<em>HTML5, CSS3, PHP, jQuery, Ajax, 그누보드</em>
-								</li>
-								<li>
-									<h4>VMP 포인트 출금 서비스 (WEB APP)</h4>
-									<em>VMP 인트라넷과 V로드를 연계한 포인트 출금서비스</em>
-									<em>메인 &#47; 서브페이지, 관리자페이지</em>
-									<em>프론트엔드 개발</em>
-									<em>참여도 100%</em>
-									<em>HTML5, CSS3, PHP, jQuery, Ajax, 그누보드</em>
-								</li>
-								<li>
-									<h4>VMP 간편 회원가입 서비스</h4>
-									<em>한 명의 회원이 간단한 정보만으로 다수의 회원을 가입시킬 수 있는 서비스</em>
-									<em>메인 &#47; 서브페이지, 관리자페이지</em>
-									<em>프론트엔드 개발</em>
-									<em>참여도 100%</em>
-									<em>HTML5, CSS3, PHP, jQuery, Ajax, 그누보드</em>
-								</li>
-							</ul>
+
+						<div class="swiper-slide slide">
+							<a href="https://seocho.knchyunjae.com/front/main.do" target="_blank">	
+								<div class="img_box">
+									<figure>
+										<img src="./pub/images/slide_02.jpg" alt="현재어학원">
+									</figure>
+								</div>
+								<div class="txt_box">
+									<p class="tit">현재어학원 홈페이지 및 학원 업무 통합 시스템 LMS</p>
+									<div class="desc">
+										<p>PC,MO 반응형 퍼블리싱</p>
+										<p>사용자 페이지 / 업무 통합시스템 페이지</p>
+										<p>사용자 페이지 : 참여도 50%</p>
+										<p>업무 통합시스템 페이지 : 참여도 100%</p>
+										<p>전자정부 프레임워크, Java, eclipse, Javascript, CSS3</p>
+									</div>
+								</div>
+							</a>
 						</div>
-					</li>
-				</ul>
-				<ul class="part_2">
-					<li class="content_darich">
-						<span class="img_box">
-							<img src="images/content_darich.jpg" alt="darich 다리치">
-						</span>
-						<div class="txt_box">
-							<h3>darich 다리치</h3>
-							<strong>HTML5, CSS3, jQuery</strong>
-							<em>프론트엔드 개발</em>
-							<em>참여도 100%</em>
-							<em>메인 페이지, 서브페이지</em>
-							<em>PC, Pad, Mobile</em>
-							<a class="open_btn" href="http://darich.co.kr">VIEW</a>
+
+						<div class="swiper-slide slide">
+							<a href="https://members.parkland.co.kr/" target="_blank">	
+								<div class="img_box">
+									<figure>
+										<img src="./pub/images/slide_03.jpg" alt="파크랜드 통합 회원가입 시스템 리뉴얼">
+									</figure>
+								</div>
+								<div class="txt_box">
+									<p class="tit">파크랜드 통합 회원가입 시스템 리뉴얼</p>
+									<div class="desc">
+										<p>PC,MO 반응형 퍼블리싱</p>
+										<p>시용자페이지</p>
+										<p>참여도 100%</p>
+										<p>PHP, Javascript, CSS3</p>
+									</div>
+								</div>
+							</a>
 						</div>
-					</li>
-					<li class="content_cjone">
-						<span class="img_box">
-							<img src="images/content_cjone.jpg" alt="CJ ONE 메인페이지">
-						</span>
-						<div class="txt_box">
-							<h3>CJ ONE</h3>
-							<strong>HTML5, CSS3, Vanilla JavaScript, JSON, jQuery, bx-slider</strong>
-							<em>포트폴리오용 웹사이트</em>
-							<em>프론트엔드 개발</em>
-							<em>참여도 100%</em>
-							<em>메인 페이지</em>
-							<em>PC, Pad</em>
-							<a class="open_btn" href="https://ziyanglee.github.io/portfolio/cj_one/main.html">VIEW</a>
+
+						<div class="swiper-slide slide">
+							<a href="https://members.parkland.kr/contest/step01.asp" target="_blank">
+								<div class="img_box">
+									<figure>
+										<img src="./pub/images/slide_04.jpg" alt="파크랜드 공모전 웹 페이지">
+									</figure>
+								</div>
+								<div class="txt_box">
+									<p class="tit">파크랜드 공모전 웹 페이지</p>
+									<div class="desc">
+										<p>PC 적응형 퍼블리싱</p>
+										<p>메인페이지 / 서브페이지 / 관리자페이지</p>
+										<p>참여도 100%</p>
+										<p>PHP, Javascript, CSS3</p>
+									</div>
+								</div>
+							</a>
 						</div>
-					</li>
-					<li class="content_tlxpass">
-						<span class="img_box">
-							<img src="images/content_tlxpass.jpg" alt="TLX PASS 메인페이지">
-						</span>
-						<div class="txt_box">
-							<h3>TLX PASS</h3>
-							<strong>HTML5, CSS3, Vanilla JavaScript, jQuery, bx-slider</strong>
-							<em>포트폴리오용 웹사이트</em>
-							<em>프론트엔드 개발</em>
-							<em>참여도 100%</em>
-							<em>메인 페이지</em>
-							<em>PC, Pad, Mobile</em>
-							<a class="open_btn" href="https://ziyanglee.github.io/portfolio/tlxpass/main.html">VIEW</a>
+
+						<div class="swiper-slide slide">
+							<a href="http://donation.kumc.or.kr/" target="_blank">
+								<div class="img_box">
+									<figure>
+										<img src="./pub/images/slide_05.jpg" alt="고대의료원 의학발전기금 ">
+									</figure>
+								</div>
+								<div class="txt_box">
+									<p class="tit">고대의료원 의학발전기금</p>
+									<div class="desc">
+										<p>PC,MO 적응형 퍼블리싱</p>
+										<p>참여도 80%</p>
+										<p>Javascript, CSS3</p>
+									</div>
+								</div>
+							</a>
 						</div>
-					</li>
-					<li class="content_63">
-						<span class="img_box">
-							<img src="images/content_63.jpg" alt="63빌딩 메인페이지">
-						</span>
-						<div class="txt_box">
-							<h3>63 빌딩</h3>
-							<strong>HTML5, CSS3, Vanilla JavaScript, malihu scrollbar-js</strong>
-							<em>포트폴리오용 웹사이트</em>
-							<em>프론트엔드 개발</em>
-							<em>참여도 100%</em>
-							<em>메인 페이지</em>
-							<em>풀페이지 레이아웃, 페이징 스크롤</em>
-							<em>PC</em>
-							<a class="open_btn" href="https://ziyanglee.github.io/portfolio/building_63/main.html">VIEW</a>
+
+						<div class="swiper-slide slide">
+							<a href="https://www.u2labs.co.kr/front/main.do" target="_blank">
+								<div class="img_box">
+									<figure>
+										<img src="./pub/images/slide_06.jpg" alt="장원의료재단">
+									</figure>
+								</div>
+								<div class="txt_box">
+									<p class="tit">장원의료재단 프로젝트</p>
+									<div class="desc">
+										<p>PC, MO 반응형 퍼블리싱</p>
+										<p>사용자 페이지 : 참여도 50%</p>
+										<p>전자정부 프레임워크, Java, eclipse, Javascript, CSS3</p>
+									</div>
+								</div>
+							</a>
 						</div>
-					</li>
-					<li class="content_nomos">
-						<span class="img_box">
-							<img src="images/content_nomos.jpg" alt="독일 시계브랜드 nomos 메인페이지">	
-						</span>				
-						<div class="txt_box">
-							<h3>NOMOS Glashütte</h3>
-							<strong>HTML5, CSS3, Vanilla JavaScript, jQuery, bx-slider</strong>
-							<em>포트폴리오용 웹사이트</em>
-							<em>프론트엔드 개발</em>
-							<em>참여도 100%</em>
-							<em>메인 페이지, 반응형 웹</em>
-							<em>PC, Pad, Mobile</em>
-							<a class="open_btn" href="https://ziyanglee.github.io/portfolio/nomos/main.html">VIEW</a>
-						</div>
-					</li>
-					<li class="content_hyosung">
-						<span class="img_box">
-							<img src="images/content_hyosung.jpg" alt="효성중공업 메인페이지">	
-						</span>		
-						<div class="txt_box">
-							<h3>효성 중공업</h3>
-							<strong>XHTML, CSS, Vanilla JavaScript, jQuery, bx-slider</strong>
-							<em>포트폴리오용 웹사이트</em>
-							<em>프론트엔드 개발</em>
-							<em>참여도 100%</em>
-							<em>메인 페이지, 서브 2페이지</em>
-							<em>PC</em>
-							<a class="open_btn" href="https://ziyanglee.github.io/portfolio/hyosung/main.html">VIEW</a>	
-							<a class="open_btn" href="https://ziyanglee.github.io/portfolio/hyosung/solar_invertor.html">서브 페이지 1</a>
-							<a class="open_btn" href="https://ziyanglee.github.io/portfolio/hyosung/eng.html">서브 페이지 2</a>						
-						</div>
-					</li>
-				</ul>
+
+					</div>
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-scrollbar"></div>
+				</div>
+				<!-- //slide -->
 			</section>
-			<section class="cover_letter">
-				<h2>Cover Letter</h2>
-				<h3>모두가 편리한 웹서비스를 만들고 싶은<br/> 이지양이라고 합니다.</h3>
-				<div class="letter_1">
-					<p>웹디자인 프리랜서를 하면서 프론트엔드 분야를 자연스레 접하게 되었고</p>
-					<p>사용자들의 필요한 부분을 파악하여 웹페이지 구조를 디자인하고</p>
-					<p>이를 구현하는 것이 굉장히 매력적으로 느껴져 공부하게 되었습니다.</p>
+			<!-- section 끝 -->
+
+			<!-- section 시작 -->
+			<section class="sec sec02">
+				<div class="bg_box">
+					<div class="back_face"></div>
+					<div class="front_face"></div>
 				</div>
-				<div class="letter_2">
-					<p>다년간 다양한 고객분들을 만나며 커뮤니케이션의 중요성과 소통을 배웠고 </p>
-					<p>협업을 통해 혼자가 아닌 함께였을 때 더 많은 것을 해낼 수 있다는 것을 배웠습니다.</p>
-				</div>
-				<div class="letter_3">
-					<p>사용자들에게 영향력을 끼치는 분야인 만큼 책임감도 따라 지속적으로 공부해야할 양도 많지만</p>
-					<p>그 과정이 즐겁고 코딩할 수 있다는 것이 행복합니다.</p>
-				</div>
-				<div class="letter_4">
-					<p>주어진 업무는 신속하고 책임감 있게 해내어 조직에 도움을 드리는 구성원이 되고 싶습니다. </p>
-					<p>맡겨주시면 열심히 하겠습니다.</p>
-					<p>시간을 내어 긴 글을 읽어주셔서 감사합니다.</p>
-				</div>
-				<div class="skill">
-					<h2>Skill</h2>
-					<ul>
+				<div class="letter_box">
+					<ul class="cont">
+						<li>안녕하세요!<br>
+							모두가 편리한 웹서비스를 만들고 싶은 이지양이라고 합니다.</li>
 						<li>
-							<strong>HTML & CSS</strong>
-							<span>
-								<em>XHTML, HTML5, CSS3</em>
-								<em>웹표준에 맞는 마크업을 구현할 수 있습니다.</em>
-								<em>다양한 사이즈에 맞는 반응형 웹페이지를 제작할 수 있습니다.</em>
-							</span>
+							웹디자인 프리랜서를 하면서 프론트엔드 분야를 자연스레 접하게 되었고<span class="for_pc"></span>
+
+							사용자들의 필요한 부분을 파악하여 웹페이지 구조를 디자인하고<span class="for_pc"></span>
+
+							이를 구현하는 것이 굉장히 매력적으로 느껴져 공부하게 되었습니다. 
 						</li>
 						<li>
-							<strong>JAVASCRIPT</strong>
-							<span>
-								<em>Vanilla JavaScript, jQuery, JSON, Ajax</em>
-								<em>다양한 라이브러리,오픈소스 경험</em>
-								<em>또한 플러그인 없이 자바스크립트로 구현할 수 있습니다.</em>
-							</span>
+							다년간 다양한 프로젝트를 진행하며 커뮤니케이션의 중요성과 소통을 배웠고<span class="for_pc"></span>
+
+							협업을 통해 혼자가 아닌 함께였을 때 더 많은 것을 해낼 수 있다는 것을 배웠습니다.
 						</li>
 						<li>
-							<strong>Vue.js</strong>
-							<span>
-								<em>Todo List 제작경험</em>
-							</span>
+							사용자들에게 영향력을 끼치는 분야인 만큼 책임감도 따라 지속적으로 공부해야할 양도 많지만<span class="for_pc"></span>
+
+							그 과정이 즐겁고 행복합니다.
 						</li>
 						<li>
-							<strong>STUDY</strong>
-							<span>
-								<em>GitHub, PHP</em>
-							</span>
+							주어진 업무는 신속하고 책임감 있게 해내어 조직에 도움을 드리는 구성원이 되고 싶습니다.<span class="for_pc"></span>
+
+							맡겨주시면 열심히 하겠습니다.<span class="for_pc"></span>
+
+							시간을 내어 긴 글을 읽어주셔서 감사합니다 😊
 						</li>
-						<li>
-							<strong>PHOTOSHOP</strong>	
-							<span>
-								<em>웹디자인, 인물,제품 리터칭을 할 수 있습니다.</em>		
-							</span>				
+						<li class="contact_box"> 
+							<p>CONTACT</p>
+							<address><a href="mailto:leeziyang@kakao.com">leeziyang@kakao.com</a></address>
 						</li>
-						<li></li>
-						<li></li>
 					</ul>
 				</div>
 			</section>
+			<!-- section 끝 -->
+
 		</main>
 		<!-- main 끝  -->
-		<!-- footer 시작  -->
-		<footer>
-			<h3>CONTACT</h3>
-			<a class="tel" href="tel:010-3930-3017"><address>010 3930 3017</address></a>
-			<a class="email_addr" href="mailto:leeziyang@naver.com"><address>leeziyang@naver.com</address></a>
-			<p>Thank You!</p>
-		</footer>
-		<!-- footer 끝  -->
-	</div> 
+	</div>
 	<!-- wrap 끝  -->
+
+<script>
+$('document').ready(function(){
+
+
+
+//포트폴리오 슬라이드
+var swiper = new Swiper(".mySwiper", {
+
+	slidesPerView: 'auto',
+	centeredSlides: true,
+	loop: true,
+	spaceBetween: 100,
+	speed: 1000,
+	pagination: {
+		el: ".swiper-pagination",
+		clickable: true,
+	},
+	scrollbar: {
+          el: ".swiper-scrollbar",
+          hide: true,
+	},
+	navigation: {
+		nextEl: ".swiper-button-next",
+		prevEl: ".swiper-button-prev",
+	},
+	breakpoints: {
+		640: {
+		slidesPerView: 1,
+		spaceBetween: 20,
+		},
+		768: {
+		slidesPerView: 1,
+		spaceBetween: 40,
+		},
+		1024: {
+		slidesPerView: 'auto',
+		spaceBetween: 100,
+		},
+	},
+});
+
+
+$('.nav_tab li').each(function(idx, obj){
+	$(obj).click(function(){
+		$(obj).addClass('on').siblings('li').removeClass('on');
+		fnMove(idx+1);
+	});
+});
+
+let scroll;
+
+$(window).scroll(function(){
+	
+	if(!scroll){
+		let scrollT = $(this).scrollTop();
+		let sec02Top = $('.sec02').offset().top / 2;
+		scroll = setTimeout(function(){
+			scroll = null;
+			console.log(scrollT);
+			console.log(sec02Top);
+
+		
+
+			if(scrollT >= sec02Top){
+				$('.sec02 .bg_box').addClass('active');
+				$('.nav_tab li').eq(1).addClass('on').siblings('li').removeClass('on');
+
+			} else {
+				$('.sec02 .bg_box').removeClass('active');
+				$('.nav_tab li').eq(0).addClass('on').siblings('li').removeClass('on');
+
+			}
+
+		
+
+
+
+		}, 200);
+	}
+    
+});
+
+
+function fnMove(obj){
+  let offset = $(".sec0" + obj).offset();
+  console.log(offset)
+  $('html, body').animate({scrollTop : offset.top}, 400);
+}
+
+
+});
+</script>
 </body>
 </html>
