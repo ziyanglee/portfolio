@@ -63,7 +63,8 @@
     .sec01 .slide_container {padding-top: 6rem; width: 90vw}
     .sec01 .slide_container .slide_wrapper .slide .img_box figure {height: 230px}
     .swiper-button-next, .swiper-button-prev {display: none;}
-    .sec02 .bg_box {width: 74%}
+    .sec02 .bg_box {position: static; height: 5rem; transform: none}
+    .sec02 .bg_box .back_face {position: static;}
     
     }
     
