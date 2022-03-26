@@ -12,7 +12,6 @@
 	</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
     <title>이지양 포트폴리오</title>
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
     <link rel="icon" href="./favicon.ico" type="image/x-icon" />
@@ -41,7 +40,7 @@
 					</ul>
 				</nav>
 				<h1>
-					<a href="/" class="logo" >
+					<a href="/portfolio" class="logo" >
 						<em>@</em>leeziyang
 					</a>
 				</h1>
@@ -246,9 +245,6 @@
 
 <script>
 $('document').ready(function(){
-
-
-
 //포트폴리오 슬라이드
 var swiper = new Swiper(".mySwiper", {
 
@@ -285,7 +281,7 @@ var swiper = new Swiper(".mySwiper", {
 	},
 });
 
-
+//nav 클릭 
 $('.nav_tab li').each(function(idx, obj){
 	$(obj).click(function(){
 		$(obj).addClass('on').siblings('li').removeClass('on');
@@ -294,9 +290,8 @@ $('.nav_tab li').each(function(idx, obj){
 });
 
 let scroll;
-
 $(window).scroll(function(){
-	
+//스크롤 이벤트	
 	if(!scroll){
 		let scrollT = $(this).scrollTop();
 		let sec02Top = $('.sec02').offset().top / 2;
@@ -314,25 +309,17 @@ $(window).scroll(function(){
 			} else {
 				$('.sec02 .bg_box').removeClass('active');
 				$('.nav_tab li').eq(0).addClass('on').siblings('li').removeClass('on');
-
 			}
-
-		
-
-
-
 		}, 200);
 	}
-    
 });
 
-
+//스크롤이동
 function fnMove(obj){
   let offset = $(".sec0" + obj).offset();
   console.log(offset)
   $('html, body').animate({scrollTop : offset.top}, 400);
 }
-
 
 });
 </script>
